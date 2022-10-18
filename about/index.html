@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="/css/particlex.css">
         
         <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
     <meta name="generator" content="Hexo 6.3.0"></head>
     <body>
         <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
@@ -135,12 +136,17 @@
         
     </div>
     <div class="content" v-pre>
-        <h1> Hello！ <br> Here is Yuan来是你. </h1>
+        <h1> 
+   <font color=#CA8EFF size=7 > Hello！ </font>
+   <br> 
+   <font color=#AAAAFF size=6 > Here is Yuan来是你. </font> 
+</h1>
 <br>
 
 <hr>
 <p><br><br><br></p>
 <h3> 
+   <font color=#5151A2>
    作者：Yuan 
    <br>
    性别：男 
@@ -150,16 +156,18 @@
    Q&nbsp Q：1450844800
    <br>
    T E L：保密
+   </font> 
 </h3>
 <br><br><br>
 
 <hr>
 <br>
-<h5>
+<font size=3 >
    声明：
    <br>
    本博客内容皆为原创！
-</h5>
+</font>
+
 
 
 
@@ -196,6 +204,9 @@
         <script src="/js/particlex.js"></script>
         <script src="/js/showimg.js"></script>
         
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
 
     </body>
 </html>

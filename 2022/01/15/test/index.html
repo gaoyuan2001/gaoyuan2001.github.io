@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="/css/particlex.css">
         
         <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
     <meta name="generator" content="Hexo 6.3.0"></head>
     <body>
         <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
@@ -149,7 +150,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/生活/" style="color: #00bcd4">
+                <a href="/tags/生活/" style="color: #00a596">
                     生活
                 </a>
             </span>
@@ -158,21 +159,23 @@
         
     </div>
     <div class="content" v-pre>
-        <h1 id="just-for-a-test"><a href="#just-for-a-test" class="headerlink" title="just for a test"></a>just for a test</h1><h1>just for a test </h1><br>
-<h2>Life</h2>
+        <p><font size= 7><b>Life</b></font></p>
+<h1>just for a test </h1>
 
+<p><font color=#28FF28 size=6 ><strong>just for a test</strong></font></p>
+<p><font color=#FF8F59 size=6 ><b>just for a test</b></font></p>
+<p><font color=#CA8EFF size=6 face=楷体>just for a test</font></p>
+<hr>
 <h2 id="1-链接-amp-图片"><a href="#1-链接-amp-图片" class="headerlink" title="1. 链接&amp;图片"></a>1. 链接&amp;图片</h2><p><a target="_blank" rel="noopener" href="https://cn.bing.com/">必应</a><br><a target="_blank" rel="noopener" href="http://baidu.com/" title="baidu">百度</a></p>
 <blockquote>
 <p><em>物质</em><strong>基础</strong><em><strong>决定上层建筑</strong></em> </p>
 </blockquote>
+<hr>
 <blockquote>
 <p><strong>别忘了你自己是谁</strong></p>
 </blockquote>
 <hr>
-<h1>哈哈哈哈哈，制作不易，三连</h><br>
-
-<hr>
-<pre><code class="javascript">for (var i = 0; i &lt; items.length; i++) &#123;
+<pre><code class="java">for (var i = 0; i &lt; items.length; i++) &#123;
  console.log(items[i], i);
 &#125;
 </code></pre>
@@ -216,6 +219,9 @@
         <script src="/js/particlex.js"></script>
         <script src="/js/showimg.js"></script>
         
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
 
     </body>
 </html>
