@@ -150,14 +150,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/算法/" style="color: #00bcd4">
+                <a href="/tags/算法/" style="color: #03a9f4">
                     算法
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/LeetCode/" style="color: #ffa2c4">
+                <a href="/tags/LeetCode/" style="color: #00bcd4">
                     LeetCode
                 </a>
             </span>
@@ -173,10 +173,10 @@
 <p><font size=4 ><strong>自己的思路和解法：</strong></font><br>思路：嵌套for循环进行查找，不能重复出现相同的答案，要注意(1,2)和(2,1)不一样</p>
 <pre><code class="java">class Solution &#123;
     public int[] twoSum(int[] nums, int target) &#123;        
-        int len = nums.length;                       //len数组长度
+        int len = nums.length;                       //形参len：数组长度
         for(int i = 0; i &lt; len; i++) &#123;               //嵌套for循环
             for(int j = 0; j &lt; len; j++) &#123;
-                if(i == j)                           //因为每次 j的循环 都要全部循环，当i=j时需要跳过
+                if(i == j)                           //因为每次 j的循环 都要全部循环，当i = j时需要跳过
                     continue;                        //这里区别break，（1，2）和（2，1）一样吗                
                 if (nums[i] + nums[j] == target) &#123;   //查找两数之和=target
                     int[] result = &#123;i,j&#125;;            //给result初始化及赋值，并用作返回
@@ -184,8 +184,8 @@
                 &#125;
             &#125;            
         &#125;
-        return null;                                 //如果没有查找到则会返回null
-     &#125;     
+        return null;                                 //如果没有查找到则会返回null，
+                                                     //我在这不返回空result数组的想法是：感觉初始化一个数组占空间，但是在实际应用中还是返回空数组，否则在客户段调用时需要进行数组的非空判断，并且有时调用内置api还容易报错
 &#125;   
 </code></pre>
 
