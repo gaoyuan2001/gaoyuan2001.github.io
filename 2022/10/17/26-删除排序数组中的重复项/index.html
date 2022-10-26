@@ -150,15 +150,22 @@
             
             <span class="tag">
                 
-                <a href="/tags/算法/" style="color: #ff7d73">
+                <a href="/tags/算法/" style="color: #ffa2c4">
                     算法
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/LeetCode/" style="color: #ff7d73">
+                <a href="/tags/LeetCode/" style="color: #00a596">
                     LeetCode
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/数组/" style="color: #03a9f4">
+                    数组
                 </a>
             </span>
             
@@ -170,6 +177,8 @@
 <p>由于在某些语言中不能改变数组的长度，所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 k 个元素，那么 nums 的前 k 个元素应该保存最终结果。</p>
 <p>将最终结果插入 nums 的前 k 个位置后返回 k 。</p>
 <p>不要使用额外的空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。</p>
+<p>示例 1：<br>输入：nums &#x3D; [1,1,2]<br>输出：2, nums &#x3D; [1,2,_]<br>解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。</p>
+<p>示例 2：<br>输入：nums &#x3D; [0,0,1,1,1,2,2,3,3,4]<br>输出：5, nums &#x3D; [0,1,2,3,4]<br>解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array">https://leetcode.cn/problems/remove-duplicates-from-sorted-array</a></p>
 <p><font size=4 ><strong>自己的思路和解法：</strong></font><br>思路：<br>注意前提是 升序排列 的数组，也就是数组已经 有序 ，相邻的两个数一种是不等，一种是相等。</p>
 <pre><code class="java">class Solution &#123;
