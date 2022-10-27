@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <title>26.删除排序数组中的重复项 | Yuan来是你</title>
+        <title>136.只出现一次的数字 | Yuan来是你</title>
         <meta name="author" content="Yuan">
         <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
         <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
@@ -123,14 +123,14 @@
                         
 <div class="article">
     <div>
-        <h1>26.删除排序数组中的重复项 </h1>
+        <h1>136.只出现一次的数字 </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
             </span>
-            2022/10/17
+            2022/10/27
         </span>
         
         <span class="category">
@@ -150,21 +150,21 @@
             
             <span class="tag">
                 
-                <a href="/tags/算法/" style="color: #00bcd4">
+                <a href="/tags/算法/" style="color: #00a596">
                     算法
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/LeetCode/" style="color: #03a9f4">
+                <a href="/tags/LeetCode/" style="color: #00bcd4">
                     LeetCode
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/数组/" style="color: #00a596">
+                <a href="/tags/数组/" style="color: #00bcd4">
                     数组
                 </a>
             </span>
@@ -173,27 +173,66 @@
         
     </div>
     <div class="content" v-pre>
-        <p><font size=4 ><strong>题目：</strong></font><br>给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 。</p>
-<p>由于在某些语言中不能改变数组的长度，所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 k 个元素，那么 nums 的前 k 个元素应该保存最终结果。</p>
-<p>将最终结果插入 nums 的前 k 个位置后返回 k 。</p>
-<p>不要使用额外的空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。</p>
-<p>示例 1：<br>输入：nums &#x3D; [1,1,2]<br>输出：2, nums &#x3D; [1,2,_]<br>解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。</p>
-<p>示例 2：<br>输入：nums &#x3D; [0,0,1,1,1,2,2,3,3,4]<br>输出：5, nums &#x3D; [0,1,2,3,4]<br>解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。</p>
-<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array">https://leetcode.cn/problems/remove-duplicates-from-sorted-array</a></p>
-<p><font size=4 ><strong>自己的思路和解法：</strong></font><br>思路：<br>注意前提是 升序排列 的数组，也就是数组已经 有序 ，相邻的两个数一种是不等，一种是相等。</p>
+        <p><font size=4 ><strong>题目：</strong></font><br>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p>说明：<br>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
+<p>示例 1:<br>输入: [2,2,1]<br>输出: 1</p>
+<p>示例 2:<br>输入: [4,1,2,1,2]<br>输出: 4</p>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/single-number">https://leetcode.cn/problems/single-number</a></p>
+<p><font size=4 ><strong>自己的思路和解法：</strong></font><br>思路：1、先排序，然后两两比较，只能出现在前length-1个里或者最后一个(排序可以用工具类或者插入)；2、异或，到最后得出的结果是只出现一次的数字(借鉴评论区大佬的方法，太厉害了)。</p>
 <pre><code class="java">class Solution &#123;
-    public int removeDuplicates(int[] nums) &#123;
-        if(nums == null || nums.length == 0)     //数组判空
-            return 0;                          
-        int temp = 0;                            //初始化temp，会用temp来记录下标以及最后的数组长度
-        for(int i = 1; i &lt; nums.length; i++)&#123;    //循环寻找
-            if(nums[temp] != nums[i])&#123;           //找到后，temp不变，会进入下一个循环i++，会把后面的所有项向前移一位，找到其他的重复项也是一样
-                nums[temp + 1]=nums[i];
-                temp++;  
-            &#125;            
+    public int singleNumber(int[] nums) &#123;
+        int len = nums.length;
+        /*原本的思路是先 排序，然后 两两比较，只出现一次得数字只能出现在前 length-1 个里或者 最后 1 个，所以用了 i += 2 来减少循环次数，排序是正确了，但是最后的找数总是出现错误结果*/
+        /*Arrays.sort(nums); */                       //使用了工具类进行排序，Arrays 数组类下的 sort
+        /*for (int i = 0; i &lt; len - 1; i++) &#123;         //用 for循环 插入排序
+            int index = i;
+            for (int j = i + 1; j &lt; len; j++) &#123;
+                if (nums[j] &lt; nums[index]) &#123;
+                    index = j;
+                &#125;
+            &#125;
+            int temp = nums[index];
+            nums[index] = nums[i];
+            nums[i] = temp;
+        &#125;*/
+        /*int x = 0;                                   //最后找数出现错误结果
+        if (len &gt; 2) &#123;
+            for (int i = 0; i &lt; len - 1; i += 2) 
+                if (nums[i] != nums[i + 1]) &#123;
+                    x = nums[i];
+                    break;
+                &#125; else &#123;
+                    x = nums[len - 1];
+                    break;
+                &#125;
+        &#125; else 
+            x = nums[0];
+        return x;*/
+         
+        /*下面的是借鉴评论大佬的异或算法后自己的算法但是这个算法性能不好，排序会占用时间*/
+        //9ms，41.2MB
+        /*Arrays.sort(nums);                          //先进行了 排序，后面发现这一步可以省略
+        int temp = 0;
+        for (int i = 0; i &lt; len; i++) &#123;               // for循环，异或
+            temp = temp ^ nums[i];
         &#125;
-        nums.length = temp + 1;
-        return temp + 1;                          //数组长度为最后一项下标+1
+        return temp;*/                                //最后运算结果肯定是只出现一次的数字
+        
+        /*改进了我的算法，不用 排序，直接 异或，成功得出结果，大佬nb*/
+        //1ms，41.5MB
+        int temp = 0;
+        for (int i = 0; i &lt; len; i++) &#123;               //for循环，异或
+            temp = temp ^ nums[i];
+        &#125;
+        return temp;
+        
+        /*下面的是大佬的源代码，nbplus*/
+        //1ms，41.5MB
+        /*int reduce = 0;
+        for (int num : nums) &#123;
+            reduce = reduce ^ num;
+        &#125;
+        return reduce;*/
     &#125;
 &#125;
 </code></pre>
