@@ -170,7 +170,7 @@
 <h6 id="instanceof运算符"><a href="#instanceof运算符" class="headerlink" title="instanceof运算符"></a>instanceof运算符</h6><p>表示判断某一对象是否某一个类型的实例，或某类型的后的实例，返回值类型boolean值<br>if (!(obj instanceof Person)) {&#x2F;&#x2F; 判断obj对象是不是Person类的实例<br>　　return false;<br>}  </p>
 <h5 id="List：contains-方法"><a href="#List：contains-方法" class="headerlink" title="List：contains()方法"></a>List：contains()方法</h5><p>判断集合中是否包含某一元素，本质上调用的是equals()方法<br>indexOf() </p>
 <h5 id="List：sort-方法"><a href="#List：sort-方法" class="headerlink" title="List：sort()方法"></a>List：sort()方法</h5><p>排序。<br>参数是一个比较器，用于比较两个对象的大小<br>比较器内定义比较规则 </p>
-<p>创建比较器<br>&#x2F;&#x2F;匿名内部类<br>Camparator<Person>  comparator &#x3D; new Comparator&lt;&gt;(){<br>　　@override<br>　　public int compare(Person p1, Person p2){<br>　　return p1.getAge() - p2.getAge();<br>}<br>ps.sort(comparator);&#x2F;&#x2F;调用排序，括号内是比较器<br>System.out.println(ps);  </p>
+<p>创建比较器<br>&#x2F;&#x2F;匿名内部类<br>Camparator<Person>  comparator &#x3D; new Comparator&lt;&gt;(){<br>　　@override<br>　　public int compare(Person p1, Person p2){<br>　　return p1.getAge() - p2.getAge();&#x2F;&#x2F;  抽象方法规定返回值只能为负数，0，正数，分别代表小于，等于，大于<br>}<br>ps.sort(comparator);&#x2F;&#x2F;调用排序，括号内是比较器<br>System.out.println(ps);  </p>
 <h5 id="List：subList-方法"><a href="#List：subList-方法" class="headerlink" title="List：subList(,)方法"></a>List：subList(,)方法</h5><p>截取子集合，返回的是List类型<br>List<Integer> sub &#x3D; numbers.subList(2,4);  </p>
 <h5 id="List：toArray-方法"><a href="#List：toArray-方法" class="headerlink" title="List：toArray()方法"></a>List：toArray()方法</h5><p>toArray();<br>把动态数组转为真正的数组<br>返回的是Object[] 数组   </p>
 <p>若想继续可以进行for强转，也可以改写成以下代码</p>
