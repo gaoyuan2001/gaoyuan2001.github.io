@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>JavaSE基础语法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>JavaSE基础语法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/12/29
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #ff7d73">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <p><strong>String是引用类</strong><br>　　　本来需要new来申请存储空间<br>　　　　String x &#x3D; new String(“*”);<br>　　　　String y &#x3D; “&amp;”;<br>　　　String 用双引号 “absolute”，里面是字符串<br>　　　char 用单引号 ‘b’，里面是字符</p>
+<p><strong>break和continue</strong><br>　　　break：跳出循环，整个循环结束，之后的循环也不再执行<br>　　　continue：直接进行下一次循环，跳过当前循环  </p>
+<p><strong>数组</strong><br>　　　各个计算机语言都有的一个数据结构，最简单，最容易理解的数据结构<br>　　　数组，即一组数据 </p>
+<p>　　　定义一个数组，<em><strong>数组底层的本质是引用类型</strong></em><br>　　　　int[] s &#x3D; new int[5];<br>　　　　int[]其实就是类型名，int类型的数组，用int[]定义一个s，s就是一个整型的数组，类似于int s，只不过这里把int换成了int[]<br>　　　数组定义后就会有默认值<br>　　　　int，0<br>　　　　float，0.0<br>　　　　boolean，false<br>　　　　String，false<br>　　　定义的同时初始化<br>　　　　int[] s &#x3D; new int[]{1,2,3,4,5};<br>　　　　int[] s &#x3D; {1,2,3,4,5};    </p>
+<p>　　　数组的长度<br>　　　　s.length;</p>
+<p>　　　查看数组<br>　　　Arrays.toString(s);&#x2F;&#x2F;对数组s进行查看  </p>
+<p><strong>随机数</strong><br>　　　Math.random();<br>　　　范围[0,1)<br>　　　　　<em>int[] p &#x3D; new int[10];<br>　　　　　for(int i &#x3D; 0; i &lt; p.length; i++) {<br>　　　　　　　p[i] &#x3D; (int)(Math.random() * 100);<br>　　　　　}<br>　　　　　System.out.println(Arrays.toString(p));</em>  </p>
+<p><strong>算法：选择排序</strong><br>　　　<em>int a[] &#x3D; {3, 85, 49, 22, 30};<br>　　　for (int j &#x3D; 0; j &lt; a.length - 1; j++) {&#x2F;&#x2F;总轮数，5个数排4轮<br>　　　　　for (int i &#x3D; j + 1; i &lt; a.length; i++) {&#x2F;&#x2F;每轮都要找到一个最大值，进行交换<br>　　　　　　　if (a[j] &lt; a[i]) {<br>　　　　　　　　　int temp &#x3D; a[j];<br>　　　　　　　　　a[j] &#x3D; a[i];<br>　　　　　　　　　a[i] &#x3D; temp;<br>　　　　　　　}<br>　　　　　}<br>　　　}<br>　　　System.out.println(Arrays.toString(a));</em>  </p>
+<p><strong>算法：冒泡排序</strong><br>　　　<em>int[] a &#x3D; new int[10];<br>　　　for (int i &#x3D; 0; i &lt; a.length; i++) {<br>　　　　　a[i] &#x3D; (int)(Math.random() * 100);<br>　　　}<br>　　　System.out.println(Arrays.toString(a));<br>　　　for (int i &#x3D; 0; i &lt; a.length - 1; i++) {&#x2F;&#x2F; 总轮数9轮<br>　　　　　for (int j &#x3D; 0; j &lt; a.length - i - 1; j++) {&#x2F;&#x2F; 每找出一个最大值，下一轮就会少一个排序<br>　　　　　　　if (a[j] &gt; a[j + 1]) {&#x2F;&#x2F; 特别注意因为此时最后两个比较是用到了j和j+1，所以最后一个不再进行比较，到第length-1个结束<br>　　　　　　　　　int temp &#x3D; a[j];<br>　　　　　　　　　a[j] &#x3D; a[j + 1];<br>　　　　　　　　　a[j + 1] &#x3D; temp;<br>　　　　　　　}<br>　　　　　}<br>　　　}<br>　　　System.out.println(Arrays.toString(a));</em> </p>
+<p><strong>函数</strong><br>　　　public static void getSum(int x,int[] y){<br>　　　　　函数体<br>　　　}<br>　　　getSum(10,y);&#x2F;&#x2F;函数的调用，只有被调用，函数体才开始被执行  </p>
+<p>　　　public：<br>　　　　　公有的，还有privat私有的，protect受保护的<br>　　　static：<br>　　　　　静态的<br>　　　void：<br>　　　　　返回值类型，void（无返回值）、int、double、boolean等<br>　　　getSum：<br>　　　　　函数名：字母、数字、下划线，不能以数字开头，不能是关键字，可以是$。<br>　　　　　命名规范：驼峰式，getElementByMyName<br>　　　(int x,int[] y)：<br>　　　　　参数列表，形参x、y用于传参，把实参传递到函数体内部进行处理</p>
+<p>　　　一个函数可以被反复调用  </p>
+<p>　　　函数可以定义在任意位置，与调用顺序无关  </p>
+<p>　　　一个函数可以调用另外一个函数  </p>
+<p>　　　函数的重载：<br>　　　　　1、函数名相同<br>　　　　　2、参数列表不同<br>　　　　　　　 1.参数的个数不同<br>　　　　　　　 2.参数的类型不一样<br>　　　　　　　 3.参数的顺序不同<br>　　　　　　　 4.和返回值无关  </p>
+<pre><code class="java">package com.yuan;
+
+public class G1 &#123;
+
+    public static void main(String[] args) &#123;
+        for (int i = 0; i &lt; 5; i++) &#123;
+            String star = new String(&quot;*&quot;);// String 是引用类型
+            String star1 = &quot;&amp;&quot;;
+        &#125;
+        
+        // 打印五行五列 *
+        for (int i = 0; i &lt; 5; i++) &#123;
+            for (int j = 0; j &lt; 5; j++) &#123;
+                System.out.print(&quot;*&quot; + &quot; &quot;);
+            &#125;
+            System.out.println();
+        &#125;
+
+        for (int i = 0; i &lt; 5; i++) &#123;
+            String star = &quot;&quot;;
+            for (int j = 0; j &lt; 5; j++) &#123;
+                star = star + &quot;*&quot; + &quot; &quot;;
+            &#125;
+            System.out.println(star);
+        &#125;
+
+        // 打印等腰三角形
+        int n = 4;
+        for (int i = 1; i &lt;= n; i++) &#123;
+            for (int j = 1; j &lt;= n - i; j++) &#123;// 第i行前面有n-i个空格，后面的空格不用管
+                System.out.print(&quot; &quot;);
+            &#125;
+            for (int k = 1; k &lt;= 2 * i - 1; k++) &#123;// 按照1、3、5...打印，第i行有2*i-1个*
+                System.out.print(&quot;*&quot;);
+            &#125;
+            System.out.println();// 换行
+        &#125;
+
+        int m = 4;
+        for (int i = 1; i &lt;= m; i++) &#123;
+            String line = &quot;&quot;;
+            for (int j = 1; j &lt;= m - i; j++) &#123;// 第i行前面有n-i个空格，后面的空格不用管
+                line += &quot; &quot;;
+            &#125;
+            for (int k = 1; k &lt;= 2 * i - 1; k++) &#123;// 按照1、3、5...，第i行有2*i-1个*
+                line += &quot;*&quot;;
+            &#125;
+            System.out.println(line);// 打印加换行
+        &#125;
+        
+        // 打印九九乘法表
+        for (int i = 1; i &lt;= 9; i++) &#123;
+            for (int j = 1; j &lt;= i; j++) &#123;
+                System.out.print(i + &quot;*&quot; + j + &quot;=&quot; + i * j + &quot;\t&quot;);
+            &#125;
+            System.out.println();
+        &#125;
+
+        // 打印三位数的素数
+        for (int i = 100; i &lt; 1000; i++) &#123;
+            boolean temp = true;
+            for (int j = 2; j &lt; i; j++) &#123;
+                if (i % j == 0) &#123;
+                    temp = false;
+                    break;
+                &#125;
+            &#125;
+            if (temp) &#123;
+                System.out.println(i);
+            &#125;
+        &#125;
+
+        String a = &quot;absolute&quot;;// 字符串
+        char b = &#39;b&#39;;// 字符
+        System.out.println(a + b);
+
+        // 数组的底层本质是引用类型，new来申请存储空间
+        int[] s = new int[5];// 定义一个数组
+        s[0] = 95;
+        s[1] = 98;
+        s[2] = 80;
+        s[3] = 89;
+        s[4] = 85;
+        System.out.println(s.length);// 数组长度s.length
+        double sum = 0;
+        for (int i = 0; i &lt; s.length; i++) &#123;
+            sum += s[i];
+        &#125;
+        System.out.println(sum);
+        System.out.println(sum / s.length);
+        System.out.println(Arrays.toString(s));// 查看数组Arrays.toString(s)
+
+        int a1 = (int)Math.random();// 随机数Math.random()
+        double a2 = Math.random();
+        System.out.println(a1 + &quot;\n&quot; + a2);
+
+
+        int[] p = new int[10];
+        for(int i = 0; i &lt; p.length; i++) &#123;
+             p[i] = (int)(Math.random() * 100);
+        &#125;
+        System.out.println(Arrays.toString(p));
+        // 选择排序
+        int a[] = &#123;3, 85, 49, 22, 30&#125;;
+        for (int j = 0; j &lt; a.length - 1; j++) &#123;// 总轮数，5个数排4轮
+            for (int i = j + 1; i &lt; a.length; i++) &#123;// 每轮都要找到一个最大（小）值，进行交换
+                if (a[j] &lt; a[i]) &#123;
+                    int temp = a[j];
+                    a[j] = a[i];
+                    a[i] = temp;
+                &#125;
+            &#125;
+        &#125;
+
+        System.out.println(Arrays.toString(a));
+        // 选择排序，从小到大
+        int b[] = new int[10];
+        for (int i = 0; i &lt; b.length; i++) &#123;
+            b[i] = (int)(Math.random() * 100);
+        &#125;
+        for (int i = 0; i &lt; b.length - 1; i++) &#123;
+            for (int j = i + 1; j &lt; b.length; j++) &#123;
+                if (b[j] &lt; b[i]) &#123;
+                    int temp = b[i];
+                    b[i] = b[j];
+                    b[j] = temp;
+                &#125;
+            &#125;
+        &#125;
+        System.out.println(Arrays.toString(b));
+
+        // 冒泡排序
+        int[] a = new int[10];
+        for (int i = 0; i &lt; a.length; i++) &#123;
+            a[i] = (int)(Math.random() * 100);
+        &#125;
+        System.out.println(Arrays.toString(a));
+        for (int i = 0; i &lt; a.length - 1; i++) &#123;// 总轮数9轮
+            for (int j = 0; j &lt; a.length - i - 1; j++) &#123;// 每找出一个最大值，下一轮就会少一个排序
+                if (a[j] &gt; a[j + 1]) &#123;// 特别注意因为此时最后两个比较是用到了j和j+1，所以最后一个不再进行比较，到第length-1个结束
+                    int temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                &#125;
+            &#125;
+        &#125;
+        System.out.println(Arrays.toString(a));
+
+    &#125;
+    public static void main(String[] args) &#123;// main函数内调用函数
+
+        System.out.println(sum(100));
+        int t = random(50, 60);
+        System.out.println(t);
+        int u = random(4);
+        System.out.println(u);
+    &#125;
+
+    public static int sum(int n) &#123;
+        int s = 0;
+        for (int i = 1; i &lt;= n; i++) &#123;
+            s += i;
+        &#125;
+        return s;
+    &#125;
+
+    // 生成[m,n)之间的额随机整数
+    public static int random(int m, int n) &#123;
+        int result = (int)(Math.random() * (n - m) + m);
+        return result;
+    &#125;
+
+    // 生成[0,n)之间的随机整数，
+    // 重载了random函数，并且调用了函数random(m,n)
+    public static int random(int n) &#123;// 参数表不一样，数量不一样，使得两个同名函数random不一样
+        return random(0, n);
+    &#125;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

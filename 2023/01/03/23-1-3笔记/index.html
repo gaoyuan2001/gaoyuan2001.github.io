@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>JavaSE基础语法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>JavaSE基础语法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/1/3
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #ffa2c4">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <p><strong>回顾：</strong><br>　　Java语法基础<br>　　　1.变量<br>　　　2.数据类型：八种基本数据类型<br>　　　3.运算符<br>　　　4.表达式和语句<br>　　　5.流程控制结构：顺序、选择和循环<br>　　　6.数组：下标可以和循环结合使用<br>　　　7.函数：定义、调用（形参、实参，传参）、函数重载、递归调用  </p>
+<p><strong>类型的构成</strong><br>　　属性和方法（通过.来调用引用成员）<br>　　　成员属性：静态属性<br>　　　成员方法：动态属性，行为<br>　　封装：将数据与对象绑定在一起，并且控制数据的可见性  </p>
+<p>　　<em><strong>成员访问权限控制符</strong></em><br>　　　public：公有的。任何地方都可以访问<br>　　　protected：受保护的。允许子类访问，允许同一个包下的类访问，类外不能访问<br>　　　空：什么都不写，包方位修饰符。仅允许当前包内的类访问，必须同属一个包下的<br>　　　private：  私有的。只能在当前类内部访问，外部不允许访问<br>　　如果不知道要定义什么访问权限，优先使用更小的的权限，安全，封装</p>
+<p>　　　setter，getter方法<br>　　　　setter：设置属性值的公有方法<br>　　　　getter：获取属性值的公有方法(boolean类型的前面加is)<br>　　　　　this.表示当前调用  </p>
+<p>　　构造函数（构造方法）<br>　　　构造函数，是用来创建对象的，new后面<br>　　　1.和类同名<br>　　　2.如果用户没有手动创建构造函数时，会自动创建空的、公有的、无参的默认构造函数<br>　　　　　public void Student () {}<br>　　　3.如果用户手动创建构造函数时，则不再创建默认的构造函数<br>　　　4.构造函数：用于对对象的属性进行初始化<br>　　　　　区分默认值和初始化，默认值是在定义属性时给予的值，初始化是创建对象时构造函数对属性的赋值<br>　　　5.构造函数可以有参数列表，可以传参给属性<br>　　　6.构造函数可以重载<br>　　　7.构造函数中可以访问属性，也可以调用方法，this.<br>　　　8.构造函数可以调用其他构造函数，使用 this() 调用，当前类的构造函数<br>　　　　　<em>注！必须要放到第一行</em></p>
+<p>　　对象成员属性的默认值<br>　　　1.引用类型默认值时null<br>　　　2.int：0<br>　　　3.boolean：false  </p>
+<p><strong>面向对象有三大特性：封装、继承、多态</strong><br>　　<strong>封装</strong>：属性和方法结合起来  </p>
+<p>　　<strong>继承</strong>：extends子类在父类基础上增添了其他的属性或者方法，复用一些重复的属性和方法（子类 extends 父类）<br>　　　　　<em>注：公有public、受保护protected可以被继承，但是<strong>构造函数不能被继承</strong>，无修饰符和私有成员private不能被继承</em>  </p>
+<p>快捷键：ctrl+shift+O 快速导入包  </p>
+<p>　　　　　<strong>调用父类的构造函数 super(); 来对父类属性进行初始化</strong><br>　　　　　子类必须要先调用父类的构造函数，然后才能执行自身的构造函数<br>　　　　　　　<em>this()调用类自身的构造函数，super()调用父类的构造函数</em></p>
+<p>　　　　　继承的注意事项：<br>　　　　　　　1.继承是可以递归继承的<br>　　　　　　　2.一个类只能继承自另一个类，也就是只能有一个直接父类，不支持多重继承，单根继承<br>　　　　　　　3.如果一个类没有手动继承自另一个类，默认继承自Object类，Object是终极父类,只有Object类没有父类<br>　　　　　　　4.任何一个类，都直接或间接的继承自Object类<br>　　　　　　　5.任一构造函数，都需要先（直接或间接）调用父类的构造函数。构造函数第            一句要么使用super()调用父类构造函数，要么使用this()调用本类构造函数。如果什么都没有写，则默认调用无参super()，此时的无参super()调用的是父类无参的构造函数，如果父类没有无参的构造函数，则报错    </p>
+<p>　　　　　<strong>super</strong><br>　　　　　　　1.super. 可以调用父类的属性和方法（区别this. 调用本类的方法）<br>　　　　　　　2.super() 调用父类构造函数,必须放在第一行 </p>
+<p>　　　　　<strong>重写方法</strong>：在子类中，方法名和父类一样，此时对父类继承下来的方法进行覆盖掉 @override<br>　　　　　　　　　　　　调用时，会调用子类的方法，而不是父类的方法，如果要调用父类的方法，用super.调用<br>　　　　　　　　　　　　子类重写的方法，访问权限不能缩小  </p>
+<p>　　　　<strong>对象与对象之间的三种结构关系</strong><br>　　　　　　1.聚合关系：has a 包含关系 例：人的对象 包含 名字对象<br>　　　　　　2.依赖关系：use a 使用关系 一个对象在动态行为过程中，使用到了另外其他的对象 例：学生A的学习这个行为对象 用到 电脑对象<br>　　　　　　3.继承关系：is a  例：学生对象 是 人对象</p>
+<p>　　<strong>多态</strong>：一个对象所展现出多种形态<br>　　　　　Person p1 &#x3D; new Student();<br>　　　　　Person p2 &#x3D; new Teacher();<br>　　　　　把p1看成人，而不是学生，或者把p2看人，而不是老师</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

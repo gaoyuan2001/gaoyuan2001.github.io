@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>SSM框架：MyBatis | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>SSM框架：MyBatis </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/3/14
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #00bcd4">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h4 id="sql标记"><a href="#sql标记" class="headerlink" title="sql标记"></a>sql标记</h4><p>sql标记，include 标记结合使用。</p>
+<p>可以定义一个sql片段</p>
+<pre><code class="sql">&lt;sql id = &quot;columns&quot;&gt;
+        id,
+        name,
+        sex
+&lt;/sql&gt;
+
+&lt;include refid = &quot;columns&quot; /&gt;
+</code></pre>
+<p>include，把sql标记引入进来</p>
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><p>自动分页：分页插件也只是将page类的功能替代，不能替代js中的分页操作</p>
+<ul>
+<li><p>引入依赖：</p>
+<pre><code class="xml">&lt;!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;
+    &lt;artifactId&gt;pagehelper&lt;/artifactId&gt;
+    &lt;version&gt;5.3.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+</li>
+<li><p>在spring.xml中配置分页</p>
+<pre><code class="xml">&lt;!--4.配置mybatis的步骤--&gt;
+&lt;!-- 一、创建SqlSessionFactory --&gt;
+&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+    &lt;!-- 指定数据库连接池 --&gt;
+    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
+    &lt;!-- 指定mybatis的配置文件 --&gt;
+    &lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis.xml&quot;/&gt;
+    &lt;!-- 指定每一个模型实体的映射文件 --&gt;
+    &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/**/*.xml&quot;/&gt;
+    &lt;!-- 配置插件 --&gt;
+    &lt;property name=&quot;plugins&quot;&gt;
+        &lt;array&gt;
+            &lt;!-- 国内开发者开发的分页插件 https://pagehelper.github.io/ --&gt;
+            &lt;bean class=&quot;com.github.pagehelper.PageInterceptor&quot;&gt;
+                &lt;property name=&quot;properties&quot;&gt;
+                    &lt;value&gt;
+                        helperDialect=mysql
+                        reasonable=true
+                        rowBoundsWithCount=true
+                        pageSizeZero=true
+                        offsetAsPageNum=true
+                    &lt;/value&gt;
+                &lt;/property&gt;
+            &lt;/bean&gt;
+        &lt;/array&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
+</li>
+<li><p>使用：</p>
+<ul>
+<li>第一步启动，PageHelper.startPage(,)</li>
+<li>第二步查询：调用业务进行查询</li>
+<li>第三步获取分页对象（注意，js里的获取名要和其一一对应）PageInfo pi &#x3D; new PageInfo()</li>
+</ul>
+</li>
+</ul>
+<pre><code class="java">@PostMapping(value = &quot;/submitList&quot;, produces = &quot;application/json;charset=utf-8&quot;)
+@ResponseBody
+public Map&lt;String, Object&gt; list(Integer pageNo, Integer pageSize) &#123;
+    Human.HumanSearchBean hsb = new Human.HumanSearchBean();
+
+    //第一步
+    PageHelper.startPage(pageNo, pageSize);
+
+    //第二步
+    List&lt;Human&gt; humanList = service.findAll(hsb);
+
+    //第三步：获取分页对象
+    PageInfo&lt;Human&gt; pi = new PageInfo&lt;&gt;(humanList);
+
+    return Map.of(&quot;list&quot;, humanList, &quot;npi&quot;, pi);
+&#125;
+</code></pre>
+<h3 id="Mybatis的注解操作"><a href="#Mybatis的注解操作" class="headerlink" title="Mybatis的注解操作"></a>Mybatis的注解操作</h3><p>可以直接在dao接口中方法上加注解，写sql语句</p>
+<p>@Select</p>
+<p>@Update</p>
+<p>@Insert</p>
+<p>@Delete</p>
+<p>适合写比较简单的sql语句</p>
+<hr>
+<h3 id="代理模式："><a href="#代理模式：" class="headerlink" title="代理模式："></a>代理模式：</h3><p>一个中间层（代理）</p>
+<p>代理在原有的功能的基础上进行改善，但行为是相同的</p>
+<h5 id="静态代理：在程序运行之前，完成代理的代码编写。在代码级别实现"><a href="#静态代理：在程序运行之前，完成代理的代码编写。在代码级别实现" class="headerlink" title="静态代理：在程序运行之前，完成代理的代码编写。在代码级别实现"></a>静态代理：在程序运行之前，完成代理的代码编写。在代码级别实现</h5><ul>
+<li>1、手动编码。定义接口</li>
+<li>2、Aspect框架，在class字节码上植入其他字节码</li>
+</ul>
+<h5 id="动态代理：在程序运行期间，动态创建某对象的代理"><a href="#动态代理：在程序运行期间，动态创建某对象的代理" class="headerlink" title="动态代理：在程序运行期间，动态创建某对象的代理"></a>动态代理：在程序运行期间，动态创建某对象的代理</h5><ul>
+<li><p>1、jdk内置的动态代理：要求被代理的对象必须要有接口，返回的代理实现也只能通过接口来访问</p>
+</li>
+<li><p>2、cglib框架：原理是继承目标类，通过子类重写父类的方法来实现代理。目标类不能是final，要代理的方法不能是final</p>
+<p>导入cglib的jar包</p>
+<p>导入asm的jar包</p>
+</li>
+</ul>
+<h3 id="什么是AOP及如何实现"><a href="#什么是AOP及如何实现" class="headerlink" title="什么是AOP及如何实现"></a>什么是AOP及如何实现</h3><p><strong>aop：面向切面编程</strong></p>
+<p>实现原理：动态代理</p>
+<p>配置aop：</p>
+<ul>
+<li><p>1、引入依赖spring-aop</p>
+<pre><code class="xml">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-aop --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-aop&lt;/artifactId&gt;
+    &lt;version&gt;5.3.25&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+</li>
+<li><p>2、在spring.xml中配置</p>
+<p>切面通知</p>
+<p> &#96;&#96;&#96;xml</p>
+</li>
+</ul>
+<bean id="logAdvice" class="com.yuan.util.LogAdvice"/>
+   ```
+
+<p>配置aop，proxy-target-class为true表示使用cglib，否则使用jdk代理</p>
+<pre><code class="xml">&lt;aop:config proxy-target-class=&quot;true&quot;&gt;
+ &lt;!-- 定义切入点 --&gt;
+   &lt;aop:pointcut id=&quot;pc&quot; expression=&quot;execution(* com.yuan.service.impl.*.*(..))&quot;/&gt;
+  
+   &lt;!-- 定义切面 --&gt;
+   &lt;aop:aspect ref=&quot;logAdvice&quot;&gt;
+        &lt;!-- 前置通知：在方法的前面进行通知 --&gt;
+       &lt;aop:before method=&quot;logBefore&quot; pointcut-ref=&quot;pc&quot; /&gt;
+   &lt;/aop:aspect&gt;
+&lt;/aop:config&gt;
+</code></pre>
+<h1 id="Spring-AOP及事务的声明式配置"><a href="#Spring-AOP及事务的声明式配置" class="headerlink" title="Spring AOP及事务的声明式配置"></a>Spring AOP及事务的声明式配置</h1><p>实现原理：动态代理</p>
+<p>配置aop</p>
+<ul>
+<li>1、引入依赖</li>
+</ul>
+<h4 id="aop的应用：1、事务通知，详情请看3-15的笔记"><a href="#aop的应用：1、事务通知，详情请看3-15的笔记" class="headerlink" title="aop的应用：1、事务通知，详情请看3.15的笔记"></a>aop的应用：1、事务通知，详情请看3.15的笔记</h4><h4 id="aop的应用：2、spring缓存，在业务类上进行缓存。-环绕通知"><a href="#aop的应用：2、spring缓存，在业务类上进行缓存。-环绕通知" class="headerlink" title="aop的应用：2、spring缓存，在业务类上进行缓存。(环绕通知)"></a>aop的应用：2、spring缓存，在业务类上进行缓存。(环绕通知)</h4><h3 id="长期不变，读多写少，频繁用到，适合缓存"><a href="#长期不变，读多写少，频繁用到，适合缓存" class="headerlink" title="长期不变，读多写少，频繁用到，适合缓存"></a>长期不变，读多写少，频繁用到，适合缓存</h3><h5 id="这里注意：mybatis是在dao层缓存，select-id-x3D-“findAll”-resultType-x3D-“Student”-userCache-x3D-“true”，并打开二级缓存"><a href="#这里注意：mybatis是在dao层缓存，select-id-x3D-“findAll”-resultType-x3D-“Student”-userCache-x3D-“true”，并打开二级缓存" class="headerlink" title="这里注意：mybatis是在dao层缓存，select id &#x3D; “findAll” resultType &#x3D; “Student” userCache &#x3D; “true”，并打开二级缓存"></a>这里注意：mybatis是在dao层缓存，select id &#x3D; “findAll” resultType &#x3D; “Student” userCache &#x3D; “true”，并打开二级缓存</h5><p>1、引入依赖，</p>
+<p>spring-context-support，此包种含有spring的注解</p>
+<pre><code class="xml">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt;
+    &lt;version&gt;5.3.25&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>缓存组件ehcache（net.sf.ehcache）</p>
+<pre><code class="xml">&lt;!-- https://mvnrepository.com/artifact/net.sf.ehcache/ehcache --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;net.sf.ehcache&lt;/groupId&gt;
+    &lt;artifactId&gt;ehcache&lt;/artifactId&gt;
+    &lt;version&gt;2.10.9.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>2、配置缓存，在spring.xml中配置缓存管理器</p>
+<pre><code class="xml">&lt;!--缓存支持注解驱动--&gt;
+&lt;cache:annotation-driven/&gt;
+
+&lt;!--配置ehcache缓存管理器--&gt;
+&lt;bean id=&quot;ehcacheFactoryBean&quot; class=&quot;org.springframework.cache.ehcache.EhCacheManagerFactoryBean&quot;&gt;
+    &lt;property name=&quot;configLocation&quot; value=&quot;classpath:ehcache.xml&quot;/&gt;
+    &lt;property name=&quot;cacheManagerName&quot; value=&quot;ehcacheManager&quot;/&gt;
+&lt;/bean&gt;
+
+&lt;!--配置spring的缓存管理器--&gt;
+&lt;!--调用了ehcache的缓存管理器--&gt;
+&lt;bean id=&quot;cacheManager&quot; class=&quot;org.springframework.cache.ehcache.EhCacheCacheManager&quot;&gt;
+    &lt;property name=&quot;cacheManager&quot; ref=&quot;ehcacheFactoryBean&quot;/&gt;
+&lt;/bean&gt;
+&lt;!--长期不变，读多写少，频繁用到，适合缓存--&gt;
+</code></pre>
+<p>3、编写ehcache.xml文件</p>
+<p>其中可以定义多个cache</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE ehcache&gt;
+
+&lt;ehcache&gt;
+&lt;!--
+    缓存配置
+    diskStore：指定数据在磁盘中的存储位置。
+    name:缓存名称。
+    defaultCache：当借助CacheManager.add(&quot;demoCache&quot;)创建Cache时，EhCache便会采用    &lt;defalutCache/&gt;指定的的管理策略,以下属性是必须的：
+    maxElementsInMemory：缓存最大个数。
+    eternal:对象是否永久有效，一但设置了，timeout将不起作用。
+    timeToIdleSeconds：设置对象在失效前的允许闲置时间（单位：秒）。仅当eternal=false对象不是永久有效时使用，可选属性，默认值是0，也就是可闲置时间无穷大。
+    timeToLiveSeconds：设置对象在失效前允许存活时间（单位：秒）。最大时间介于创建时间和失效时间之间。仅当eternal=false对象不是永久有效时使用，默认是0.，也就是对象存活时间无穷大。
+    overflowToDisk：当内存中对象数量达到maxElementsInMemory时，Ehcache将会对象写到磁盘中。
+    diskSpoolBufferSizeMB：这个参数设置DiskStore（磁盘缓存）的缓存区大小。默认是30MB。每个Cache都应该有自己的一个缓冲区。
+    maxElementsOnDisk：硬盘最大缓存个数。
+    diskPersistent：是否缓存虚拟机重启期数据 Whether the disk store persists between restarts of the Virtual Machine. The default value is false.
+    diskExpiryThreadIntervalSeconds：磁盘失效线程运行时间间隔，默认是120秒。
+    memoryStoreEvictionPolicy：当达到maxElementsInMemory限制时，Ehcache将会根据指定的策略去清理内存。默认策略是LRU（最近最少使用）。你可以设置为FIFO（先进先出）或是LFU（较少使用）。
+    clearOnFlush：内存数量最大时是否清除。
+--&gt;
+    
+    &lt;!--其机制是先在内存中放缓存，如果内存中容量不够，则会放在硬盘中--&gt;
+    &lt;!--这里的用于存放缓存的硬盘位置--&gt;
+    &lt;diskStore path=&quot;d:/ehcache&quot;/&gt;
+
+    &lt;defaultCache maxElementsInMemory=&quot;1000&quot;
+                  eternal=&quot;false&quot;
+                  timeToIdleSeconds=&quot;120&quot;
+                  timeToLiveSeconds=&quot;120&quot;
+                  overflowToDisk=&quot;true&quot;
+                  maxElementsOnDisk=&quot;10000000&quot;
+                  diskPersistent=&quot;false&quot;
+                  diskExpiryThreadIntervalSeconds=&quot;120&quot;
+                  memoryStoreEvictionPolicy=&quot;LRU&quot;/&gt;
+
+    &lt;cache name=&quot;service-cache&quot;
+           maxElementsInMemory=&quot;100&quot;
+           timeToLiveSeconds=&quot;1800&quot;/&gt;
+
+&lt;/ehcache&gt;
+</code></pre>
+<p>4、在业务类方法上添加注解。缓存是要，缓存业务类的方法的返回值</p>
+<p>@Cacheable：放&#x2F;获取缓存，当没有的时候放，如果有缓存，则获取</p>
+<p>@CachePut：放缓存</p>
+<p>@CacheEvict：清空缓存</p>
+<p>@CacheConfig：定义在业务实现类上，可以统一进行配置，一旦配置后，方法上的其他注解可以省略配置缓存名字value</p>
+<p>@Caching：用于在一个方法上同时定义多个@Cacheable，@CachePut，@CacheEvict</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

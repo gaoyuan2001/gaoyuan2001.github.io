@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>JavaSE基础语法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>JavaSE基础语法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/1
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #03a9f4">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><h4 id="进程和线程的区别：process、thread"><a href="#进程和线程的区别：process、thread" class="headerlink" title="进程和线程的区别：process、thread"></a>进程和线程的区别：process、thread</h4><p>进程：系统分配资源和调用的最基本单位，每个程序可能不止一个进程</p>
+<p>线程：CPU调用分派的最小单位，每个进程最少包含一个线程（主线程），在CPU上运行的其实是线程</p>
+<p>系统把资源（内存，CPU）分配给进程，此进程的所有线程共享这些资源，就会造成线程冲突</p>
+<p>串行：1——2——3——</p>
+<p>并行：1——</p>
+<p>　　　2——</p>
+<p>　　　3——</p>
+<p>并发：1—　　　　1—</p>
+<p>　　　　　2—　　　　2—</p>
+<p>　　　　　　　3—　　　　3—</p>
+<p>并行：<strong>同时</strong>处理多个任务的能力</p>
+<p>并发：处理多个任务的能力</p>
+<p>一个线程的run() {……}，就是这个线程的任务</p>
+<p>生命周期：当run里的代码执行完后，此线程就结束了，死亡了</p>
+<p>创建—start—&gt;就绪态—run—&gt;运行——&gt;结束(死亡)</p>
+<p>start()：启动线程，到就绪态，CPU可以调用线程</p>
+<p>run()：执行线程，线程获得时间片timeslice，在CPU上运行</p>
+<h4 id="创建线程的方法："><a href="#创建线程的方法：" class="headerlink" title="创建线程的方法："></a>创建线程的方法：</h4><p>一、创建Thread的子类，重写run方法，启动</p>
+<p>二、创建Runnable的接口的实现类，作为Thread构造器的参数</p>
+<p>三、jdk1.5后新增Executor，Executors，ExecutorService</p>
+<p>Executor（执行器）：接口，用于提交任务（多线程）</p>
+<p>Executors：类，提供一些快速创建Executor的工具类</p>
+<p>ExecutorService：接口，继承自Executor，并扩展了一些接口</p>
+<pre><code class="java">ExecutorService es = Executors. newFixedThreadPool(5);
+es.execute(r);// r是继承自Runnable接口的实现类的对象，里面重写了run方法
+</code></pre>
+<p>Thread.yield(); &#x2F;&#x2F; 向CPU提出建议，去执行其他线程，可以放在run里面</p>
+<p>Runnable：没有返回值</p>
+<p>Callable：可以有返回值</p>
+<p>Future类：代表一个未来有值的对象</p>
+<p>Thread.sleep()：休眠指定的毫秒数，需要捕获异常</p>
+<ul>
+<li><p>execute只能提交Runnable类型的任务，无返回值。</p>
+<p>submit既可以提交Runnable类型的任务，也可以提交Callable类型的任务，会有一个类型为Future的返回值，但当任务类型为Runnable时，返回值为null。</p>
+</li>
+<li><p>execute在执行任务时，如果遇到异常会直接抛出，而submit不会直接抛出，只有在使用Future的get方法获取返回值时，才会抛出异常。</p>
+</li>
+</ul>
+<pre><code class="java">Callable&lt;Integer&gt; c = new Callable&lt;&gt;() &#123;
+    public Integer call() throws Exception &#123;
+        Thread.sleep(3000);
+        return 103;
+    &#125;
+&#125;;
+//Future：代表一个未来有值的对象
+Future&lt;Integer&gt; f = es.submit(c);// f可能还没有计算出来，但是先执行之后的语句，相当于，同时执行
+
+Thread。sleep(8000);
+
+try&#123;
+    Integer i = f.get();// 此时的f应该计算出来了，节约时间
+    System.out.println(i);
+&#125; catch(……) &#123;
+    
+&#125; catch(……) &#123;
+    
+&#125;
+</code></pre>
+<p>仅在面试中有用：</p>
+<p>wait()：表示等待，可以指定具体的等待时间，或者无限等待。</p>
+<p>　　　　wait();用锁来调用，唤醒也需要同一把锁来唤醒</p>
+<p>　　　　wait(3000);也可以等待三秒后，自动唤醒，无需手动notify唤醒</p>
+<pre><code class="java">private static final byte[] lock = new byte[0];
+synchronized(lock) &#123;
+    lock.wait();
+    System.out.println(&quot;等待中&quot;);
+&#125;
+synchronized(lock) &#123;
+    lock.wait(3000);// 无需手动唤醒
+    System.out.println(&quot;等待中&quot;);
+&#125;
+</code></pre>
+<p>notify()：表示唤醒一个等待中的线程，这个锁如果有多个无参等待，则唤醒只会随机唤醒其中一个，</p>
+<p>notifyAll()：表示唤醒所有等待中的线程</p>
+<p>等待和唤醒必须放在同步方法，或者同步块中</p>
+<pre><code class="java">synchronized(lock) &#123;
+    lock.notify();
+    System.out.println(&quot;已唤醒&quot;);
+&#125;
+</code></pre>
+<p>synchronized：同步锁，必须为对象，例如引用对象synchronized(lock) {……}</p>
+<p>　　　　　　　　也可以定义在方法上，给方法加锁public synchronized void  ab() {……}</p>
+<p>锁池：没有拿到锁的线程，竞争关系，线程等待拿到锁，转移出锁池，才能执行</p>
+<p>等待池：等待中的线程，唤醒（notify）后的线程会被转移到锁池</p>
+<hr>
+<h3 id="反射：Java的灵魂技术。Reflect"><a href="#反射：Java的灵魂技术。Reflect" class="headerlink" title="反射：Java的灵魂技术。Reflect"></a>反射：Java的灵魂技术。Reflect</h3><p>一种根据类的原数据，创建对象，访问对象成员的技术</p>
+<p>专门用于描述其他类的类，叫Class。</p>
+<h4 id="如何得到Class类型的-对象-？不是new出来的，是获取来的"><a href="#如何得到Class类型的-对象-？不是new出来的，是获取来的" class="headerlink" title="如何得到Class类型的  对象   ？不是new出来的，是获取来的"></a>如何得到Class类型的  <em><strong><u>对象</u></strong></em>   ？不是new出来的，是获取来的</h4><ul>
+<li><p>1.类名.class;</p>
+<p>Class&lt;?&gt; clazz1 &#x3D; Student.class;</p>
+</li>
+<li><p>2.通过对象.getClass();</p>
+<p>Student s &#x3D; new Student();</p>
+<p>Class&lt;?&gt;clazz2 &#x3D; s.getClass();</p>
+<p>局限性：如果没有对象，则获取不到</p>
+</li>
+<li><p>3.通过Class.forName();需要捕获异常</p>
+<p>Class&lt;?&gt;clazz3 &#x3D; Class.forName(“com.yuan.chapter1.Student”);</p>
+<p>灵活性高，括号里的变量可以改变，因此可以传参，用变量来获取</p>
+</li>
+</ul>
+<h4 id="反射可以做什么？"><a href="#反射可以做什么？" class="headerlink" title="反射可以做什么？"></a>反射可以做什么？</h4><h5 id="1-创建对象：其实都是调用了之前类的构造函数，-因此-参数列表要统一-。"><a href="#1-创建对象：其实都是调用了之前类的构造函数，-因此-参数列表要统一-。" class="headerlink" title="1.创建对象：其实都是调用了之前类的构造函数，**因此    参数列表要统一**。"></a>1.创建对象：其实都是调用了之前类的构造函数，**因此    <u><em>参数列表要统一</em></u>**。</h5><p>建议使用第二种构造函数创造对象</p>
+<ul>
+<li><p>用clazz方法，newInstance();</p>
+<p>Student  stu &#x3D; (Student)clazz.newInstance(String.class, String.class, int.class);&#x2F;&#x2F; 也需要捕获异常</p>
+</li>
+<li><p>用Constructor获取类的构造函数</p>
+<p>Constructor<?>  fun = (Constructor<?>)clazz.getDeclaredConstructor(……);</p>
+<p>Constructor<Student>  fun &#x3D; (Constructor<Student>)clazz.getDeclaredConstructor(String.class, String.class, int.class);</p>
+</li>
+</ul>
+<h5 id="2-可以访问（读写）对象的属性-x2F-x2F-Test4"><a href="#2-可以访问（读写）对象的属性-x2F-x2F-Test4" class="headerlink" title="2.可以访问（读写）对象的属性&#x2F;&#x2F; Test4"></a>2.可以访问（读写）对象的属性&#x2F;&#x2F; Test4</h5><h5 id="Field"><a href="#Field" class="headerlink" title="Field"></a>Field</h5><p>Field f &#x3D; clazz.getDeclareField(“name”);&#x2F;&#x2F; 括号里的使属性名</p>
+<p>f.setAccessible(true);强行把private类型转为public</p>
+<p>f.get(  );</p>
+<p>f.set(  ,  );</p>
+<h5 id="3-可以访问对象的方法-x2F-x2F-Test5"><a href="#3-可以访问对象的方法-x2F-x2F-Test5" class="headerlink" title="3.可以访问对象的方法&#x2F;&#x2F; Test5"></a>3.可以访问对象的方法&#x2F;&#x2F; Test5</h5><h5 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h5><p>Method m &#x3D; clazz.getDeclareMethod(“getName”);&#x2F;&#x2F; 括号里是方法名</p>
+<p>无法获取方法体。</p>
+<p>使用m这个函数</p>
+<p>m.invoke(null,”孙小美”,”女”,20);&#x2F;&#x2F;null的位置填的是对象名，静态方法无需用对象调用，之后的是原函数的要用的参数</p>
+<p>m.setAccessible(true);强行把private类型转为public</p>
+<h5 id="和反射相关的类："><a href="#和反射相关的类：" class="headerlink" title="和反射相关的类："></a>和反射相关的类：</h5><p>1.Class：类，描述类的对象</p>
+<p>2.Constructor：类，描述构造函数的对象</p>
+<p>3.Field：类，描述字段的对象</p>
+<p>4.Method：类，描述方法的对象</p>
+<p>5.Parameter:类，描述方法参数的队形</p>
+<p>补充知识：</p>
+<p>参数列表(Integer…numbers)</p>
+<p>不定长，参数数量可变</p>
+<p>有几种创建对象的方式？</p>
+<p>1.通过new构造函数创建对象</p>
+<p>2.反射</p>
+<p>3.反序列化,对象可以到序列化，</p>
+<p>　序列化也可以到对象，但是生成的对象不再是之前的对象</p>
+<p>4.克隆clone()：浅克隆</p>
+<p>需要实现 Cloneable 接口，对象才能调用clone()方法</p>
+<pre><code class="java">package com.yuan.chapter;
+public class Test1 &#123;
+    public static void main(String[] args) &#123;
+        // 1.通过类名.class来得到Class对象
+        // 需要知道类名
+        Class&lt;?&gt; clazz1 = Student.class;
+
+        // 2.通过原类的对象，对象.getClass()
+        // 局限性：需要现有原类的对象，才能用此方法
+        Student s = new Student();
+        Class&lt;?&gt; clazz2 = s.getClass();
+        /*
+         * 3.通过Class.forName()来获取 
+         * 但是需要注意两点： 
+         * ①括号内的类型是String类型 
+         * ②需要对其进行异常处理（try catch）
+         * 
+         * 此方法比以上两种方法更灵活，括号里的参数可以通过传参来获得
+         */
+        try &#123;
+            Class&lt;?&gt; clazz3 = Class.forName(&quot;com.yuan.chapter.Student&quot;);
+            System.out.println(clazz1 == clazz3);// true
+        &#125; catch (ClassNotFoundException e) &#123;
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        &#125;
+        System.out.println(clazz1 == clazz2);// true
+        System.out.println(clazz1.toString());//返回值为string类型 class com.yuan.chapter.Student
+        System.out.println(clazz1.getName());//返回值为string类型 com.yuan.chapter.Student
+        System.out.println(clazz1.getTypeName());//返回值为string类型 com.yuan.chapter.Student
+        System.out.println(clazz1.getSimpleName());//返回值为string类型 Student	
+    &#125;
+&#125;
+
+package com.yuan.chapter;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+public class Test2 &#123;
+    
+    public static void main(String[] args) &#123;
+        try &#123;
+            Class&lt;?&gt; clazz = Class. forName(&quot;com.yuan.chapter.Student&quot;);
+            
+            //已过时。 此方法传播由Nullary构造函数抛出的任何异常，包括已检查的异常。
+            Student stu1 = (Student)clazz.newInstance();
+            
+            Constructor&lt;?&gt; con =(Constructor&lt;?&gt;)clazz.getDeclaredConstructor();
+            Student stu = (Student)con.newInstance();
+            stu.setName(&quot;王蒙&quot;);
+            System.out.println(stu.getName());
+            
+            System.out.println(int.class == Integer.class);// false,int和Integer的class必然不一样，Integer是封装类
+            
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125; 
+    &#125;
+&#125;
+
+package com.yuan.chapter;
+public class Test3 &#123;
+    public static void main(String[] args) &#123;
+        printNumbers(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+    &#125;
+
+    public static void printNumbers(Integer... numbers) &#123;
+        // 参数列表中...表示参数数量不确定，虽然只有一个numbers，但是需要看调用的时候具体有几个参数
+        System.out.println(numbers.length);// 既然numbers能点出来length，说明numbers实际上是个数组
+        for (int i : numbers) &#123;
+            System.out.print(i + &quot; &quot;);
+        &#125;
+    &#125;
+&#125;
+
+package com.yuan.chapter;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+public class Test4 &#123;
+
+    public static void main(String[] args) &#123;
+        try &#123;
+            Class&lt;?&gt; clazz = Class.forName(&quot;com.yuan.chapter.Student&quot;);
+            Student s = new Student();
+            Field f = clazz.getDeclaredField(&quot;name&quot;);
+            f.setAccessible(true);// 强制访问私有的属性
+            f.set(s,&quot;红姐&quot;);// 因为name在Student里是私有属性，所以需要写上一句
+            System.out.println(f.get(s));// 红姐
+            System.out.println(f.getName());// name，属性的名字
+            System.out.println(f.getType().getName());// java.lang.String，属性的类的全名
+            System.out.println(f.getType().getSimpleName());// String，属性的类的简单名
+            System.out.println(Modifier.toString(f.getModifiers()));// private，属性的访问修饰符
+                        
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125; 		
+    &#125;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

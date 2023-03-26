@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>JavaSE基础语法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>JavaSE基础语法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/1/9
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #03a9f4">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h3 id="1-List：列表，和数组很像"><a href="#1-List：列表，和数组很像" class="headerlink" title="1. List：列表，和数组很像"></a>1. List：列表，和数组很像</h3><p>List接口<br>ArrayList具体实现类<br>ArrayList　list　&#x3D;　new ArrayList();&#x2F;&#x2F; 动态数组<br>ArrayList　&lt;Integer&gt; list　&#x3D;　new　ArrayList &lt;Integer&gt;();<br><strong>&#x2F;&#x2F;泛型&lt;Integer&gt;修饰限制ArrayList，后面的&lt;Integer&gt;可以省略</strong><br>List是个接口：继承自collection接口<br>ArrayList是继承List的类  </p>
+<p>collection接口</p>
+<h6 id="自己补充："><a href="#自己补充：" class="headerlink" title="自己补充："></a>自己补充：</h6><p>Java Collections swap()用法：<br>java.util.Collections类的swap()方法用于交换指定列表中指定位置的元素。如果指定位置相等，则调用此方法将使列表保持不变。<br>用法:<br>public static void swap(List list, int i, int j)</p>
+<hr>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>引用对象只能判断相等和不相等，不能判断谁大谁小</p>
+<h5 id="Object-equals-方法"><a href="#Object-equals-方法" class="headerlink" title="Object:equals()方法"></a>Object:equals()方法</h5><p>用于判断地址是否相同，用逻辑判断两个对象是否相同，并且可由设计者自己定义进行重写    </p>
+<h5 id="Object：hashCode-方法"><a href="#Object：hashCode-方法" class="headerlink" title="Object：hashCode()方法"></a>Object：hashCode()方法</h5><p>返回对象的哈希码，可由类的设计者自己定义重写，默认是取内存中的地址<br>哈希码，对于任意一个数据，生成一个尽量唯一的表示字符串（特征字符串）   </p>
+<h5 id="Object：toString-方法"><a href="#Object：toString-方法" class="headerlink" title="Object：toString()方法"></a>Object：toString()方法</h5><p>将对象转换成字符串，用户可以自己定义重写  </p>
+<h6 id="instanceof运算符"><a href="#instanceof运算符" class="headerlink" title="instanceof运算符"></a>instanceof运算符</h6><p>表示判断某一对象是否某一个类型的实例，或某类型的后的实例，返回值类型boolean值<br>if (!(obj instanceof Person)) {&#x2F;&#x2F; 判断obj对象是不是Person类的实例<br>　　return false;<br>}  </p>
+<h5 id="List：contains-方法"><a href="#List：contains-方法" class="headerlink" title="List：contains()方法"></a>List：contains()方法</h5><p>判断集合中是否包含某一元素，本质上调用的是equals()方法<br>indexOf() </p>
+<h5 id="List：sort-方法"><a href="#List：sort-方法" class="headerlink" title="List：sort()方法"></a>List：sort()方法</h5><p>排序。<br>参数是一个比较器，用于比较两个对象的大小<br>比较器内定义比较规则 </p>
+<p>创建比较器  </p>
+<pre><code class="java">//匿名内部类  
+Camparator&lt;Person&gt;  comparator = new Comparator&lt;&gt;()&#123;  
+　　@override  
+　　public int compare(Person p1, Person p2)&#123;   
+　　return p1.getAge() - p2.getAge();//  抽象方法规定返回值只能为负数，0，正数，分别代表小于，等于，大于  
+&#125;    
+ps.sort(comparator);//调用排序，括号内是比较器  
+System.out.println(ps);  
+</code></pre>
+<h5 id="List：subList-方法"><a href="#List：subList-方法" class="headerlink" title="List：subList(,)方法"></a>List：subList(,)方法</h5><p>截取子集合，返回的是List类型<br>List<Integer> sub &#x3D; numbers.subList(2,4);  </p>
+<h5 id="List：toArray-方法"><a href="#List：toArray-方法" class="headerlink" title="List：toArray()方法"></a>List：toArray()方法</h5><p>toArray();<br>把动态数组转为真正的数组<br>返回的是Object[] 数组   </p>
+<p>若想继续可以进行for强转，也可以改写成以下代码</p>
+<p>toArray(T[] {});<br>Integer[] is &#x3D; numbers.toArray(new Integer[] {});<br>此时返回的是Integer类型的数组<br>或者<br>Integer[] a &#x3D; {1};<br>Integer[] is &#x3D; numbers.toArray(a);<br>此时返回的也是Integer类型的数组<br>只要括号里是某一个数组的实例，则返回的就是这一数组类型的数组</p>
+<h4 id="迭代器-一种循环遍历集合所有元素的方式，迭代器是一个对象"><a href="#迭代器-一种循环遍历集合所有元素的方式，迭代器是一个对象" class="headerlink" title="迭代器:一种循环遍历集合所有元素的方式，迭代器是一个对象"></a>迭代器:一种循环遍历集合所有元素的方式，迭代器是一个对象</h4><p>iterator();返回值类型是Iterator类型的对象  </p>
+<p>Iterator<Integer> it &#x3D; nembers.iterator();&#x2F;&#x2F;多态，Iterator接口，定义对象it<br>while(it.hasNext()){&#x2F;&#x2F;判断是否有下一个元素<br>　　Integer i &#x3D; it.next();&#x2F;&#x2F;取出下一个元素<br>}</p>
+<p>特点：<br>1.遍历所有元素，无法只遍历部分<br>2.迭代器迭代时，无需索引，只能往一个方向迭代<br>3.安全，由于不涉及索引，所以不会出现指针越界等问题<br>4.适用场景：适合需要遍历全部元素的场景，不适合遍历局部，以及按照不同方向遍历的场景</p>
+<p>iterator()函数可以返回一个集合的迭代器对象  </p>
+<h5 id="迭代器语法糖（增强for循环）"><a href="#迭代器语法糖（增强for循环）" class="headerlink" title="迭代器语法糖（增强for循环）"></a>迭代器语法糖（增强for循环）</h5><p>迭代器语法糖，没有索引，和上面的一样，语法上简化简化<br>for(a:b):b是集合，a是迭代过程中的集合b的某一个元素  </p>
+<pre><code class="java">for(Integer i：numbers)&#123;  
+　　System.out.println(i);  
+&#125;  
+</code></pre>
+<h5 id="forEach-隐式迭代"><a href="#forEach-隐式迭代" class="headerlink" title="forEach:隐式迭代"></a>forEach:隐式迭代</h5><p>直接调用，Consumer的accept方法，需要自己重写  </p>
+<pre><code class="java">//匿名内部类  
+Consumer&lt;Integer&gt; consumer = new Consumer&lt;&gt;() &#123;  
+　　@override  
+　　public void accept(Integer t)&#123;  
+　　　　System.out.println(t * t);  
+　　&#125;  
+&#125;  
+numbers.forEach(consumer);//调用  
+</code></pre>
+<p>以上可以简写为：</p>
+<pre><code class="java">numbers.forEach(t-&gt;System.out.println(t * t));    
+//把方法体写在括号里  
+</code></pre>
+<h5 id="流操作：隐式迭代"><a href="#流操作：隐式迭代" class="headerlink" title="流操作：隐式迭代"></a>流操作：隐式迭代</h5><p>numbers.stream().forEach(t-&gt;System.out.println(t * t));  </p>
+<h3 id="2-Set-集合（狭义集合）"><a href="#2-Set-集合（狭义集合）" class="headerlink" title="2.Set:集合（狭义集合）"></a>2.Set:集合（狭义集合）</h3><p>其中元素无序，但是不重复<br>Set和List一样是继承于Collection的接口<br>HashSet是具体实现类<br>HashSet底层实现，使用的是HashMap，HashMap的特点是，key无序且不重复<br>List中的方法，在Set中也有，除了需要get(i)等有序号的方法，Set中元素无序，没有i<br>HashSet<Integer> set &#x3D; new HashSet&lt;&gt;();<br>&#x2F;&#x2F;HashSet是是Set接口的实现类   </p>
+<p>取值：<br>无序所以没有get(i)；方法<br>用迭代器进行遍历打印 </p>
+<pre><code class="java">Iterator&lt;Integer&gt; it = set.iterator();  
+while(it.hasNext())&#123;  
+　　Integer i = it.next();  
+　　System.out.println(i);  
+&#125;  
+</code></pre>
+<p>加强for循环，输出  </p>
+<pre><code class="java">for(Integer　i　:　set)&#123;  
+　　System.out.println(i　+　&quot;　&quot;);  
+&#125; 
+</code></pre>
+<h3 id="3-Map：映射（a-gt-b）"><a href="#3-Map：映射（a-gt-b）" class="headerlink" title="3.Map：映射（a-&gt;b）"></a>3.Map：映射（a-&gt;b）</h3><p>Map也是一个接口<br>HashMap是具体实现类<br>存储　键值对　(key，value)<br>key无序，不重复，在一个key上多次重新put()赋值，是一次次的覆盖，值为最后一次put() </p>
+<p>Map&lt;String, String&gt; map &#x3D; new HashMap&lt;&gt;();<br>map.put(“stu001”,”张三”);&#x2F;&#x2F;一次存两个，键和值<br>map.put(“stu002”,”李四”);<br>map.put(“stu003”,”王五”);  </p>
+<p>取得时候用key取值<br>map.get(“stu002”);  </p>
+<p>特点：key无序且不重复的<br>如何判断key重复：<br>先调用hashCode，判断是否相同，如果相同，则认为两个key重复。如果hashCode不同，则再次调用equals方法，判断是否相同，如果相同，则认为key重复</p>
+<p>常用方法：<br>1.存储键值对<br>map.put( , )<br>2.获取值<br>map.get()<br>3.元素数量<br>map.size()<br>4.清空<br>map.clear()<br>5.克隆，浅复制<br>map.clone()<br>6.判断容器中，是否包含某个指定的key或value<br>map.containsKey();<br>map.containsValue();<br>7.迭代器,entrySet()返回一个Set类型的键值对集合<br>Entry&lt;,&gt;代表一个键值对<br>Set&lt;Entry&lt;String, String&gt;&gt; st &#x3D; map.entrySet();&#x2F;&#x2F; 这个集合st里存储的都是一个个Entry类型键值对，每个键值对有key和value，相当于用&lt;Entry&lt;String, String&gt;对Set st里的每一个元素进行了定义。<br>for(Entry&lt;Strin, String&gt; p : st){<br>　　String k &#x3D; p.getKey();<br>　　String v &#x3D; p.getValue();<br>　　System.out.println(k+”-&gt;”v);<br>}  </p>
+<p>8.隐式迭代<br>&#x2F;&#x2F;匿名内部类<br>BiConsumer&lt;String,　String&gt;　bc &#x3D; new　BiConsumer&lt;&gt;()　{<br>　　public void accept(String t,String　u){<br>　　System.out.println(t　+　“-&gt;”　+　u);<br>};    </p>
+<p>map.forEach((a,　b)-&gt;System.out.println(a　+　“-&gt;”　+　b));    </p>
+<p>9.根据键获取值，如果获取不到，则使用默认值<br>String v　&#x3D;　map.getOrDefault(“stu000”,”无名”);<br>System.out.println(v);  </p>
+<p>10.返回此容器的所有的key<br>Set<String>　keys　&#x3D;　map.KeySet();<br>System.out.println(keys);   </p>
+<p>11.批量添加<br>Map&lt;String,String&gt;　m　&#x3D;　Map.of(“stu2004”,”忍太 郎”,”stu005”,”旺财”)&#x2F;&#x2F;Map.of　只读<br>map.putAll(m);<br>System.out.println(map);  </p>
+<p>12.移除，根据key移除键值对<br>map.remove(“stu004”);  </p>
+<hr>
+<h3 id="六、异常：Exception"><a href="#六、异常：Exception" class="headerlink" title="六、异常：Exception"></a>六、异常：Exception</h3><h5 id="异常处理机制：Java语法，及异常类型"><a href="#异常处理机制：Java语法，及异常类型" class="headerlink" title="异常处理机制：Java语法，及异常类型"></a>异常处理机制：Java语法，及异常类型</h5><p>程序中出现非预期的情况，导致程序无法正常运行，数据出错，或者程序终止。   </p>
+<p>出现异常后，程序立即终止，异常位置之后的代码不再执行<br>由程序员去捕获异常，在捕获异常后，进行一定的补救或者挽回措施，同时保证程序可以继续运行<br>捕获私有前后顺序的。当出现异常时，只会进入一个分支<br>try　{  &#x2F;&#x2F;程序  </p>
+<p>}　catch　(异常类型1)　{  </p>
+<p>}　catch　(异常类型2)　{  </p>
+<p>}　catch　(Exception　e)　{<br>　　e.printStackTrace();<br>}  </p>
+<p>所有异常类型，都直接或间接的是Exception的子类（后代类）<br>常见异常类型：<br>　　Exception：异常的父类<br>　　ArithmeticException：数学异常<br>　　RuntimeException：运行时异常<br>　　ArrayIndexOutOfBoundsException：数组下标越界<br>　　StringIndexOutOfBoundsException：字符串索引越界异常<br>　　IndexOutOfBoundsException：下标越界异常<br>　　NullPointerException：空指针异常  </p>
+<pre><code class="java">try　&#123;// 监控程序   
+　　int　c　=　a　/　b;    
+&#125;　catch (ArithmeticException　e)　&#123;// 捕获异常类型    
+　　e.printStackTrace();//打印异常路由    
+　　System.out.println(&quot;除数为0&quot;);   
+&#125;　catch (RuntimeException　e1)　&#123;   
+　　e.printStackTrace();   
+　　System.out.println(&quot;运行时异常&quot;);   
+&#125;   
+System.out.println(&quot;运行结束&quot;);   
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>MySQL数据库 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>MySQL数据库 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/8
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/MySQL/" style="color: #03a9f4">
+                    MySQL
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <hr>
+<h3 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h3><p><strong>JDBC：Java Database Connectivit ，java连接数据库技术</strong></p>
+<p>ODBC：彻底被淘汰</p>
+<h4 id="固定套路："><a href="#固定套路：" class="headerlink" title="固定套路："></a>固定套路：</h4><ul>
+<li><p><strong>1.引入相关库。注册驱动</strong></p>
+<p>注册驱动，看看有没有这个类，如果没有报错</p>
+<pre><code class="java">try &#123;
+    Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);
+&#125; catch (ClassNotFoundException e) &#123;
+    throw new RuntimeException(e);
+&#125;
+</code></pre>
+</li>
+<li><p><strong>2.获取数据库连接</strong></p>
+</li>
+</ul>
+<p>  url、user、password</p>
+<p>  然后用Connection类创建对象，以创建与数据库之间的连接</p>
+<p>  url：mysql：是数据库类型，也可以是Oracle等</p>
+<p>  　　localhost：3306是地址，这里用的是本地地址，3306是接口名，与数据库一直，也可以写其他电脑的IP</p>
+<p>  　　student2022：是数据库的名字</p>
+<p>  user：mysql的用户名，这里要注意此用户有没有读写的权限</p>
+<p>  passwor：上面用户名的密码</p>
+<pre><code class="java">String url =&quot;jdbc:mysql://localhost:3306/student2022?&quot; +
+                &quot;characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;&quot; +
+                &quot;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true&quot;;
+String user =&quot;root&quot;;
+String password = &quot;root&quot;;
+Connection conn = DriverManager.getConnection(url, user, password);
+</code></pre>
+<ul>
+<li><p><strong>3.创建statement</strong> </p>
+<p>分成两种操作。一、读操作 二、写操作<br>创建一个sql载体，用于装载sql语句</p>
+<p>stmt：相当于一个卡车，用于把sql语句运送到数据库并返回一定的数据，运输的路就是conn创建的连接</p>
+<pre><code class="java">Statement stmt = conn.createStatement();
+String sql = &quot;select id, stu_id, name as 姓名, sex, birthday, phone from t_student where id &lt; 10&quot;;
+</code></pre>
+</li>
+<li><p><strong>4.发送sql进行查询操作，返回结果集</strong> </p>
+<p>发送sql到数据库服务器，返回一个结果集</p>
+<p>executeQuery(sql)：mysql中的select，返回一个结果集</p>
+<p>executeUpdate(sql)：mysql中的update、insert、delete，返回一个int整数值，表示改动了几行数据</p>
+<pre><code class="java">ResultSet rs = stmt.executeQuery(sql);
+</code></pre>
+</li>
+<li><p>**5.对结果集进行遍历操作，获取数据 **</p>
+<pre><code class="java">while(rs.next()) &#123;
+    int id = rs.getInt(&quot;id&quot;);
+    String stuId = rs.getString(&quot;stu_id&quot;);
+    String name = rs.getString(&quot;姓名&quot;);
+    String sex = rs.getString(&quot;sex&quot;);
+    Date birthday = rs.getDate(&quot;birthday&quot;);
+    String phone = rs.getString(&quot;phone&quot;);
+
+    System.out.println(id +&quot; &quot;+ stuId + &quot; &quot; + name + &quot; &quot; + sex + &quot; &quot;+birthday + &quot; &quot; + phone);
+&#125;
+</code></pre>
+</li>
+<li><p><strong>6.关闭数据库连接（一定要关闭）</strong></p>
+</li>
+</ul>
+<pre><code class="java">finally &#123;
+    //6.关闭数据库
+    if(conn != null)&#123;
+        try &#123;
+            conn.close();
+        &#125; catch (SQLException e) &#123;
+            throw new RuntimeException(e);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<hr>
+<h3 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h3><pre><code class="java">import java.sql.*;
+
+/**
+ * @Title: Select
+ * @Project: lesson0208
+ * @Description:
+ * @Author: 14508
+ * @Version:
+ * @Creat: 2023/2/8 20:48
+ */
+public class Select &#123;
+    public static void main(String[] args) &#123;
+
+        //1.注册驱动，看看有没有这个类，如果没有报错
+        try &#123;
+            Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);
+        &#125; catch (ClassNotFoundException e) &#123;
+            throw new RuntimeException(e);
+        &#125;
+
+        //2.获取数据库连接
+        String url =&quot;jdbc:mysql://localhost:3306/student2022?&quot; +
+                &quot;characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;&quot; +
+                &quot;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true&quot;;
+        String user =&quot;root&quot;;
+        String password = &quot;root&quot;;
+        Connection conn = null;
+        try &#123;
+            conn = DriverManager.getConnection(url, user, password);
+
+            //3.分成两种操作。一、读操作 二、写操作
+            //读操作
+            //创建一个sql载体，用于装载sql语句
+            Statement stmt = conn.createStatement();
+            String sql = &quot;select id, stu_id, name as 姓名, sex, birthday, phone from t_student where id &lt; 10&quot;;
+
+            //4.发送sql到数据库服务器，返回一个结果集
+            ResultSet rs = stmt.executeQuery(sql);
+
+            //5.从结果集中取数据
+            while(rs.next()) &#123;
+                int id = rs.getInt(&quot;id&quot;);
+                String stuId = rs.getString(&quot;stu_id&quot;);
+                String name = rs.getString(&quot;姓名&quot;);
+                String sex = rs.getString(&quot;sex&quot;);
+                Date birthday = rs.getDate(&quot;birthday&quot;);
+                String phone = rs.getString(&quot;phone&quot;);
+
+                System.out.println(id +&quot; &quot;+ stuId + &quot; &quot; + name + &quot; &quot; + sex + &quot; &quot;+birthday + &quot; &quot; + phone);
+            &#125;
+        &#125; catch (SQLException e) &#123;
+            throw new RuntimeException(e);
+        &#125; finally &#123;
+            //6.关闭数据库
+            if(conn != null)&#123;
+                try &#123;
+                    conn.close();
+                &#125; catch (SQLException e) &#123;
+                    throw new RuntimeException(e);
+                &#125;
+            &#125;
+        &#125;
+
+    &#125;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

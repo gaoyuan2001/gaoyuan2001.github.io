@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>JavaSE基础语法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>JavaSE基础语法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/1/4
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #00a596">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>使用父类（祖先类）指向子类（后代类）的对象，此时访问引用的方法，实际上是子类的方法，有可能会表现出不同于父类的行为（方法重写）<br>这个类有很多子类，如果用这个类定义一个对象，则其对象可以的类型可以有很多种！！！  </p>
+<p>Teacher extends Person<br>Person tea &#x3D; new Teacher();<br>父类的引用 指向了 子类的对象，<br>父类对象(Person)是真正的对象，只能调用父类已有的方法<br>tea是父类的对象，其内核是子类。</p>
+<p><strong>注意！！！</strong><br>调用方法只能是调用父类的方法：<br>1.未经过子类重写的，调用父类的方法<br>2.经过子类重写的，调用子类的方法  </p>
+<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><p>使用abstract关键字<br>抽象类不能实例化，也就是不能创建对象<br>当觉得某个类不应该被实例化，<u><strong>仅用作继承</strong></u>，就可以写成抽象类<br>除了不能实例化，不能创建对象之外，与普通类没有任何区别<br>继承层次很高，很高的祖先类，可以定义成抽象类，这种类太宽泛了，不适合用于创建对象</p>
+<p>例如：动物，这个类太宽泛，被哺乳动物，爬行动物等类继承，当创建一个猴子对象时会用到哺乳动物类，而不是动物类，此时动物类就可以被设计为抽象类，<u><strong>太宽泛了</strong></u>  </p>
+<p>public abstract class Play {}  </p>
+<h3 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h3><p>如果一个方法,没有具体的行为实现,仅有定义，被称为抽象类<br>1.需要用abstract关键字定义<br>2.没有方法体，没有具体的实现<br>3.不能定义为私有的，因为需要继承才能使用<br>4.子类必须对父类的抽象方法进行实现（重写），如果不进行实现，那子类也只能时抽象类<br>有抽象方法的类必须为抽象类，也只能定义于抽象类<br>一个抽象类可以没有抽象方法，但是有抽象方法的类必为抽象类     </p>
+<p>某些场景下，某些方法无法提供具体的行为实现，或者不适合提供时间，或者不想提供实现<br><u><strong>太宽泛的行为，经常写在父类，被用于子类的重写</strong></u></p>
+<p>public abstract void run();</p>
+<h3 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h3><p>static用于修饰类成员（属性或方法），隶属于类</p>
+<p>static：静态的，非成员的<br>隶属于类的，而非隶属于对象的，属性和方法上使用<br>命名时全部大写命名<br>调用时直接用类名.属性名或方法名调用<br>public static int AGE &#x3D; 22;</p>
+<p>某些场景下，有一些成员（属性和方法）根本不需要创建对象，可以定义为static成员<br>例如：Math类，其中有很多静态方法，random()，调用时直接Math.random()</p>
+<h3 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h3><p>final表示最终的，不可改变的<br>1.修饰变量：变量是不可变的最终的，将变成常量<br>2.修饰方法：表示此方法是不可变最终的，不可被重写<br>3.修饰类：表示此类是最终的不可变，不能被继承</p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口不是类，定义接口使用interface关键字<br><u><strong>接口，可以约束某个类应该拥有哪些行为，并对其进行实现</strong></u><br>如果多个类实现了此种接口，就可以提供相似的行为   </p>
+<p><u><strong>1</strong>.接口中的方法必须是抽象方法（jdk8之后，有例外）<br>　接口中的方法默认是公有的public，抽象的abstract<br>　　　void run();省略了public，abstract<br><strong>2</strong>.接口中的属性默认是公有的public，静态的static，最终且不可变的final<br>　　　String name &#x3D; “张三”;省略了public，static，final </p>
+<p><strong>3</strong>.类可以实现接口，使用关键字implements来实现接口<br>　类实现了接口就须要对接口内的抽象方法提供实现<br>　一个类可以实现多个接口，需要将每个接口中的方法都提供实现<br><strong>4</strong>.接口可以继承，且可以多继承，一个接口可以继承多个接口</u></p>
+<p>多态:如果这个接口被多个类实现，那会有多态的表现<br>Runnable a &#x3D; new Animal();&#x2F;&#x2F;　Runnable是接口，Animal是类<br>a.run();&#x2F;&#x2F;　run();是接口Runnable里的抽象方法，在类Animal中被实现<br>此时定义了接口类a，a调用的方法，只能是接口里的，被实现类所重写的方法，而不能调用实现类里其他的方法  </p>
+<hr>
+<h2 id="常用类（包含抽象类、接口等）"><a href="#常用类（包含抽象类、接口等）" class="headerlink" title="常用类（包含抽象类、接口等）"></a>常用类（包含抽象类、接口等）</h2><h3 id="一、基本数据类型的封装类："><a href="#一、基本数据类型的封装类：" class="headerlink" title="一、基本数据类型的封装类："></a>一、基本数据类型的封装类：</h3><p>八大基本数据类型：<br>byte short int long&#x2F;&#x2F;整数<br>float double&#x2F;&#x2F;小数<br>char&#x2F;&#x2F;字符<br>boolean&#x2F;&#x2F;1，0</p>
+<p>对于每一种基本类型，都有对应的引用类型<br>byte：Byte<br>short：Short<br>int：Integer&#x2F;&#x2F;-128-127的整数进行缓存，如果超过则new<br>long：Long<br>float：Float<br>double：Double<br>char：Character<br>boolean：Boolean  </p>
+<p>装箱操作：把一个基本数据类型赋值给引用类型对象，Java会自动转换<br>基本数据类型只是一个值，但引用类型是个对象，把基本数据类型打包打包封装到引用对象中———装箱<br>例：Integer a1 &#x3D; Integer.valueOf(10);<br>简写为Integer a1 &#x3D; 10;<br>把10这一int基本数据类型转换为Integer引用对象<br>机制是对-128-127的整数进行缓存，当要赋值的数在这个范围内，就直接在缓存中提取，如果超过这个范围则会new创建新的引用对象进行存储      </p>
+<p>拆箱操作：把一个引用类型对象赋值给基本数据类型，Java自动转换<br>a1.intValue();<br>int a2 &#x3D; a1 + 10;&#x2F;&#x2F;此时a1就自动执行了拆箱了操作a1.intValue();     </p>
+<p>XXX.parseXXX;&#x2F;&#x2F;String转换为XXX基本数据类型<br>int a3 &#x3D; Integer.parseInt(“123”);<br>注意这里转换成了基本数据类型int<br>XXX.valueOf();&#x2F;&#x2F;String转换为XXX引用类型<br>Integer a4 &#x3D; Integer.valueOf(“123”)<br>注意这里转换成了引用类型Integer<br>a3 &#x3D;&#x3D; a4;&#x2F;&#x2F;引用类型和基本数据类型判断，判断结果为true<br>进行了拆箱操作，a4转换成了基本类型  </p>
+<p>二、Math：<br>三、String：<br>四、日期相关类：<br>五、集合：<br>六、异常类型：<br>七、IO输入输出类型：<br>八、反射相关类：  </p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

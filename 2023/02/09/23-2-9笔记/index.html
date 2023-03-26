@@ -1,0 +1,865 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>MySQL数据库 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>MySQL数据库 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/9
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/MySQL/" style="color: #03a9f4">
+                    MySQL
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <p>设计模式：</p>
+<p>1.控制对象的数量的创建。</p>
+<ul>
+<li>指定数量（多于一个），对象池</li>
+<li>仅能创建一个。单例模式，singleton。<ul>
+<li>饱汉式</li>
+<li>懒汉式</li>
+<li>内部类</li>
+<li>……</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Jdbc"><a href="#Jdbc" class="headerlink" title="Jdbc"></a>Jdbc</h2><p>Global</p>
+<pre><code class="java">package com.yuan.chapter1;
+
+import java.sql.Connection;
+
+/**
+ * @Title: Global
+ * @Project: lesson0209
+ * @Description:
+ * @Author: 14508
+ * @Version:
+ * @Creat: 2023/2/9 10:04
+ */
+public class Global &#123;
+    private static final String driver = &quot;com.mysql.cj.jdbc.Driver&quot;;
+    public static final String url = &quot;jdbc:mysql://localhost:3306/student2022?characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true&quot;;
+    public static final String user = &quot;root&quot;;
+    public static final String password = &quot;root&quot;;
+
+    public static Connection getConnection() &#123;
+        return JdbcUtils.getConnection(driver, url, user, password);
+
+    &#125;
+
+&#125;
+</code></pre>
+<p>Student</p>
+<pre><code class="java">package com.yuan.chapter1;
+
+import java.sql.Date;
+import java.time.LocalDate;
+
+/**
+ * @Title: Student
+ * @Project: lesson0209
+ * @Description: 学生类
+ * @Author: 14508
+ * @Version:
+ * @Creat: 2023/2/9 9:10
+ */
+public class Student &#123;
+    private Integer id;
+    private String name;
+    private String sex;
+    private Date birthday;
+
+    /**
+     * 必须包含一个无参的构造函数，以供反射的构造调用
+     * 用来创建对象
+     */
+    public Student() &#123;
+    &#125;
+
+    public Student(Integer id, String name, String sex, Date birthday) &#123;
+        this.id = id;
+        this.name = name;
+        this.sex = sex;
+        this.birthday = birthday;
+    &#125;
+
+    public Integer getId() &#123;
+        return id;
+    &#125;
+
+    public void setId(Integer id) &#123;
+        this.id = id;
+    &#125;
+
+    public String getName() &#123;
+        return name;
+    &#125;
+
+    public void setName(String name) &#123;
+        this.name = name;
+    &#125;
+
+    public String getSex() &#123;
+        return sex;
+    &#125;
+
+    public void setSex(String sex) &#123;
+        this.sex = sex;
+    &#125;
+
+    public Date getBirthday() &#123;
+        return birthday;
+    &#125;
+
+    public void setBirthday(Date birthday) &#123;
+        this.birthday = birthday;
+    &#125;
+
+    @Override
+    public String toString() &#123;
+        return &quot;Student&#123;&quot; +
+                &quot;id=&quot; + id +
+                &quot;, name=&#39;&quot; + name + &#39;\&#39;&#39; +
+                &quot;, sex=&#39;&quot; + sex + &#39;\&#39;&#39; +
+                &quot;, birthday=&quot; + birthday +
+                &#39;&#125;&#39;;
+    &#125;
+&#125;
+</code></pre>
+<p>JdbcUtils</p>
+<pre><code class="java">package com.yuan.chapter1;
+
+import com.mysql.cj.jdbc.result.ResultSetInternalMethods;
+
+import java.beans.BeanInfo;
+import java.beans.IntrospectionException;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.sql.*;
+import java.sql.Date;
+import java.time.*;
+import java.util.*;
+
+/**
+ * @Title: JdbcUtils
+ * @Project: lesson0209
+ * @Description:
+ * @Author: 14508
+ * @Version: 工具类，以简化Dao的重复代码
+ * @Creat: 2023/2/9 9:29
+ */
+public class JdbcUtils &#123;
+
+    private JdbcUtils() &#123;
+    &#125;
+
+    /**
+     * 获取数据库连接，被Global调用
+     * Global内存储driver，url，user，password信息
+     * 所以创建连接需要在Global内进行
+     *
+     * @param driver   驱动器
+     * @param jdbcurl  数据库地址
+     * @param user     数据库用户名
+     * @param password 数据库密码
+     * @return 数据库的连接 connection
+     */
+    public static Connection getConnection(String driver, String jdbcurl, String user, String password) &#123;
+        try &#123;
+            Class.forName(driver);
+            return DriverManager.getConnection(jdbcurl, user, password);
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+            throw new RuntimeException(&quot;无法获取数据库连接&quot;, e);
+        &#125;
+    &#125;
+
+    /**
+     * 关闭数据库连接connection
+     *一定要关闭数据库连接
+     *
+     * @param connection
+     */
+    public static void closeConnection(Connection connection) &#123;
+        if (connection != null) &#123;
+            try &#123;
+                connection.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+    &#125;
+
+    /**
+     * 关闭Statement
+     *
+     * @param stmt
+     */
+    public static void closeStatement(Statement stmt) &#123;
+        if (stmt != null) &#123;
+            try &#123;
+                stmt.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+    &#125;
+
+    /**
+     * 关闭ResultSet
+     *
+     * @param rs
+     */
+    public static void closeResultSet(ResultSet rs) &#123;
+        if (rs != null) &#123;
+            try &#123;
+                rs.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+    &#125;
+
+    /**
+     * 总的调用
+     * 分辨调用了以上三个关闭方法
+     *
+     * @param args 作为一个数组，可以一起关闭以上三个
+     */
+    public static void close(Object... args) &#123;
+        for (Object obj : args) &#123;
+            if (obj instanceof Connection conn) &#123;//将obj直接转化成接口类型的对象conn
+                closeConnection(conn);
+            &#125;
+            if (obj instanceof Statement stmt) &#123;//将obj直接转化成Statement类型的对象stmt
+                closeStatement(stmt);
+            &#125;
+            if (obj instanceof ResultSet rs) &#123;//将obj直接转化成ResultSet类型的对象rs
+                closeResultSet(rs);
+            &#125;
+        &#125;
+    &#125;
+
+    /**
+     * Select中用到，返回一个结果集
+     *
+     * @param conn 数据库连接
+     * @param sql  sql语句
+     * @param args 查询的参数
+     * @return 返回一个结果集
+     */
+    public static ResultSet query(Connection conn, String sql, List&lt;Object&gt; args) &#123;
+        try &#123;
+            PreparedStatement ps = conn.prepareStatement(sql);
+            for (int i = 0; i &lt; args.size(); i++) &#123;
+                ps.setObject(i + 1, args.get(i));//把？的地方设置好，两个值，第一个为？的位标，第二个表示要设置的值
+            &#125;
+            return ps.executeQuery();
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125;
+        return null;
+    &#125;
+
+    public static ResultSet query(Connection conn, String sql, Object... args) &#123;
+        return query(conn, sql, Arrays.asList(args));
+    &#125;
+
+    /**
+     * 把结果集返回泛型数据
+     * 因为不知道从数据库中查询到的结果集是什么类型
+     * 先用泛型代替
+     * 其中调用了上面的query()，用于得到原始的结果集
+     * 再对原始结果集进行处理，以匹配类型
+     *
+     * @param conn    连接
+     * @param handler ResultSetHandler接口的对象，
+     *                这里使用多态，其实现类为BeanListResultSetHandler，
+     *                其中有对方法handle()的重写，用来处理结果集
+     * @param sql     sql语句
+     * @param args    参数
+     * @param &lt;T&gt;     泛型，目前未知
+     * @return 返回一个泛型，比如如果查询到的是Student，则返回Student的对象
+     */
+    public static &lt;T&gt; T query(Connection conn, ResultSetHandler&lt;T&gt; handler, String sql, List&lt;Object&gt; args) &#123;
+        ResultSet rs = query(conn, sql, args);
+        return handler.handle(rs);//对结果集进行处理
+    &#125;
+
+    /**
+     * 重载上面的query()方法，参数列表最后的List换成了数组Object... args
+     *
+     * @param conn
+     * @param handler
+     * @param sql
+     * @param args
+     * @param &lt;T&gt;
+     * @return
+     */
+    public static &lt;T&gt; T query(Connection conn, ResultSetHandler&lt;T&gt; handler, String sql, Object... args) &#123;
+        return query(conn, handler, sql, Arrays.asList(args));
+    &#125;
+
+    public interface ResultSetHandler&lt;T&gt; &#123;
+        T handle(ResultSet sa);
+    &#125;
+
+    /**
+     * 此类是对ResultSetHandler接口的实现
+     * 作用是将结果集转换为T类型对象并存入T类型的列表中
+     *
+     * @param &lt;T&gt;
+     */
+    public static class BeanListResultSetHandler&lt;T&gt; implements ResultSetHandler&lt;List&lt;T&gt;&gt; &#123;
+
+        private Constructor&lt;T&gt; constructor;//构造函数
+        private Class&lt;T&gt; clazz;//创建反射对象
+        private Map&lt;String, PropertyDescriptor&gt; pdMap = new HashMap&lt;&gt;();//以属性为key,以属性描述器为值，存储所有的属性描述器
+
+        /**
+         * 构造函数，会被多态使用，进行接口的实例化
+         * 括号内是要存储从数据库读出数据所组成的对象的类
+         *
+         * @param clazz
+         */
+        public BeanListResultSetHandler(Class&lt;T&gt; clazz) &#123;
+            this.clazz = clazz;//由用户自己传入，如Student
+            //约束T类型必须要有一个无参的构造函数，进行创建对象
+            /**
+             * 这里是为了下面创建T类型的对象做准备
+             */
+            try &#123;
+                //此构造函数就是无参的构造函数，后面的括号内没有参数
+                this.constructor = clazz.getDeclaredConstructor();
+
+                //通过属性获取对应的设置值的方法，如stuId就获取setStuId()方法
+                //getBeanInfo():对clazz了解其所有属性，公开方法和事件。
+                BeanInfo bi = Introspector.getBeanInfo(clazz);
+                //把所有要获取的属性放入属性描述器数组内
+                PropertyDescriptor[] pds = bi.getPropertyDescriptors();
+                for (PropertyDescriptor pd : pds) &#123;
+                    pdMap.put(pd.getName(), pd);
+                &#125;
+
+            &#125; catch (Exception e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+
+        /**
+         * 对接口ResultSetHandler内的方法的重写
+         * 将结果集转为T类型的列表
+         *
+         * @param rs
+         * @return 返回T类型的列表
+         */
+        @Override
+        public List&lt;T&gt; handle(ResultSet rs) &#123;
+            //存储所有的列名
+            List&lt;String&gt; columnLabels = new ArrayList&lt;&gt;();
+            //用于存放返回的列表，表内是T类的对象
+            List&lt;T&gt; result = new ArrayList&lt;&gt;();
+
+            try &#123;
+                //结果集的元数据，也就是sql语句中要查找的所有的列名
+                ResultSetMetaData rsmd = rs.getMetaData();
+                //结果集列的数量
+                int cnt = rsmd.getColumnCount();
+                //把列名存入列名列表中
+                for (int i = 0; i &lt; cnt; i++) &#123;
+                    String columnLabel = rsmd.getColumnLabel(i + 1);
+                    columnLabels.add(columnLabel);
+                &#125;
+                //获取数据，对结果集遍历，一条一条数据的取，也就是一行一行的取
+                while (rs.next()) &#123;
+                    T t = constructor.newInstance();
+
+                    for (String column : columnLabels) &#123;
+                        //根据列名，取出某行结果集字段的值
+                        Object obj = rs.getObject(column);//值在obj中
+
+                        //通过反射将column对应的值obj，设置到T类型的对象t的对应的属性上
+                        //每一列名，都有唯一对应的属性名。某种机制通过column获取对应的property
+                        String property = underlineToCamel(column);
+
+                        //根据属性名，获取属性描述器,存在了pdMap中
+                        PropertyDescriptor pd = pdMap.get(property);
+
+                        //根据属性，调取其自己的setter方法
+                        if (pd != null) &#123;
+                            Method m = pd.getWriteMethod();
+                            m.invoke(t, convertType(obj, pd));//convertType()将结果集中的列的类型转换为类中属性的类型，才能创建t对象
+                        &#125;
+                    &#125;
+                    result.add(t);
+                &#125;
+            &#125; catch (Exception e) &#123;
+                e.printStackTrace();
+            &#125;
+
+            return result;
+        &#125;
+
+
+    &#125;
+
+    /**
+     * 将mysql中列名有下划线的转换为类中驼峰式的属性名（stu_id-&gt;stuid）
+     *
+     * @param str MySQL中的列名
+     * @return
+     */
+    private static String underlineToCamel(String str) &#123;
+        if (str.contains(&quot;_&quot;)) &#123;
+            String[] tokens = str.split(&quot;_&quot;);
+            String result = tokens[0];//第一个单词全是小写，从第二个单词开始，单词首字母大写
+            for (int i = 1; i &lt; tokens.length; i++) &#123;
+                String firstLetter = String.valueOf(tokens[i].charAt(0));
+                String remain = tokens[i].substring(1);
+                result += (firstLetter + remain);
+            &#125;
+            return result.toString();
+        &#125; else &#123;
+            return str;
+        &#125;
+    &#125;
+
+    /**
+     * 将从数据库查询出的值转换成适配模型类的类型
+     * 把obj的类型转换成pd的类型
+     *
+     * @param obj
+     * @param pd
+     * @return
+     */
+    private static Object convertType(Object obj, PropertyDescriptor pd) &#123;
+        if (obj == null) &#123;
+            return null;
+        &#125;
+
+        Class&lt;?&gt; clazz = pd.getPropertyType();
+
+        if (clazz == Integer.class) &#123;
+            return ((Number) obj).intValue();
+        &#125; else if (clazz == Byte.class) &#123;
+            return ((Number) obj).byteValue();
+        &#125; else if (clazz == Short.class) &#123;
+            return ((Number) obj).shortValue();
+        &#125; else if (clazz == Long.class) &#123;
+            return ((Number) obj).longValue();
+        &#125; else if (clazz == Float.class) &#123;
+            return ((Number) obj).floatValue();
+        &#125; else if (clazz == Double.class) &#123;
+            return ((Number) obj).doubleValue();
+        &#125; else if (clazz == LocalTime.class || clazz == LocalDate.class || clazz == LocalDateTime.class) &#123;
+            //getTime():返回类型Long，返回自此 Date对象表示的1970年1月1日00:00:00 GMT以来的毫秒数。
+            return convertLocalDateTime(((Date) obj).getTime(), clazz);
+        &#125;
+        return obj;
+
+    &#125;
+
+    private static Object convertLocalDateTime(long time, Class&lt;?&gt; clazz) &#123;
+        //ofEpochMilli()：从1970-01-01T00：00：00Z的纪元使用毫秒获得 Instant的实例。
+        Instant is = Instant.ofEpochMilli(time);
+        //ofInstant(,)：从Instant和区域ID获取 LocalDateTime的实例。后者是时区
+        LocalDateTime ldt = LocalDateTime.ofInstant(is, ZoneId.systemDefault());
+        if (clazz == LocalDate.class) &#123;
+            return ldt.toLocalDate();
+        &#125; else if (clazz == LocalTime.class) &#123;
+            return ldt.toLocalTime();
+        &#125; else &#123;
+            return ldt;
+        &#125;
+    &#125;
+
+    public static int update(Connection conn, String sql, List&lt;Object&gt; args) &#123;
+        try &#123;
+            PreparedStatement ps = conn.prepareStatement(sql);
+            for (int i = 0; i &lt; args.size(); i++) &#123;
+                ps.setObject(i + 1, args.get(i));
+            &#125;
+
+            return ps.executeUpdate();
+        &#125; catch (Exception e) &#123;
+            //如果报异常直接throw的话就不用在catch中写return
+            throw new RuntimeException(e);
+        &#125;
+
+    &#125;
+
+
+&#125;
+</code></pre>
+<p>StudentDao</p>
+<pre><code class="java">package com.yuan.chapter1;
+
+import javax.management.remote.JMXConnectorProvider;
+import java.sql.Connection;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * @Title: StudentDao
+ * @Project: lesson0209
+ * @Description: 调用工具类JdbcUtils中的方法对数据库进行修改
+ * @Author: 14508
+ * @Version:
+ * @Creat: 2023/2/9 9:10
+ */
+public class StudentDao &#123;
+    /**
+     * 通过id查找
+     *
+     * @param id
+     * @return Student的对象，后期可以输出
+     */
+    public Student findById(Integer id) &#123;
+        Connection conn = null;
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;select id, `name`, sex, birthday from t_student where id = ?&quot;;
+            //new 是多态，对接口ResultSetHandler的实现，里面由handle方法，return handler.handle(rs)对结果集进行处理
+            List&lt;Student&gt; students = JdbcUtils.query(conn, new JdbcUtils.BeanListResultSetHandler&lt;&gt;(Student.class), sql, id);
+            return students.size() == 0 ? null : students.get(0);
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    /**
+     * 查找所有
+     *
+     * @return Student类的列表，后期可以输出
+     */
+    public List&lt;Student&gt; findAll() &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;select id, `name`, sex, birthday from t_student&quot;;
+            List&lt;Student&gt; students = JdbcUtils.query(conn, new JdbcUtils.BeanListResultSetHandler&lt;&gt;(Student.class), sql);
+            return students.size() == 0 ? null : students;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    /**
+     * 根据id列表内的id查找
+     *
+     * @param ids 要查找的id列表
+     * @return Student类的列表，后期可以输出
+     */
+    public List&lt;Student&gt; findByIdList(Integer ids) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;select id, `name`, sex, birthday from t_student where id =?&quot;;
+            List&lt;Student&gt; students = JdbcUtils.query(conn, new JdbcUtils.BeanListResultSetHandler&lt;&gt;(Student.class), sql, ids);
+            return students.size() == 0 ? null : students;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    /**
+     * 插入一个学生数据
+     *
+     * @param stu 通过这个已创建的学生对象中的信息，进行插入
+     * @return boolean如果插入成功，则返回true
+     */
+    public boolean save(Student stu) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;insert into t_student (stu_id, name, sex, birthday) values (?,?,?,?)&quot;;
+
+            List&lt;Object&gt; args = Arrays.asList(stu.getId(), stu.getName(), stu.getSex(), stu.getBirthday());
+            return JdbcUtils.update(conn, sql, args) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+
+    &#125;
+
+    /**
+     * 更新学生数据
+     *
+     * @param stu 通过这个已创建的学生对象中的信息，进行更新
+     * @return boolean如果更新，则成功返回true
+     */
+    public boolean update(Student stu) &#123;
+        Connection conn = null;
+        try &#123;
+            conn = Global.getConnection();
+
+            String sql = &quot;update t_student set  name = ?, sex = ?, birthday = ? where id = ?&quot;;
+            List&lt;Object&gt; args = Arrays.asList(stu.getName(), stu.getSex(), stu.getBirthday(), stu.getId());
+            return JdbcUtils.update(conn, sql, args) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    /**
+     * 通过id删除学生信息
+     *
+     * @param id
+     * @return boolean如果删除成功，则返回true
+     */
+    public boolean deleteById(Integer id) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;delete from t_student where id = ?&quot;;
+            //List.of()：返回包含一个元素的不可修改列表。
+            return JdbcUtils.update(conn, sql, List.of(id)) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+
+    &#125;
+
+&#125;
+</code></pre>
+<p>Test1</p>
+<pre><code class="java">package com.yuan.chapter1;
+
+
+import java.util.ArrayList;
+import java.sql.Date;
+import java.util.List;
+
+/**
+ * @Title: Test1
+ * @Project: lesson0209
+ * @Description: 测试类
+ * @Author: 14508
+ * @Version:
+ * @Creat: 2023/2/9 9:09
+ */
+public class Test1 &#123;
+    public static void main(String[] args) &#123;
+        //需要创建Dao类对象，以调用Dao中的方法
+        StudentDao dao = new StudentDao();
+        Student stu = dao.findById(88);
+        System.out.println(stu);
+
+        List&lt;Student&gt; students = dao.findAll();
+        for(Student stu1 :students)&#123;
+            System.out.println(stu1);
+        &#125;
+
+        Student stu2 = new Student(1005,&quot;灰太狼&quot;,&quot;男&quot;,null);
+        boolean b1 = dao.save(stu2);
+        System.out.println(b1);
+
+        Student stu3 = new Student();
+        stu3.setId(10003);
+        stu3.setName(&quot;沸羊羊&quot;);
+        stu3.setSex(&quot;男&quot;);
+        stu3.setBirthday(new Date(2001,01,01));
+
+        boolean b3 = dao.update(stu3);
+        System.out.println(b3);
+
+    &#125;
+&#125;
+</code></pre>
+<p>2.工厂模式</p>
+<p>3.代理模式（静态代理和动态代理）</p>
+<p>数据结构</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

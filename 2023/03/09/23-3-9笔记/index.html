@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>SSM框架：SpringMVC | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>SSM框架：SpringMVC </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/3/9
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #ffa2c4">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h1 id="SpringMVC拦截器"><a href="#SpringMVC拦截器" class="headerlink" title="SpringMVC拦截器"></a>SpringMVC拦截器</h1><h3 id="拦截器与过滤器的区别？"><a href="#拦截器与过滤器的区别？" class="headerlink" title="拦截器与过滤器的区别？"></a>拦截器与过滤器的区别？</h3><ul>
+<li><p>拦截的时机（位置）不同，过滤器是在到达servlet之前拦截，拦截器是在到达controller之前拦截</p>
+</li>
+<li><p>过滤器是javaee内置的组件，而拦截器是springmvc提供的</p>
+</li>
+<li><p>拦截器可以使用springmvc的一些特性，但过滤器不行</p>
+</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h4 id="1、配置拦截器"><a href="#1、配置拦截器" class="headerlink" title="1、配置拦截器"></a>1、配置拦截器</h4><p>在springmvc .xml中配置</p>
+<pre><code class="xml">&lt;!--拦截器的配置--&gt;
+&lt;mvc:interceptors&gt;
+    &lt;!--配置一个拦截器--&gt;
+    &lt;mvc:interceptor&gt;
+    &lt;!--配置拦截模式，定义多个。/*,*.do,/**/*--&gt;
+    &lt;!--/**代表任意多层目录--&gt;
+    &lt;mvc:mapping path=&quot;/**&quot;/&gt;
+    &lt;!--排除拦截的请求--&gt;
+    &lt;mvc:exclude-mapping path=&quot;/user/login&quot;/&gt;
+    &lt;mvc:exclude-mapping path=&quot;/user/logout&quot;/&gt;
+    &lt;mvc:exclude-mapping path=&quot;/**/*.js&quot;/&gt;
+    &lt;mvc:exclude-mapping path=&quot;/**/*.png&quot;/&gt;
+    &lt;mvc:exclude-mapping path=&quot;/**/*.jpg&quot;/&gt;
+    &lt;mvc:exclude-mapping path=&quot;/**/*.css&quot;/&gt;
+    &lt;mvc:exclude-mapping path=&quot;/static/**&quot;/&gt;
+    &lt;bean class=&quot;com.situ.springmvc1.interceptors.SecurityInterceptor&quot;/&gt;
+    &lt;/mvc:interceptor&gt;
+    &lt;!--继续配置拦截器--&gt;
+&lt;/mvc:interceptors&gt;
+</code></pre>
+<p>&#x2F;**：代表任意多层目录请求和</p>
+<p>&#x2F;*：代表一层目录请求</p>
+<h4 id="2、定义拦截器："><a href="#2、定义拦截器：" class="headerlink" title="2、定义拦截器："></a>2、定义拦截器：</h4><p>实现接口：HandlerInterceptor</p>
+<p>返回true代表放行，返回false代表拦截</p>
+<pre><code class="java">public class SecurityInterceptor implements HandlerInterceptor &#123;
+    //到达controller之前处理，返回true代表放行，返回false代表拦截
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse
+    response, Object handler) throws Exception &#123;
+    System.out.println(&quot;到达controller之前&quot;);
+    return true;
+    &#125;
+    //到达controller之后处理
+    @Override
+    public void postHandle(HttpServletRequest request, HttpServletResponse
+    response, Object handler, ModelAndView modelAndView) throws Exception &#123;
+    System.out.println(&quot;到达controller之后&quot;);
+    &#125;
+&#125;
+</code></pre>
+<h2 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h2><ul>
+<li>在springmvc配置上传文件解析器（多段文件内容解析器），multipartResolver</li>
+</ul>
+<pre><code class="xml">&lt;!--配置文件上传--&gt;
+    &lt;!-- 文件上传配置。注意：文件上传时，要配置form的enctype属性值为multipart/form-data --&gt;
+    &lt;!-- 文件上传解析器，其id固定为multipartResolver，配置为其它值无效，此实现类依赖于
+commons-fileupload、commons-io --&gt;
+    &lt;bean id=&quot;multipartResolver&quot;    class=&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;&gt;
+    &lt;!-- 上传文件大小上限，单位为字节（10MB） --&gt;
+    &lt;property name=&quot;maxUploadSize&quot; value=&quot;10485760&quot; /&gt;
+    &lt;!-- 请求的编码格式，必须模板页的编码一致，以便正确读取表单的内容，默认为ISO-8859-1--&gt;
+    &lt;property name=&quot;defaultEncoding&quot; value=&quot;UTF-8&quot; /&gt;
+    &lt;/bean&gt;
+</code></pre>
+<ul>
+<li>配置文件上传依赖（pom），Commons-FileUpload</li>
+</ul>
+<pre><code class="xml">&lt;!--配置文件上传--&gt;
+&lt;!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;commons-fileupload&lt;/groupId&gt;
+    &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt;
+    &lt;version&gt;1.5&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<ul>
+<li>在表单实现文件上传</li>
+</ul>
+<p>表单必须是post提交</p>
+<p>且必须是文件域进行上传</p>
+<p>在表单中加入entype&#x3D;”multipart&#x2F;form-data”</p>
+<pre><code class="java">&lt;div&gt;
+    &lt;label for=&quot;avatar&quot;&gt;头像：&lt;/label&gt;
+    &lt;input type=&quot;file&quot; id=&quot;avatar&quot; name=&quot;avatar&quot;&gt;
+&lt;/div&gt;
+        
+&lt;form action=&quot;human/edit&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+</code></pre>
+<ul>
+<li><p>在controller中实现上传</p>
+<p>处理上文文件的内容：</p>
+</li>
+</ul>
+<pre><code class="java">BeanUtils.copyProoperties(Object , Object);
+
+file.transferTo(target);//复制到指定位置
+</code></pre>
+<h2 id="SpringMVC中的路径参数："><a href="#SpringMVC中的路径参数：" class="headerlink" title="SpringMVC中的路径参数："></a>SpringMVC中的路径参数：</h2><p>@PathVariable注解，用于定义请求路径参数</p>
+<p>请求路径：&#x2F;a&#x2F;b&#x2F;c</p>
+<p>@GetMapping(“&#x2F;list&#x2F;{a}&#x2F;{b}”)</p>
+<pre><code class="java">@GetMapping(&quot;/list/&#123;pageNo&#125;/&#123;pageSize&#125;&quot;)
+public String list (@PathVariable Integer pageNo, @PathVariable Integer pageSize)&#123;
+
+&#125;
+</code></pre>
+<hr>
+<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><p>###控制反转，IOC：把创建对象的权力，交给框架，由框架帮你创建（框架同时可以帮助约束对象，规范）</p>
+<h3 id="依赖注入，DI：框架可以帮助自动将某对象依赖的其他对象进行注入（如，service依赖dao，自动将dao注入到service）"><a href="#依赖注入，DI：框架可以帮助自动将某对象依赖的其他对象进行注入（如，service依赖dao，自动将dao注入到service）" class="headerlink" title="依赖注入，DI：框架可以帮助自动将某对象依赖的其他对象进行注入（如，service依赖dao，自动将dao注入到service）"></a>依赖注入，DI：框架可以帮助自动将某对象依赖的其他对象进行注入（如，service依赖dao，自动将dao注入到service）</h3><p>StudentServiceImpl ssi &#x3D; new AnotherStudentServiceImpl(); </p>
+<p>StudentDAO dao &#x3D; new StudentDAOImpl(); </p>
+<p>ssi.setStudentDAO(dao);</p>
+<p>正常情况下，不使用框架：</p>
+<p>问题1：大量创建对象。但实际上并不需要</p>
+<p>问题2：在运行期间，很难切换业务的实现，每次都需要重新启动，不灵活</p>
+<h4 id="Spring可以用来整合其他框架"><a href="#Spring可以用来整合其他框架" class="headerlink" title="Spring可以用来整合其他框架"></a>Spring可以用来整合其他框架</h4><h2 id="使用Spring框架步骤"><a href="#使用Spring框架步骤" class="headerlink" title="使用Spring框架步骤"></a>使用Spring框架步骤</h2><p>1、引入依赖。如果web程序中已经引入SpringMVC，则Spring相关库会被依赖引入，无需再单独引入</p>
+<p>2、在web.xml中，配置spring监听器</p>
+<pre><code class="java">&lt;!--配置spring监听器--&gt;
+&lt;!-- spring配置文件参数 --&gt;
+&lt;context-param&gt;
+    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+    &lt;param-value&gt;classpath:spring.xml&lt;/param-value&gt;
+&lt;/context-param&gt;
+&lt;!-- spring引入，在web应用启动时执行--&gt;
+&lt;listener&gt;
+    &lt;listener·class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+&lt;/listener&gt;
+</code></pre>
+<h3 id="注入有三种（spring-xml）："><a href="#注入有三种（spring-xml）：" class="headerlink" title="注入有三种（spring.xml）："></a>注入有三种（spring.xml）：</h3><p>在spring.xml中设置</p>
+<p>1、字段注入</p>
+<p>2、方法注入</p>
+<p>3、构造函数注入</p>
+<p>以上都是老旧方法：</p>
+<pre><code>控制反转
+&lt;bean id=&quot;studentService&quot;class=&quot;com.example.demo.service.impl.StudentServiceImpl&quot;&gt;
+    构造函数注入
+    &lt;constructor-arg index=&quot;0&quot; ref=&quot;studentDAO&quot; /&gt;
+
+    字段注入，方法注入
+    &lt;property name=&quot;dao&quot; ref=&quot;studentDAO&quot;  /&gt;
+&lt;/bean&gt;
+
+&lt;!--控制反转--&gt;
+&lt;bean id=&quot;studentDAO&quot; class=&quot;com.example.demo.service.dao.impl.StudentDAOImpl&quot; /&gt;
+</code></pre>
+<h5 id="4、通过扫描基础包，结合注解实现自动注入"><a href="#4、通过扫描基础包，结合注解实现自动注入" class="headerlink" title="4、通过扫描基础包，结合注解实现自动注入"></a>4、通过扫描基础包，结合注解实现自动注入</h5><p>注解：@Controller @Service @Repository @Component</p>
+<p>依赖注入：在构造函数上加注解@Autowired，按类型匹配注入，需要容器中有唯一的指定类型的实例。</p>
+<p>@Autowired 表示依赖其他bean。按类型匹配注入。</p>
+<p>目前常用方法：</p>
+<pre><code class="xml">&lt;!--通过设置扫描基包，结合注解实现自动注入--&gt;
+&lt;!--@Controller @Service @Repository @Component--&gt;
+&lt;context:component-scan base-package=&quot;com.yuan&quot; /&gt;
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Js：事件、动画 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>Js：事件、动画 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/23
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #00a596">
+                    Java
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/前端/" style="color: #ffa2c4">
+                    前端
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h2 id="事件："><a href="#事件：" class="headerlink" title="事件："></a>事件：</h2><p>1、页面就绪事件</p>
+<p>$(function() {</p>
+<p>写代码……</p>
+<p>});</p>
+<p>2、其他常用事件</p>
+<ul>
+<li><p>$jq对象.xxx(function(){</p>
+<p>xxx事件名</p>
+<p>});</p>
+</li>
+<li><p>$(this).text，this只是当前的对象，就是触发当前事件的dom元素</p>
+<p>在事件处理函数中，this指代触发事件的dom元素</p>
+</li>
+<li><p>在纯js中，function(e)，e就是event</p>
+<p>但在jquery中，e和event不一样，类型都不一样，此时e.originalEvent和event一样，jquery对event进行了封装，保留了一些常用操作</p>
+<p>在jquery事件处理函数中，参数是原始event对象的一个封装，如何获取原始event？e.originalEvent</p>
+</li>
+<li><p>移除事件，$(“.my”).off(“click”);&#x2F;&#x2F; 关闭点击事件</p>
+</li>
+<li><p>注册事件：$jq对象.on(xxx,function(){……})</p>
+<p>$(.my:first).on(“click.a”,function(){</p>
+<p>});</p>
+<p>$(“.my”).off(“click.a”);&#x2F;&#x2F;只关闭click.a</p>
+</li>
+<li><p>hover：</p>
+<p>$jq对象.hover(function(){</p>
+<p>&#x2F;&#x2F;鼠标滑过</p>
+<p>},function(){</p>
+<p>&#x2F;&#x2F;鼠标离开</p>
+<p>});</p>
+</li>
+<li><p>使用js触发事件：$jq对象.trigger(“xxx”)，使用js代码手动触发xxx事件</p>
+</li>
+</ul>
+<p>3、事件委托：事件冒泡</p>
+<p>let a &#x3D; event.target;</p>
+<p>.con是.my的父（祖先）元素</p>
+<p>$(“.con”).on(“click”,”.my”,function(){</p>
+<p>});</p>
+<p>$jq对象.on(“xxx”,”真正要监听事件的对象的选择器，$jq的后代元素”,function(){</p>
+<p>});</p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>jquery进一步简化了js中动画的创建</p>
+<ul>
+<li><p>show(speed，easing，fn)，出现</p>
+<p>speed：速度，可以是数字，表示时间，也可以是fast，slow，normal</p>
+<p>easing：缓动函数：指随时间而变化的曲线，linear，swing</p>
+<p>fn：回调函数：当动画结束后会调用这个函数</p>
+</li>
+<li><p>hide()，隐藏</p>
+<p>参数和show一样</p>
+</li>
+<li><p>slideDown()，滑下</p>
+<p>slideUp()，滑上</p>
+<p>slideToggle()，自动判断收放</p>
+</li>
+<li><p>fadeIn()，淡入</p>
+<p>fadeOut()，淡出</p>
+<p>fadeToggle()，自动判断</p>
+<p>fadeTo(speed，透明度，easing，fn)</p>
+</li>
+<li><p>animate({动画终止时的状态}，speed，easing，fn)，自定义动画</p>
+</li>
+<li><p>delay(2000)，延迟2秒</p>
+</li>
+<li><p>stop(boolean,boolean)：停止，第一个参数表示是否要清空所有的动画队列，第二个参数表示是否要立刻跳转到动画结尾</p>
+</li>
+</ul>
+<hr>
+<h1 id="JavaEE"><a href="#JavaEE" class="headerlink" title="JavaEE"></a>JavaEE</h1><p>javaMe：micro edition</p>
+<p>javaSe：standard edition，标准版</p>
+<p>javaEE：enterprice edition，企业版，java web</p>
+<p>j2ee-&gt;javaEE-&gt;jakartaEE</p>
+<p>侧重于应用。</p>
+<p>基于http协议，应用层</p>
+<p>http基于TCP&#x2F;IP协议</p>
+<p>TCP&#x2F;IP协议，传输层，请求响应模型</p>
+<p>域名（IP）—&gt;DNS解析—&gt;地址</p>
+<p>Build System：构建系统，版本依赖系统。maven</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>MySQL数据库 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>MySQL数据库 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/3
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/MySQL/" style="color: #00a596">
+                    MySQL
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><p>mysql中不区分大小写，故在mysql中不使用驼峰法命名，而用下划线**_**来间隔单词</p>
+<p>表与表之间的关系：</p>
+<p>1.一对一：1：1</p>
+<p>2.一对多：1：n，例：学生班级，学生成绩</p>
+<p>3.多对多：n：n，中间表</p>
+<p>SQL：Structure Query Language，结构化查询语言。</p>
+<ul>
+<li><p>DDL（Data Definition Language）：数据定义语言。<u>面试可能会用到。</u></p>
+<ul>
+<li>创建库，删除库</li>
+<li>创建视图</li>
+<li>函数</li>
+<li>存储过程</li>
+<li>触发器</li>
+</ul>
+</li>
+<li><p>DCL（Data Control Language）：数据控制语言。</p>
+<ul>
+<li>创建用户，删除用户</li>
+<li>赋予权限</li>
+<li>删除权限</li>
+</ul>
+</li>
+<li><p>DML（Data Manipulation Language）：* <strong>数据操作语言。</strong></p>
+<p>对表操作</p>
+<ul>
+<li>insert</li>
+<li>updata</li>
+<li>delete</li>
+</ul>
+</li>
+<li><p>DQL（Data Query Language）：** <strong>输出查询语言。</strong></p>
+<p>对表操作</p>
+<ul>
+<li>select</li>
+</ul>
+</li>
+</ul>
+<h3 id="精通，使劲看"><a href="#精通，使劲看" class="headerlink" title="精通，使劲看"></a>精通，使劲看</h3><p>一、简单查询</p>
+<pre><code class="SQL">-- 一、简单查询
+-- 1.查询全部数据，全部行，全部列
+SELECT * FROM t_student
+
+-- 2.查询指定列
+SELECT name, sex, birthday FROM t_student
+
+-- 3.查询指定列时，起别名
+SELECT name as 姓名, sex as 性别, birthday as 出生日期 FROM t_student
+
+-- 4.查询时表取别名
+SELECT t.name, t.sex, t.birthday FROM t_student as t
+
+-- 5.条件查询。用where来指定条件。精确匹配
+SELECT * FROM t_student WHERE stu_id = &#39;st_0000&#39;
+SELECT * FROM t_student WHERE id = 100
+
+-- 6.其他运算符。&gt; &lt; &gt;= &lt;= &lt;&gt; !=
+SELECT * FROM t_student WHERE sex &lt;&gt; &#39;男&#39;
+SELECT * FROM t_student WHERE height &gt; 175
+
+-- 7.算数运算符。+ - * / %
+SELECT * FROM t_student WHERE height+10 &gt; 175
+
+-- 8.逻辑运算符。与：and 或：or 非：not
+SELECT * FROM t_student WHERE sex = &#39;男&#39; AND height &lt; 170
+SELECT * FROM t_student WHERE last_name = &#39;张&#39; OR (height &gt; 170 AND sex = &#39;女&#39;)
+SELECT * FROM t_student WHERE NOT sex = &#39;男&#39;
+SELECT * FROM t_student WHERE pinyin IS NULL
+SELECT * FROM t_student WHERE NOT pinyin IS NULL
+SELECT * FROM t_student WHERE pinyin IS  NOT NULL
+
+-- 9.区间查询。BETWEEN...AND...
+SELECT * FROM t_student WHERE weight BETWEEN 60 AND 80
+
+-- 10.列运算。
+SELECT id, stu_id, weight*2 AS 斤 FROM t_student WHERE id &gt; 100 AND id &lt;105
+-- CONCAT(str1,str2,...)把列连接起来
+SELECT last_name AS 姓, first_name AS 名, CONCAT(last_name,first_name) AS 名字 FROM t_student
+
+-- 11.模糊查询。LIKE %代表0或者多个字符 _代表1个字符
+SELECT * FROM t_student WHERE `name` NOT LIKE &#39;%强%&#39;
+SELECT * FROM t_student WHERE `name` LIKE &#39;_晓%&#39;
+
+-- 12.正则表达式 ^表开始，$表结束，.表任意，&#123;4,&#125;表至少4个字符
+SELECT * FROM t_student WHERE `name` RLIKE &#39;^.&#123;4,&#125;$&#39;
+</code></pre>
+<p>二、子查询</p>
+<pre><code class="sql">-- 二、子查询：嵌套，子可以单独运行
+-- 1.普通子查询
+SELECT * FROM t_student WHERE class_id = (
+    SELECT id FROM t_class WHERE class_name = &#39;100115-Java&#39;
+)OR class_id = (
+    SELECT id FROM t_class WHERE class_name = &#39;100802-Java&#39;
+)
+
+-- 2.IN子查询
+SELECT * FROM t_student WHERE class_id IN (
+    SELECT id FROM t_class WHERE class_name IN (&#39;100115-Java&#39;, &#39;100802-Java&#39;)
+)
+
+-- 3.EXISTS子查询，相当于一个判断，如果括号里的有结果，才会执行外面的语句
+SELECT * FROM t_student WHERE EXISTS(
+    SELECT id FROM t_class WHERE class_name = &#39;abc&#39;
+)
+
+-- 4.ALL和ANY函数
+SELECT * FROM t_student WHERE height &gt; ALL(
+    SELECT height FROM t_student WHERE sex = &#39;女&#39; AND iq &gt; 99 AND weight &gt; 50
+)
+SELECT * FROM t_student WHERE height &gt; ANY(
+    SELECT height FROM t_student WHERE sex = &#39;女&#39; AND iq &gt; 99 AND weight &gt; 50
+)
+
+-- 5.多层嵌套
+SELECT * FROM t_student WHERE class_id IN (
+    SELECT id FROM t_class WHERE EXISTS (
+        SELECT id FROM t_class WHERE student_cnt &gt; 3
+    )
+)
+
+-- 6.表子查询。子查询所返回的表，必须起别名 t
+SELECT id, name FROM (
+    SELECT * FROM t_student WHERE id &gt; 900
+) t WHERE id &lt; 980 
+
+
+-- 7.列子查询。不常见，性能低，不建议 
+SELECT id, (SELECT class_name FROM t_class WHERE id = class_id) AS 班级名称, class_id, `name` FROM t_student
+
+-- 8.相关子查询。性能极差
+SELECT AVG(height) FROM t_student -- 取平均值
+-- 查询出比所在班级平均身高要高的女生
+
+SELECT * FROM t_student t1 WHERE sex = &#39;女&#39; AND height &gt; (
+    SELECT AVG(height) FROM t_student t2 WHERE t2.class_id = t1.class_id
+) 
+</code></pre>
+<p>三、结果排序</p>
+<pre><code class="sql">-- 三、结果排序 ORDER BY, ASC代表升序（可省略），DESC代表降序
+SELECT * FROM t_student WHERE sex = &#39;女&#39; ORDER BY height DESC
+-- --  多列排序
+SELECT * FROM t_student WHERE sex = &#39;女&#39; ORDER BY height DESC, weight ASC
+</code></pre>
+<p>四、限定数量查询</p>
+<pre><code class="sql">-- 四、限定数量查询,LIMIT 和 OFFSET。
+-- 1个参数，表示省略第1个参数，表示查询出几行，
+-- 2个参数，第1个参数表示第几行开始查，第2个参数表示查询出几行
+SELECT * FROM t_student ORDER BY weight DESC LIMIT 5 -- 等同于LIMIT 0, 10
+SELECT * FROM t_student ORDER BY weight DESC LIMIT 5, 10
+
+SELECT * FROM t_student ORDER BY weight DESC LIMIT 10 OFFSET 5 -- 等同于LIMIT 5, 10
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

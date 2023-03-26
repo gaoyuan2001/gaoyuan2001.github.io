@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>JQuery | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>JQuery </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/22
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/前端/" style="color: #ffa2c4">
+                    前端
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <p>span的dom元素用的是innerText</p>
+<h2 id="jQuery：是一个js库。"><a href="#jQuery：是一个js库。" class="headerlink" title="jQuery：是一个js库。"></a>jQuery：是一个js库。</h2><p>封装了很多可快捷使用，方便的函数</p>
+<p>1.jquery的选择器</p>
+<p>$(“选择器”).XXX();</p>
+<p>由jquery选择器返回的对象，称之为jquery对象，以示和dom对象区分</p>
+<p>先选中一些元素，在对其进行操作</p>
+<p>2.文档操作</p>
+<p>增删改查</p>
+<p>3.链式操作，隐式迭代</p>
+<p>jquery中，大多数返回的是对象本身，所以能一直…</p>
+<p>jquery的操作方法，绝大多数都支持隐式迭代</p>
+<p>4.jquery对象的dom对象的区别以及转换方式</p>
+<p>如何获取jquery对象？使用jquery选择器获取的对象。一个jquery对象中，可以有 0或者多个dom对象</p>
+<p>如何获取dom对象？通过索引，使用下标访问jquery（类数组）对象中的元素，或者使用jquery对象.get(x)</p>
+<p>如何将dom对象转换成jquery对象？使用$(dom);即可</p>
+<p>5.事件和动画</p>
+<p>6.ajax</p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>1.支持绝大多数css选择器</p>
+<p>2.:first第一个，:last最后一个，:eq(n)第几个，:gt(n)大于；:lt(n)小于</p>
+<ul>
+<li><p>first和first-child区别：</p>
+<p>td:first———td:first-child</p>
+<p>first表所有td中的第一个</p>
+<p>first-child表示在td父元素下的第一个td</p>
+</li>
+<li><p>eq(index|-index)</p>
+<p>获取第N个元素</p>
+<p>index：表示要获取的位置，一个整数，指示元素基于0的位置,这个元素的位置是从0算起。</p>
+<p>-index：表示要获取的位置，一个整数，指示元素的位置，从集合中的最后一个元素开始倒数。(1算起)</p>
+</li>
+</ul>
+<p>3.:even偶数，:odd奇数</p>
+<p>4.:contains(xxx)，匹配包含指定文本的元素</p>
+<p>5.:empty：匹配所有的空元素</p>
+<p>6.:parent：匹配非空元素</p>
+<p>7.:hidden：匹配不可见的元素，display，hidden ，visibility：hidden</p>
+<p>8.:visible：匹配可见元素</p>
+<p>9.:has(selector)，包含有指定选择器的元素</p>
+<p>10.[xxx]：匹配拥有xxx属性的元素</p>
+<p>11.[xxx&#x3D;yyy]：匹配拥有xxx属性，并且值等于yyy的元素，选择指定属性是给定值的元素。 </p>
+<p>12.[xxx!&#x3D;yyy]：选择不存在指定属性，或者指定的属性值不等于给定值的元素。</p>
+<p>13.[xxx^&#x3D;yyy]：匹配拥有xxx属性，并以yyy开头的属性，选择指定属性是以给定字符串开始的元素 </p>
+<p>14.[xxx$&#x3D;yyy]：选择指定属性是以给定值结尾的元素。这个比较是区分大小写</p>
+<p>15.[xxx*&#x3D;yyy]：选择指定属性具有包含一个给定的子字符串的元素。（选择给定的属性是以包含某些值的元素） </p>
+<p>16.:first-of-type：选择所有相同的元素名称的第一个兄弟元素。 </p>
+<p>17.表单类选择器</p>
+<ul>
+<li>:input：选中所有类型的表单元素，包括文本框，密码框，下拉列表框，，单选按钮，复选框，文本域，文件</li>
+<li>:text：选中单行文本框</li>
+<li>:password：选中密码框</li>
+<li>:radio：选择所有类型为单选框的元素。 </li>
+<li>:checkbox：选中复选框</li>
+<li>:submit：选择所有类型为提交的元素。 </li>
+<li>:file：选中文件域</li>
+<li>:enabled：选中所有可用元素</li>
+<li>:disenabled：选中所有不可用的元素</li>
+<li>:checked：选中单选按钮，或者复选框被选中的元素</li>
+<li>:selected：选中下拉列表中被选中的元素</li>
+</ul>
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><p>1.css(参数1，参数2)</p>
+<p>1个参数表示获取css，2个参数表示设置css</p>
+<p>2.css({ })，参数可以是一个对象，可以同时设置多个样式</p>
+<p>3.text(参数)：</p>
+<p>0个参数表示获取文本内容，1个参数表示设置文本内容</p>
+<p>4.html(参数)：获取html值</p>
+<p>0个参数表示获取文本内容，1个参数表示设置文本内容</p>
+<p>5.val(参数)：获取value值</p>
+<p>0个参数表示获取文本内容，1个参数表示设置文本内容</p>
+<p>6.attr(参数1，参数2)：2个参数代表设置，1个参数代表获取</p>
+<p>7.removeAttr(参数)：移除属性</p>
+<p>8.prop(参数，boolean参数)：用于设置属性</p>
+<p>9.addClass(“类名”)：添加类名称</p>
+<p>removeAttr(“类名”)：移除类名称</p>
+<p>toggleClass(“类名”)：切换类名称，没有就加上，有就移除</p>
+<p>hasClass (“类名”)：是否拥有某个class，返回boolean</p>
+<p>10.is(“selector”)：判断jquery对象是不是匹配指定的选择器的元素，返回boolean</p>
+<p>11.二次筛选（在选择器之后再次筛选）</p>
+<ul>
+<li><p>eq (index)，first()，last()</p>
+</li>
+<li><p>filte(“selector”)：筛选出符合指定选择器的元素</p>
+</li>
+<li><p>has(“selector”)：筛选匹配元素集合中的那些有相匹配的选择器或DOM元素的后代元素</p>
+</li>
+<li><p>not(“selector”)：排除掉满足指定选择器的元素</p>
+</li>
+<li><p>slice(start,end)：切片，选择其中一部分元素</p>
+</li>
+<li><p>四向遍历：参数可选，可有，可没有</p>
+<ul>
+<li>children(“selector”)：向下，选取匹配指定选择器的所有子元素</li>
+<li>find(“selector”)：向下，选取匹配指定选择器的所有后代元素（包含子代）</li>
+<li>parent(“selector”)： 获取所有父元素</li>
+<li>parents(“selector”)：获取所有祖先元素</li>
+<li>parentUntil(“selector”)：获取所有祖先元素，直到选择器所指定的元素为止</li>
+<li>closest(“selector”)：获取最近的能匹配指定选择器的祖先元素</li>
+<li>prev(“selector”)：获取匹配指定选择器的紧邻兄元素</li>
+<li>prevAll(“selector”)：获取匹配指定选择器的所有兄元素</li>
+<li>prevUntil(“selector”)：获取匹配的所有兄元素，直到指定选择器的元素为止</li>
+<li>next(“selector”)</li>
+<li>nextAll(“selector”)</li>
+<li>nextUntil(“selector”)</li>
+<li>sibilings(“selector”)：获取所有兄弟元素，不包含自身</li>
+</ul>
+</li>
+<li><p>add(“selector”)：添加匹配指定选择器的元素到当前集合，并取并集</p>
+</li>
+<li><p>addBack(“selector”)：把自身也添加进去</p>
+</li>
+</ul>
+<p>12.增删改查（文档处理）：</p>
+<p>创建对象 let $a &#x3D; $(“div”);</p>
+<p>append()</p>
+<ul>
+<li><p>$a.append($b)：在$b追加元素$a</p>
+</li>
+<li><p>$b.appendTo($a)：在$b追加元素$a</p>
+</li>
+<li><p>$a.prepend($b)：在$a所有子元素前面追加$b</p>
+</li>
+<li><p>$b.prependTo($a)：在$a所有子元素前面追加$b</p>
+</li>
+<li><p>$a.before($b)：在$a的前面插入元素$b</p>
+</li>
+<li><p>$b.insertBefore($a)：在$a的前面插入元素$b</p>
+</li>
+<li><p>$a.after($b)：在$a的后面插入元素$b</p>
+</li>
+<li><p>$b.insertAfter($a)：在$a的后面插入元素$b</p>
+</li>
+<li><p>$a.remove()：移除$a</p>
+</li>
+</ul>
+<p>13.empty()：清空内容（子元素）</p>
+<p>14.clone()：克隆</p>
+<p>15.offset()：获取或设置元素的偏移位置（相对于可视区域），数字类型</p>
+<p>16.position()：相对父元素的偏移</p>
+<p>17.scrollTop()：获取或设置滚动的距离</p>
+<p>18.width()：获取或设置元素的宽度</p>
+<p>19.height()：获取或设置元素的高度</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

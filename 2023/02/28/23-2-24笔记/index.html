@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Java Web | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>Java Web </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/28
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #00bcd4">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <p>maven：构建工具，依赖管理工具</p>
+<p>官方仓库：<a target="_blank" rel="noopener" href="https://mvnrepository.com/">https://mvnrepository.com</a></p>
+<p>Servlet：专业名词。表示执行web服务器中的java代码的组件</p>
+<p>接收http请求，并进行响应</p>
+<p>get&#x2F;post请求的区别？</p>
+<p>请求的类型：get&#x2F;post</p>
+<p>只有在表单中通过method属性明确指定为post的，才是post类型，除此之外，一切请求都是get请求</p>
+<p>使用注解也可以配置servlet。</p>
+<h4 id="WebServlet-“……”"><a href="#WebServlet-“……”" class="headerlink" title="@WebServlet({“……”})"></a>@WebServlet({“……”})</h4><h2 id="servlet生命周期"><a href="#servlet生命周期" class="headerlink" title="servlet生命周期"></a>servlet生命周期</h2><p>1、从第一次访问对应的请求，加载并创建对象。调用init()函数，共有两个init函数</p>
+<p>servlet创建后会复用</p>
+<p>可以通过参数指定servlet，从应用启动即加载。<load-on-startup>1</load-on-startup></p>
+<p>2、持续对外提供服务，等待处理请求</p>
+<p>3、服务器（tomcat）终止应用，调用destroy函数</p>
+<h2 id="JSP：Java-Server-Page，Java服务器端页面"><a href="#JSP：Java-Server-Page，Java服务器端页面" class="headerlink" title="JSP：Java Server Page，Java服务器端页面"></a>JSP：Java Server Page，Java服务器端页面</h2><p>前端（浏览器）不能直接识别jsp，Tomcat可以识别，Tomcat可以把jsp转换成前端页面，再交给浏览器解析</p>
+<p>jsp本质就是servlet。服务器（Tomcat），也可以称之为servlet容器，可以将jsp转译成servlet代码，并执行编译</p>
+<p>默认访问webapp下的jsp</p>
+<h3 id="JSP四大作用域和九大内置对象（笔试）："><a href="#JSP四大作用域和九大内置对象（笔试）：" class="headerlink" title="JSP四大作用域和九大内置对象（笔试）："></a>JSP四大作用域和九大内置对象（笔试）：</h3><h4 id="四大作用域"><a href="#四大作用域" class="headerlink" title="四大作用域"></a>四大作用域</h4><ul>
+<li><p>页面域：4</p>
+<p>pageContext，当前页面</p>
+</li>
+<li><p>请求域，每次请求都会创建一个请求对象、响应对象，一次请求结束两个同时销毁，1</p>
+<p>HttpServletRequest request：</p>
+<p>request.setAttribute(“currnt_login_user”,”张三”);</p>
+<p>request.getAttribute(“currnt_login_user”);</p>
+<p>仅限于一次请求</p>
+</li>
+<li><p>会话域，生命周期长于请求域，2</p>
+<p>HttpSession session：</p>
+<p>仅限于一次对话</p>
+</li>
+<li><p>应用域，生命周期更长，在整个应用程序存在期间有效。唯一一个，3</p>
+<p>ServletContext ctx &#x3D; request.getServletContext();</p>
+<p>随应用启动而启动，随应用销毁而雄安会，整个应用唯一一个</p>
+</li>
+</ul>
+<h4 id="九大内置对象，都是内置对象，可以在jsp直接用"><a href="#九大内置对象，都是内置对象，可以在jsp直接用" class="headerlink" title="九大内置对象，都是内置对象，可以在jsp直接用"></a>九大内置对象，都是内置对象，可以在jsp直接用</h4><p>1、request：代表请求对象，请求域</p>
+<p>2、response：代表响应对象</p>
+<p>3、out：字符输出流，直接写到前端界面</p>
+<p>4、session：代表会话对象，会话域</p>
+<p>5、application：应用域，类型为ServletContext</p>
+<p>6、config：类型ServletConfig，servlet的配置对象</p>
+<p>7、exception：异常对象。只有Error配置才有</p>
+<p>8、page：指代当前页面，即this</p>
+<p>9、pageContext：页面上下文，又称页面域</p>
+<h3 id="存储转发和重定向：重点"><a href="#存储转发和重定向：重点" class="headerlink" title="存储转发和重定向：重点"></a>存储转发和重定向：重点</h3><p>两者不能同时用</p>
+<ul>
+<li><p>重定向：把请求重新定向给另外一个新的请求，会产生一个新的请求</p>
+<p><strong>请求调用</strong></p>
+</li>
+<li><p>存储转发：将当前请求作用域的数据转发给新的地址，但并不创建新的请求</p>
+<p>request.getRequestDispathcher(“……”).forward(request,response)</p>
+<p><strong>响应调用</strong></p>
+</li>
+</ul>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

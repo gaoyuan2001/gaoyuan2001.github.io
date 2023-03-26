@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>续-Js语法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>续-Js语法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/21
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/前端/" style="color: #ffa2c4">
+                    前端
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h2 id="js的事件处理：交互的基础"><a href="#js的事件处理：交互的基础" class="headerlink" title="js的事件处理：交互的基础"></a>js的事件处理：交互的基础</h2><h3 id="定义事件的三种方式："><a href="#定义事件的三种方式：" class="headerlink" title="定义事件的三种方式："></a>定义事件的三种方式：</h3><p>1.直接写在行内。写成onXXX的形式。</p>
+<ul>
+<li><p>缺陷：js代码长度有限，且阅读、调试不方便，</p>
+</li>
+<li><p>解决方案可以调用函数，而函数体写在JavaScript中</p>
+</li>
+<li><p>同一类型的事件，只能定义（生效）一个</p>
+</li>
+</ul>
+<p>2.dom.onXXX</p>
+<ul>
+<li><p>本质即修改标记的哦onXXX属性，也就是说，同一种方式一致</p>
+</li>
+<li><p>可以取消事件：dom.onXXX &#x3D; null;</p>
+</li>
+</ul>
+<p>3.dom.addEventListener(“xxx”,fun);推荐的方式（事件监听）</p>
+<ul>
+<li><p>第一个参数：事件类型，第二个参数：事件处理函数（函数名，或者匿名函数体）</p>
+</li>
+<li><p>可以对同一类型的事件添加多次（按定义的顺序调用）</p>
+</li>
+<li><p>可以取消事件：dom.removeEventListener(“xxx”,fun);移除事件处理函数，</p>
+<p>第一个参数：事件类型，第二个参数：事件处理函数（函数名），匿名函数体无法移除</p>
+</li>
+</ul>
+<h3 id="事件对象：封装了事件触发现场的一些相关数据"><a href="#事件对象：封装了事件触发现场的一些相关数据" class="headerlink" title="事件对象：封装了事件触发现场的一些相关数据"></a>事件对象：封装了事件触发现场的一些相关数据</h3><p>1.内置的事件对象：event</p>
+<p>2.在事件处理函数中，第一个参数即为event对象</p>
+<p>onXXX &#x3D; “js代码”</p>
+<h3 id="常用事件的类型："><a href="#常用事件的类型：" class="headerlink" title="常用事件的类型："></a>常用事件的类型：</h3><p>1.onclick&#x3D;”js代码”，单击事件，鼠标或者回车都可以，</p>
+<p>2.ondbclick，双击事件</p>
+<p>3.键盘相关事件：keydown，键盘按下，keyup，键盘弹起，keypressed</p>
+<p>keydown可以一直触发，keyup只触发一次</p>
+<p>4.鼠标相关事件：mousedown，mouseup，mouseleave，mouseover，mouseenter，mousemove</p>
+<p>5.载入事件：window.onload &#x3D; function( ){……};&#x2F;&#x2F;当窗口加载完毕之后执行，里面可以放js</p>
+<h4 id="dom属性："><a href="#dom属性：" class="headerlink" title="dom属性："></a>dom属性：</h4><p>1.offsetTop：上偏移</p>
+<p>2.offsetLeft：左偏移</p>
+<p>3.offsetParent：绝对定位的参照物dom</p>
+<h4 id="引入js的三种方式"><a href="#引入js的三种方式" class="headerlink" title="引入js的三种方式"></a>引入js的三种方式</h4><p>1.行内js，只能用于事件处理属性。onXXX</p>
+<p>2.页内js： </p>
+<p>3.引入外部js：script src&#x3D;””</p>
+<h3 id="事件委托（基于事件冒泡）"><a href="#事件委托（基于事件冒泡）" class="headerlink" title="事件委托（基于事件冒泡）"></a>事件委托（基于事件冒泡）</h3><p>event.target：用于获取事件源，触发事件的对象</p>
+<p>使用场景：</p>
+<p>1.大量相同（或相似）的元素添加事件监听器，会导致事件监听器过多。</p>
+<p>2.预期有不存在的元素，提前添加事件（设置在父元素上），可以用target来获取触发的元素是不是原本要设置的元素</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            .outer &#123;
+                width: 400px;
+                height: 300px;
+                background-color: pink;
+            &#125;
+
+            .inner &#123;
+                width: 200px;
+                height: 100px;
+                background-color: gold;
+            &#125;
+        &lt;/style&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            window.onload = function() &#123;
+                let inner = document.querySelector(&quot;.outer&quot;);
+                /* for (let i = 0; i &lt; inner.length; i++) &#123;
+                    let a = inner[i];
+                    a.addEventListener(&quot;click&quot;, function(e) &#123;
+                        console.log(&quot;aaaa&quot;);
+                    &#125;);
+                &#125; */
+                inner.addEventListener(&quot;click&quot;,function(e)&#123;
+                    if(e.target.classList.contains(&quot;inner&quot;))&#123;
+                        console.log(&quot;aaaa&quot;);
+                    &#125;
+                &#125;);
+
+                let btn = document.querySelector(&quot;#btn&quot;);
+                let outer = document.querySelector(&quot;.outer&quot;);
+                btn.addEventListener(&quot;click&quot;, function() &#123;
+                    let i = document.createElement(&quot;div&quot;);
+                    i.className = &quot;inner&quot;;
+                    outer.appendChild(i);
+                &#125;);
+            &#125;;
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;outer&quot;&gt;
+            &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;button id=&quot;btn&quot;&gt;点我&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="动画：随时间有节奏的变化"><a href="#动画：随时间有节奏的变化" class="headerlink" title="动画：随时间有节奏的变化"></a>动画：随时间有节奏的变化</h3><ul>
+<li><p>setTimeout(… , …)：定时器（函数行为，时间）</p>
+</li>
+<li><p>setInterval(… , …)：循环定时器</p>
+</li>
+<li><p>clearTimeout(… , …)：清除定时器</p>
+</li>
+<li><p>clearInterval(… , …)：清除循环定时器</p>
+</li>
+</ul>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            html,
+            body &#123;
+                height: 100%;
+            &#125;
+
+            body &#123;
+                margin: 0;
+            &#125;
+
+            .my &#123;
+                width: 80px;
+                height: 80px;
+                background-color: pink;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            &#125;
+
+            #btn &#123;
+                position: absolute;
+                bottom: 5px;
+                right: 5px;
+            &#125;
+        &lt;/style&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            window.onload = function() &#123;
+                let my = document.querySelector(&quot;.my&quot;);
+                let btn = document.querySelector(&quot;#btn&quot;);
+                btn.addEventListener(&quot;click&quot;, function() &#123;
+                    //创建定时器
+                    /* let s1 = setTimeout(function() &#123;
+                        my.remove();
+                    &#125;, 3000); */
+
+                    //清除定时器
+                    /* clearTimeout(s1);
+
+                    let s2 = setInterval(function() &#123;
+                        console.log(&quot;aaa&quot;);
+                    &#125;, 1000); */
+
+                    /* clearInterval(s2); */
+
+
+                    let duration = parseInt(Math.random() * 600);
+
+                    let timer;
+
+                    setInterval(function() &#123;
+                        if (timer) &#123;
+                            clearInterval(timer);
+                        &#125;
+                        
+                        let direction = parseInt(Math.random() * 4);
+                        let speed = parseInt(Math.random() * 20 + 20);
+                        timer = move(my, direction, speed);
+                    &#125;, duration);
+
+                &#125;);
+            &#125;;
+
+            function move(dom, direction, speed) &#123;
+                //0表示上，1表示下，2表示左，3表示右
+                switch (direction) &#123;
+                    case 0: &#123;
+                        return setInterval(function() &#123;
+                            dom.style.top = dom.offsetTop - 5 + &quot;px&quot;;
+                        &#125;, speed);
+                        break;
+                    &#125;
+                    case 1: &#123;
+                        return setInterval(function() &#123;
+                            dom.style.top = dom.offsetTop + 5 + &quot;px&quot;;
+                        &#125;, speed);
+                        break;
+                    &#125;
+                    case 2: &#123;
+                        return setInterval(function() &#123;
+                            dom.style.left = dom.offsetLeft - 5 + &quot;px&quot;;
+                        &#125;, speed);
+                        break;
+                    &#125;
+                    case 3: &#123;
+                        return setInterval(function() &#123;
+                            dom.style.left = dom.offsetLeft + 5 + &quot;px&quot;;
+                        &#125;, speed);
+                        break;
+                    &#125;
+                &#125;
+            &#125;
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;my&quot;&gt;&lt;/div&gt;
+        &lt;button id=&quot;btn&quot;&gt;点我&lt;/button&gt;
+        
+        &lt;a href=&quot;demo5.html&quot;&gt;去下一页&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="bom：Browser-Object-Mode，浏览器对象模型"><a href="#bom：Browser-Object-Mode，浏览器对象模型" class="headerlink" title="bom：Browser Object Mode，浏览器对象模型"></a>bom：Browser Object Mode，浏览器对象模型</h2><p>通过js可以控制浏览器中的一些对象</p>
+<p>window：window.document</p>
+<p>location：指代地址栏对象</p>
+<ul>
+<li>location.href&#x3D;””;&#x2F;&#x2F;给href赋新的属性，载入新页面</li>
+<li>location.reload();&#x2F;&#x2F;刷新</li>
+<li>location.replace();</li>
+</ul>
+<p>history：指代访问历史记录</p>
+<ul>
+<li>history.back();&#x2F;&#x2F;后退一个页面</li>
+<li>history.forward();&#x2F;&#x2F;前进一个界面</li>
+<li>history.go(-5);&#x2F;&#x2F;后退5的界面</li>
+</ul>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button id=&quot;btn&quot;&gt;点我&lt;/button&gt;
+        
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            let btn = document.querySelector(&quot;#btn&quot;);
+            btn.addEventListener(&quot;click&quot;,function()&#123;
+                //location.href = &quot;http://www.baidu.com&quot;;
+                //location.reload();//刷新
+                //location.replace(&quot;demo1.html&quot;);
+                
+                history.back();//后退一步
+                history.forward();//前进一步
+                
+                history.go(-5);//后退5步
+                history.go(5);//前进5步	
+            &#125;);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>localStorage：本地存储</p>
+<p>sessionStorage：会话存储</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

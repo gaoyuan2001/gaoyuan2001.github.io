@@ -1,0 +1,1348 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>练习（完整源码） | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>练习（完整源码） </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/12
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #00bcd4">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><h2 id="运用Jdbc，对数据库中的表：t-employee，进行增、删、改、查操作"><a href="#运用Jdbc，对数据库中的表：t-employee，进行增、删、改、查操作" class="headerlink" title="运用Jdbc，对数据库中的表：t_employee，进行增、删、改、查操作"></a>运用Jdbc，对数据库中的表：t_employee，进行增、删、改、查操作</h2><h3 id="员工类"><a href="#员工类" class="headerlink" title="员工类"></a>员工类</h3><pre><code class="java">package com.yuan.week0211;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+/**
+ * @Title: Employee
+ * @Project: weekhomework0211
+ * @Description: 员工类
+ * @Author: 14508
+ * @Version:
+ * @Creat: 2023/2/11 8:45
+ */
+public class Employee &#123;
+    private Integer empId;// 员工编号
+    private String name;// 姓名
+    private String sex;// 性别
+    private Date birthday;// 出生日期
+    private Boolean politicalStatus;// 政治面貌，是否党员
+    private Date hiredate;// 入职时间
+    private String nativePlace;// 籍贯
+    private Integer depId;// 所在部门编号
+
+    /**
+     * 无参构造函数
+     */
+    public Employee() &#123;
+    &#125;
+
+    public Employee(Integer empId, String name, String sex, Date birthday, Boolean politicalStatus, Date hiredate, String nativePlace, Integer depId) &#123;
+        this.empId = empId;
+        this.name = name;
+        this.sex = sex;
+        this.birthday = birthday;
+        this.politicalStatus = politicalStatus;
+        this.hiredate = hiredate;
+        this.nativePlace = nativePlace;
+        this.depId = depId;
+    &#125;
+
+    public Integer getEmpId() &#123;
+        return empId;
+    &#125;
+
+    public void setEmpId(Integer empId) &#123;
+        this.empId = empId;
+    &#125;
+
+    public String getName() &#123;
+        return name;
+    &#125;
+
+    public void setName(String name) &#123;
+        this.name = name;
+    &#125;
+
+    public String getSex() &#123;
+        return sex;
+    &#125;
+
+    public void setSex(String sex) &#123;
+        this.sex = sex;
+    &#125;
+
+    public Date getBirthday() &#123;
+        return birthday;
+    &#125;
+
+    public void setBirthday(Date birthday) &#123;
+        this.birthday = birthday;
+    &#125;
+
+    public void setBirthday(String birthday) &#123;
+
+        SimpleDateFormat ft = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+        try &#123;
+            this.birthday = (Date) ft.parse(birthday);
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125;
+        /*try &#123;
+            LocalDate ld = LocalDate.parse(birthday, DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&quot;));
+            stu.setBirthday(ld);
+        &#125; catch (Exception e) &#123;
+            // e.printStackTrace();
+        &#125;*/
+
+    &#125;
+
+    public Boolean getPoliticalStatus() &#123;
+        return politicalStatus;
+    &#125;
+
+    public void setPoliticalStatus(Boolean politicalStatus) &#123;
+        this.politicalStatus = politicalStatus;
+    &#125;
+
+    public Date getHiredate() &#123;
+        return hiredate;
+    &#125;
+
+    public void setHiredate(Date hiredate) &#123;
+        this.hiredate = hiredate;
+    &#125;
+
+    public void setHiredate(String hiredate) &#123;
+        SimpleDateFormat formatter = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+        try &#123;
+            Date date = (Date) formatter.parse(hiredate);
+            this.hiredate = date;
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125;
+    &#125;
+
+    public String getNativePlace() &#123;
+        return nativePlace;
+    &#125;
+
+    public void setNativePlace(String nativePlace) &#123;
+        this.nativePlace = nativePlace;
+    &#125;
+
+    public Integer getDepId() &#123;
+        return depId;
+    &#125;
+
+    public void setDepId(Integer depId) &#123;
+        this.depId = depId;
+    &#125;
+
+    @Override
+    public String toString() &#123;
+        return &quot;[工号：&quot; + empId +
+                &quot;, 姓名：&quot; + name  +
+                &quot;, 性别：&quot; + sex +
+                &quot;, 出生日期：&quot; + birthday +
+                &quot;, 政治面貌：&quot; + politicalStatus +
+                &quot;, 入职日期：&quot; + hiredate +
+                &quot;, 籍贯：&quot; + nativePlace +
+                &quot;, 部门编号：&quot; + depId +
+                &#39;]&#39;;
+    &#125;
+&#125;
+</code></pre>
+<h3 id="静态属性，供创建连接用"><a href="#静态属性，供创建连接用" class="headerlink" title="静态属性，供创建连接用"></a>静态属性，供创建连接用</h3><pre><code class="java">package com.yuan.week0211;
+
+import java.sql.Connection;
+
+/**
+ * @Title: Global
+ * @Project: weekhomework0211
+ * @Description: 静态属性，供创建连接使用
+ * @Author: 14508
+ * @Version:
+ * @Creat: 2023/2/11 10:20
+ */
+public class Global &#123;
+    private static final String driver = &quot;com.mysql.cj.jdbc.Driver&quot;;
+    public static final String url = &quot;jdbc:mysql://localhost:3306/iceman0203?characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true&quot;;
+    public static final String user = &quot;root&quot;;
+    public static final String password = &quot;root&quot;;
+
+    public static Connection getConnection() &#123;
+        return JdbcUtils.getConnection(driver, url, user, password);
+    &#125;
+&#125;
+</code></pre>
+<h3 id="Jdbc工具类，供Dao层调用"><a href="#Jdbc工具类，供Dao层调用" class="headerlink" title="Jdbc工具类，供Dao层调用"></a>Jdbc工具类，供Dao层调用</h3><pre><code class="java">package com.yuan.week0211;
+
+import java.beans.BeanInfo;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+import java.sql.*;
+import java.sql.Date;
+import java.time.*;
+import java.util.*;
+
+/**
+ * @Title: JdbcUtils
+ * @Project: weekhomework0211
+ * @Description: 工具类，供Dao层调用
+ * @Author: 14508
+ * @Version:
+ * @Creat: 2023/2/11 10:21
+ */
+public class JdbcUtils &#123;
+    private JdbcUtils() &#123;
+    &#125;
+
+    public static Connection getConnection(String driver, String url, String user, String password) &#123;
+        try &#123;
+            Class.forName(driver);
+            return DriverManager.getConnection(url, user, password);
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+            throw new RuntimeException(&quot;无法获取数据库连接&quot;, e);
+        &#125;
+    &#125;
+
+    public static void closeConnection(Connection conn) &#123;
+        if (conn != null) &#123;
+            try &#123;
+                conn.close();
+            &#125; catch (Exception e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+    &#125;
+
+    public static void closeStatement(Statement stmt) &#123;
+        if (stmt != null) &#123;
+            try &#123;
+                stmt.close();
+            &#125; catch (Exception e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+    &#125;
+
+    public static void closeResultSet(ResultSet rs) &#123;
+        if (rs != null) &#123;
+            try &#123;
+                rs.close();
+            &#125; catch (Exception e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+    &#125;
+
+    public static void close(Object... args) &#123;
+        for (Object obj : args) &#123;
+            if (obj instanceof Connection conn) &#123;
+                closeConnection(conn);
+            &#125;
+            if (obj instanceof Statement stmt) &#123;
+                closeStatement(stmt);
+            &#125;
+            if (obj instanceof ResultSet rs) &#123;
+                closeResultSet(rs);
+            &#125;
+        &#125;
+    &#125;
+
+    public static ResultSet query(Connection conn, String sql, List&lt;Object&gt; args) &#123;
+        try &#123;
+            PreparedStatement ps = conn.prepareStatement(sql);
+            for (int i = 0; i &lt; args.size(); i++) &#123;
+                ps.setObject(i + 1, args.get(i));
+            &#125;
+            return ps.executeQuery();
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125;
+        return null;
+    &#125;
+
+    public static ResultSet query(Connection conn, String sql, Object... args) &#123;
+        return query(conn, sql, Arrays.asList(args));
+    &#125;
+
+    public static &lt;T&gt; T query(Connection conn, String sql, ResultSetHandler&lt;T&gt; handler, List&lt;Object&gt; args) &#123;
+        ResultSet rs = query(conn, sql, args);
+        return handler.handle(rs);
+    &#125;
+
+    public static &lt;T&gt; T query(Connection conn, String sql, ResultSetHandler&lt;T&gt; handler, Object... args) &#123;
+        return query(conn, sql, handler, Arrays.asList(args));
+    &#125;
+
+
+    public interface ResultSetHandler&lt;T&gt; &#123;
+        T handle(ResultSet rs);
+    &#125;
+
+    public static class BeanListResultSetHandler&lt;T&gt; implements ResultSetHandler&lt;List&lt;T&gt;&gt; &#123;
+        private Constructor&lt;T&gt; constructor;
+        private Class&lt;T&gt; clazz;
+        private Map&lt;String, PropertyDescriptor&gt; pdMap = new HashMap&lt;&gt;();
+
+
+        public BeanListResultSetHandler(Class&lt;T&gt; clazz) &#123;
+            this.clazz = clazz;
+
+            try &#123;
+                this.constructor = clazz.getDeclaredConstructor();
+                BeanInfo bi = Introspector.getBeanInfo(clazz);
+                //PropertyDescriptor描述了Java Bean通过一对存取方法导出的一个属性。
+                PropertyDescriptor[] pds = bi.getPropertyDescriptors();
+                for (PropertyDescriptor pd : pds) &#123;
+                    pdMap.put(pd.getName(), pd);
+                &#125;
+            &#125; catch (Exception e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+
+        @Override
+        public List&lt;T&gt; handle(ResultSet rs) &#123;
+            List&lt;String&gt; columnLabels = new ArrayList&lt;&gt;();
+            List&lt;T&gt; result = new ArrayList&lt;&gt;();
+
+            try &#123;
+                ResultSetMetaData rsmd = rs.getMetaData();
+                int cnt = rsmd.getColumnCount();
+
+                for (int i = 0; i &lt; cnt; i++) &#123;
+                    String columnLabel = rsmd.getColumnLabel(i + 1);
+                    columnLabels.add(columnLabel);
+                &#125;
+
+                while (rs.next()) &#123;
+                    T t = constructor.newInstance();
+                    for (String column : columnLabels) &#123;
+                        Object obj = rs.getObject(column);
+
+                        String property = underlineToCamel(column);
+                        PropertyDescriptor pd = pdMap.get(property);
+
+                        if (pd != null) &#123;
+                            Method m = pd.getWriteMethod();
+                            m.invoke(t, convertType(obj, pd));
+                        &#125;
+                    &#125;
+                    result.add(t);
+                &#125;
+            &#125; catch (Exception e) &#123;
+                e.printStackTrace();
+            &#125;
+
+            return result;
+        &#125;
+    &#125;
+
+    private static String underlineToCamel(String str) &#123;
+        if (str.contains(&quot;_&quot;)) &#123;
+            String[] tokens = str.split(&quot;_&quot;);
+            StringBuilder result = new StringBuilder(tokens[0]);
+            for (int i = 1; i &lt; tokens.length; i++) &#123;
+                String firstLetter = String.valueOf(tokens[i].charAt(0));
+                String remain = tokens[i].substring(1);
+                result.append(firstLetter.toUpperCase()).append(remain);
+            &#125;
+            return result.toString();
+        &#125; else &#123;
+            return str;
+        &#125;
+    &#125;
+
+    private static Object convertType(Object obj, PropertyDescriptor pd) &#123;
+        if (obj == null) &#123;
+            return null;
+        &#125;
+        Class&lt;?&gt; clazz = pd.getPropertyType();
+
+        if (clazz == Integer.class) &#123;
+            return ((Number) obj).intValue();
+        &#125; else if (clazz == Short.class) &#123;
+            return ((Number) obj).shortValue();
+        &#125; else if (clazz == Byte.class) &#123;
+            return ((Number) obj).byteValue();
+        &#125; else if (clazz == Long.class) &#123;
+            return ((Number) obj).longValue();
+        &#125; else if (clazz == Float.class) &#123;
+            return ((Number) obj).floatValue();
+        &#125; else if (clazz == Double.class) &#123;
+            return ((Number) obj).doubleValue();
+        &#125; else if (clazz == LocalTime.class || clazz == LocalDate.class || clazz == LocalDateTime.class) &#123;
+            return convertLocalDateTime(((Date) obj).getTime(), clazz);
+        &#125;
+        return obj;
+    &#125;
+
+    private static Object convertLocalDateTime(long time, Class&lt;?&gt; clazz) &#123;
+        Instant is = Instant.ofEpochMilli(time);
+        LocalDateTime ldt = LocalDateTime.ofInstant(is, ZoneId.systemDefault());
+        if (clazz == LocalDate.class) &#123;
+            return ldt.toLocalDate();
+        &#125; else if (clazz == LocalTime.class) &#123;
+            return ldt.toLocalTime();
+        &#125; else &#123;
+            return ldt;
+        &#125;
+    &#125;
+
+    public static int update(Connection conn, String sql, List&lt;Object&gt; args) &#123;
+        try &#123;
+            PreparedStatement ps = conn.prepareStatement(sql);
+            for (int i = 0; i &lt; args.size(); i++) &#123;
+                ps.setObject(i + 1, args.get(i));
+            &#125;
+            return ps.executeUpdate();
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+            return 0;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h3 id="Dao层，具体对数据库进行增、删、改、查操作的方法实现"><a href="#Dao层，具体对数据库进行增、删、改、查操作的方法实现" class="headerlink" title="Dao层，具体对数据库进行增、删、改、查操作的方法实现"></a>Dao层，具体对数据库进行增、删、改、查操作的方法实现</h3><pre><code class="java">package com.yuan.week0211;
+
+import java.sql.Connection;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * @Title: EmpDao
+ * @Project: weekhomework0211
+ * @Description: Dao层，具体对数据库进行增、删、改、查操作的方法实现
+ * @Author: 14508
+ * @Version:
+ * @Creat: 2023/2/11 10:21
+ */
+public class EmpDao &#123;
+    public Employee findByEmpId(Integer empId) &#123;
+        Connection conn = null;
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;select * from t_employee where emp_id = ?&quot;;
+
+            List&lt;Employee&gt; employees = JdbcUtils.query(conn, sql, new JdbcUtils.BeanListResultSetHandler&lt;&gt;(Employee.class), empId);
+            return employees.size() == 0 ? null : employees.get(0);
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    public List&lt;Employee&gt; findAll() &#123;
+        Connection conn = Global.getConnection();
+        try &#123;
+            String sql = &quot;select * from t_employee&quot;;
+
+            List&lt;Employee&gt; employees = JdbcUtils.query(conn, sql, new JdbcUtils.BeanListResultSetHandler&lt;&gt;(Employee.class));
+            return employees.size() == 0 ? null : employees;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    public boolean save(Employee emp) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;insert into t_employee (emp_id, name, sex, birthday, political_status, hiredate, native_place, dep_id) values (?, ?, ?, ?, ?, ?, ?, ?)&quot;;
+
+            List&lt;Object&gt; args = Arrays.asList(emp.getEmpId(), emp.getName(), emp.getSex(), emp.getBirthday(), emp.getPoliticalStatus(), emp.getHiredate(), emp.getNativePlace(), emp.getDepId());
+            return JdbcUtils.update(conn, sql, args) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    public boolean update(Employee emp) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;update t_employee set name=?, sex=?, birthday=?, political_status=?, hiredate=?, native_place=?, dep_id=? where emp_id = ?&quot;;
+            List&lt;Object&gt; args = Arrays.asList(emp.getName(), emp.getSex(), emp.getBirthday(), emp.getPoliticalStatus(), emp.getHiredate(), emp.getNativePlace(), emp.getDepId(), emp.getEmpId());
+            return JdbcUtils.update(conn, sql, args) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    public boolean updateName(Employee emp) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;update t_employee set name=? where emp_id = ?&quot;;
+            List&lt;Object&gt; args = Arrays.asList(emp.getName(), emp.getEmpId());
+            return JdbcUtils.update(conn, sql, args) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    public boolean updateSex(Employee emp) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;update t_employee set sex=? where emp_id = ?&quot;;
+            List&lt;Object&gt; args = Arrays.asList(emp.getSex(), emp.getEmpId());
+            return JdbcUtils.update(conn, sql, args) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    public boolean updateBirthday(Employee emp) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;update t_employee set birthday=? where emp_id = ?&quot;;
+            List&lt;Object&gt; args = Arrays.asList(emp.getBirthday(), emp.getEmpId());
+            return JdbcUtils.update(conn, sql, args) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    public boolean updatePoliticalStatus(Employee emp) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;update t_employee set political_status=? where emp_id = ?&quot;;
+            List&lt;Object&gt; args = Arrays.asList(emp.getPoliticalStatus(), emp.getEmpId());
+            return JdbcUtils.update(conn, sql, args) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    public boolean updateHiredate(Employee emp) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;update t_employee set hiredate=? where emp_id = ?&quot;;
+            List&lt;Object&gt; args = Arrays.asList(emp.getHiredate(), emp.getEmpId());
+            return JdbcUtils.update(conn, sql, args) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    public boolean updateNativePlace(Employee emp) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;update t_employee set native_place=? where emp_id = ?&quot;;
+            List&lt;Object&gt; args = Arrays.asList(emp.getNativePlace(), emp.getEmpId());
+            return JdbcUtils.update(conn, sql, args) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    public boolean updateDepId(Employee emp) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;update t_employee set dep_id=? where emp_id = ?&quot;;
+            List&lt;Object&gt; args = Arrays.asList(emp.getDepId(), emp.getEmpId());
+            return JdbcUtils.update(conn, sql, args) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+
+    public boolean deleteByEmpId(Integer empId) &#123;
+        Connection conn = null;
+
+        try &#123;
+            conn = Global.getConnection();
+            String sql = &quot;delete from t_employee where emp_id = ?&quot;;
+            return JdbcUtils.update(conn, sql, List.of(empId)) &gt; 0;
+        &#125; finally &#123;
+            JdbcUtils.close(conn);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h3 id="视图类，调用Dao层的方法，对数据库进行操作"><a href="#视图类，调用Dao层的方法，对数据库进行操作" class="headerlink" title="视图类，调用Dao层的方法，对数据库进行操作"></a>视图类，调用Dao层的方法，对数据库进行操作</h3><pre><code class="java">package com.yuan.week0211;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Scanner;
+
+
+/**
+ * @Title: View
+ * @Project: weekhomework0211
+ * @Description: 视图类，调用Dao层的方法，对数据库进行操作
+ * @Author: 14508
+ * @Version:
+ * @Creat: 2023/2/12 18:27
+ */
+public class View &#123;
+    EmpDao dao = new EmpDao();
+    private static final Scanner SCANNER = new Scanner(System.in);
+    private static final SimpleDateFormat FORMAT = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+
+    public void welcome() &#123;
+        System.out.println(&quot;欢迎使用员工管理系统&quot;);
+    &#125;
+
+    /**
+     * 选择界面
+     */
+    public void start() &#123;
+        while (true) &#123;
+            System.out.println(&quot;*********************&quot;);
+            System.out.println(&quot;1.查询员工&quot;);
+            System.out.println(&quot;2.添加员工&quot;);
+            System.out.println(&quot;3.修改员工&quot;);
+            System.out.println(&quot;4.删除员工&quot;);
+            System.out.println(&quot;5.退出系统&quot;);
+            System.out.println(&quot;*********************&quot;);
+
+            String choice = SCANNER.next();
+
+            switch (choice) &#123;
+                case &quot;1&quot;: &#123;
+                    findEmployee();
+                    break;
+                &#125;
+                case &quot;2&quot;: &#123;
+                    saveEmployee();
+                    break;
+                &#125;
+                case &quot;3&quot;: &#123;
+                    updateEmployee();
+                    break;
+                &#125;
+                case &quot;4&quot;: &#123;
+                    deleteEmployee();
+                    break;
+                &#125;
+                case &quot;5&quot;: &#123;
+                    System.out.println(&quot;系统已退出，感谢您选择本系统！&quot;);
+                    return;
+                &#125;
+                default: &#123;
+                    System.out.println(&quot;您的输入有误，请重新输入！&quot;);
+                    continue;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+
+
+    /**
+     * 查询
+     */
+    private void findEmployee() &#123;
+        while (true) &#123;
+            System.out.println(&quot;1.查询所有员工&quot;);
+            System.out.println(&quot;2.根据工号查询&quot;);
+            System.out.println(&quot;3.返回上级菜单&quot;);
+            System.out.println(&quot;请输入指令代码：&quot;);
+
+            String choice = SCANNER.next();
+            switch (choice) &#123;
+                case &quot;1&quot;: &#123;
+                    findAllEmployee();
+                    break;
+                &#125;
+                case &quot;2&quot;: &#123;
+                    findEmployeeById();// 跳转到根据编号查询
+                    break;
+                &#125;
+                case &quot;3&quot;: &#123;
+                    return;
+                &#125;
+                default: &#123;
+                    System.out.println(&quot;输入的代码错误，请重新输入&quot;);
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+
+    /**
+     * 查询所有
+     */
+    public void findAllEmployee() &#123;
+        List&lt;Employee&gt; employees = dao.findAll();// 获取要显示的员工列表
+        if (employees.isEmpty()) &#123;
+            System.out.println(&quot;未查询到员工数据&quot;);
+        &#125; else &#123;
+            printEmployee(employees);
+        &#125;
+        System.out.println();
+    &#125;
+
+    /**
+     * 通过工号查询
+     */
+    private void findEmployeeById() &#123;
+        while (true) &#123;
+            System.out.println();
+            System.out.println(&quot;请输入您要查询的员工的工号：&quot;);
+            Integer id = Integer.valueOf(SCANNER.next());
+
+            Employee emp = dao.findByEmpId(id);// 要查询的员工
+            if (emp == null) &#123;
+                System.out.println(&quot;您要查询的员工不存在，工号输入错误，请重新输入&quot;);
+                continue;
+            &#125; else &#123;
+                printEmployee(List.of(emp));
+                System.out.println();
+            &#125;
+
+            System.out.println(&quot;是否继续查询员工？y/n&quot;);
+            String choice = SCANNER.next();
+            if (&quot;n&quot;.equals(choice)) &#123;
+                break;
+            &#125;
+        &#125;
+    &#125;
+
+    /**
+     * 添加
+     */
+    private void saveEmployee() &#123;
+        while (true) &#123;
+            System.out.println();
+            System.out.println(&quot;请输入员工的员工编号：&quot;);
+            Integer id = Integer.valueOf(SCANNER.next());
+            Employee emp = new Employee();
+            emp.setEmpId(id);
+
+            System.out.println(&quot;请输入员工的姓名：&quot;);
+            String name = SCANNER.next();
+            emp.setName(name);
+
+            while (true) &#123;
+                System.out.println(&quot;请输入员工的性别（1：男，2：女）：&quot;);
+                String sex = SCANNER.next();
+                if (&quot;1&quot;.equals(sex)) &#123;
+                    emp.setSex(&quot;男&quot;);
+                    break;
+                &#125; else if (&quot;2&quot;.equals(sex)) &#123;
+                    emp.setSex(&quot;女&quot;);
+                    break;
+                &#125; else &#123;
+                    System.out.println(&quot;您输入的代码不正确，请重新输入&quot;);
+                &#125;
+            &#125;
+
+            while (true) &#123;
+                System.out.println(&quot;请输入员工的出生日期(输入n可以跳过，格式：yyyy-MM-dd)：&quot;);
+                String birthday = SCANNER.next();
+                if (! &quot;n&quot;.equals(birthday)) &#123;
+                    //SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+                    try &#123;
+                        Date date = (Date) FORMAT.parse(birthday);
+                        emp.setBirthday(date);
+                        break;
+                    &#125; catch (Exception e) &#123;
+                        System.out.println(&quot;输入格式不正确，请重新输入&quot;);
+                        //e.printStackTrace();
+                    &#125;
+                    /*try &#123;
+                        LocalDate ld = LocalDate.parse(birthday, DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&quot;));
+                    &#125; catch (Exception e) &#123;
+                        // e.printStackTrace();
+                    &#125;*/
+                &#125; else &#123;
+                    break;
+                &#125;
+            &#125;
+
+            while (true) &#123;
+                System.out.println(&quot;请输入员工的政治面貌，是否党员（输入n可以跳过，输入代码1：是，2：否）：&quot;);
+                String option = SCANNER.next();
+                if (! &quot;n&quot;.equals(option)) &#123;
+                    if (&quot;1&quot;.equals(option)) &#123;
+                        emp.setPoliticalStatus(true);
+                        break;
+                    &#125; else if (&quot;2&quot;.equals(option)) &#123;
+                        emp.setPoliticalStatus(false);
+                        break;
+                    &#125; else &#123;
+                        System.out.println(&quot;您输入的代码不正确，请重新输入&quot;);
+                    &#125;
+                &#125; else &#123;
+                    break;
+                &#125;
+            &#125;
+
+            while (true) &#123;
+                System.out.println(&quot;请输入员工的入职日期(输入n可以跳过，格式：yyyy-MM-dd)：&quot;);
+                String hiredate = SCANNER.next();
+                if (! &quot;n&quot;.equals(hiredate)) &#123;
+                    //SimpleDateFormat formatter = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+                    try &#123;
+                        Date date = (Date) FORMAT.parse(hiredate);
+                        emp.setHiredate(date);
+                        break;
+                    &#125; catch (Exception e) &#123;
+                        System.out.println(&quot;输入格式不正确，请重新输入&quot;);
+                        //e.printStackTrace();
+                    &#125;
+                &#125; else &#123;
+                    break;
+                &#125;
+            &#125;
+
+            while (true) &#123;
+                System.out.println(&quot;请输入员工的籍贯（输入n可以跳过）：&quot;);
+                String place = SCANNER.next();
+                if (! &quot;n&quot;.equals(place)) &#123;
+                    emp.setNativePlace(place);
+                    break;
+                &#125; else &#123;
+                    break;
+                &#125;
+            &#125;
+
+            while (true) &#123;
+                System.out.println(&quot;请输入员工所在的部门编号（输入n可以跳过）：&quot;);
+                Integer depment = SCANNER.nextInt();
+                if (! &quot;n&quot;.equals(depment)) &#123;
+                    emp.setDepId(depment);
+                    break;
+                &#125; else &#123;
+                    break;
+                &#125;
+            &#125;
+
+            boolean b = dao.save(emp);
+            if (b) &#123;
+                System.out.println(&quot;添加成功&quot;);
+            &#125; else &#123;
+                System.out.println(&quot;添加失败&quot;);
+            &#125;
+            System.out.println();
+
+            System.out.println(&quot;是否继续添加员工？y/n&quot;);
+            String choice = SCANNER.next();
+            if (&quot;n&quot;.equals(choice)) &#123;
+                break;
+            &#125;
+        &#125;
+    &#125;
+
+    /**
+     * 修改
+     */
+    private void updateEmployee() &#123;
+        while (true) &#123;
+            System.out.println();
+            System.out.println(&quot;请输入您要修改员工的员工编号：&quot;);
+            Integer empId = Integer.valueOf(SCANNER.next());
+
+            Employee emp = dao.findByEmpId(empId);// 要修改的员工
+            if (emp == null) &#123;
+                System.out.println(&quot;您要修改的员工不存在，员工编号输入错误，请重新输入&quot;);
+                continue;
+            &#125; else &#123;
+                printEmployee(List.of(emp));
+                System.out.println();
+            &#125;
+
+            System.out.println(&quot;1.修改员工的姓名&quot;);
+            System.out.println(&quot;2.修改员工的性别&quot;);
+            System.out.println(&quot;3.修改员工的出生日期&quot;);
+            System.out.println(&quot;4.修改员工的政治面貌&quot;);
+            System.out.println(&quot;5.修改员工的入职日期&quot;);
+            System.out.println(&quot;6.修改员工的籍贯&quot;);
+            System.out.println(&quot;7.修改员工部门编号&quot;);
+            System.out.println(&quot;8.返回上级菜单&quot;);
+            System.out.println(&quot;请输入指令代码：&quot;);
+
+            String choice = SCANNER.next();
+            boolean b = false;
+            switch (choice) &#123;
+                case &quot;1&quot;: &#123;
+                    b = updateName(emp);
+                    break;
+                &#125;
+                case &quot;2&quot;: &#123;
+                    b = updateSex(emp);
+                    break;
+                &#125;
+                case &quot;3&quot;: &#123;
+                    b = updateBirthday(emp);
+                    break;
+                &#125;
+                case &quot;4&quot;: &#123;
+                    b = updatePoliticalStatus(emp);
+                    break;
+                &#125;
+                case &quot;5&quot;: &#123;
+                    b = updateHiredate(emp);
+                    break;
+                &#125;
+                case &quot;6&quot;: &#123;
+                    b = updateNativePlace(emp);
+                    break;
+                &#125;
+                case &quot;7&quot;: &#123;
+                    b = updateDepId(emp);
+                    break;
+                &#125;
+                case &quot;8&quot;: &#123;
+                    return;
+                &#125;
+                default: &#123;
+                    System.out.println(&quot;输入的代码错误，请重新输入&quot;);
+                &#125;
+            &#125;
+            if (b) &#123;
+                System.out.println(&quot;修改成功&quot;);
+            &#125; else &#123;
+                System.out.println(&quot;修改失败&quot;);
+            &#125;
+            System.out.println();
+            System.out.println(&quot;是否继续修改员工信息？y/n&quot;);
+            String choice1 = SCANNER.next();
+            if (&quot;n&quot;.equals(choice1)) &#123;
+                break;
+            &#125;
+
+        &#125;
+    &#125;
+
+    /**
+     * 修改员工姓名
+     *
+     * @param emp 作为形参传入一个存在的员工对象
+     * @return
+     */
+    private boolean updateName(Employee emp) &#123;
+        System.out.println(&quot;请输入员工的姓名：&quot;);
+        String name = SCANNER.next();
+        emp.setName(name);
+        return dao.updateName(emp);
+    &#125;
+
+    /**
+     * 修改员工性别
+     *
+     * @param emp 作为形参传入一个存在的员工对象
+     * @return
+     */
+    private boolean updateSex(Employee emp) &#123;
+        while (true) &#123;
+            System.out.println(&quot;请输入员工的性别（1：男，2：女）：&quot;);
+            String sex = SCANNER.next();
+            if (&quot;1&quot;.equals(sex)) &#123;
+                emp.setSex(&quot;男&quot;);
+                break;
+            &#125; else if (&quot;2&quot;.equals(sex)) &#123;
+                emp.setSex(&quot;女&quot;);
+                break;
+            &#125; else &#123;
+                System.out.println(&quot;您输入的代码不正确，请重新输入&quot;);
+            &#125;
+        &#125;
+        return updateSex(emp);
+    &#125;
+
+    /**
+     * 修改员工生日
+     *
+     * @param emp 作为形参传入一个存在的员工对象
+     * @return
+     */
+    private boolean updateBirthday(Employee emp) &#123;
+        while (true) &#123;
+            System.out.println(&quot;请输入员工的出生日期(输入n可以跳过，格式：yyyy-MM-dd)：&quot;);
+            String birthday = SCANNER.next();
+            if (! &quot;n&quot;.equals(birthday)) &#123;
+                //SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+                try &#123;
+                    Date date = (Date) FORMAT.parse(birthday);
+                    emp.setBirthday(date);
+                    break;
+                &#125; catch (Exception e) &#123;
+                    System.out.println(&quot;输入格式不正确，请重新输入&quot;);
+                    //e.printStackTrace();
+                &#125;
+            &#125; else &#123;
+                break;
+            &#125;
+        &#125;
+        return dao.updateBirthday(emp);
+    &#125;
+
+    /**
+     * 修改员工政治面貌
+     *
+     * @param emp 作为形参传入一个存在的员工对象
+     * @return
+     */
+    private boolean updatePoliticalStatus(Employee emp) &#123;
+        while (true) &#123;
+            System.out.println(&quot;请输入员工的政治面貌，是否党员（输入n可以跳过，输入代码1：是，2：否）：&quot;);
+            String option = SCANNER.next();
+            if (! &quot;n&quot;.equals(option)) &#123;
+                if (&quot;1&quot;.equals(option)) &#123;
+                    emp.setPoliticalStatus(true);
+                    break;
+                &#125; else if (&quot;2&quot;.equals(option)) &#123;
+                    emp.setPoliticalStatus(false);
+                    break;
+                &#125; else &#123;
+                    System.out.println(&quot;您输入的代码不正确，请重新输入&quot;);
+                &#125;
+            &#125; else &#123;
+                break;
+            &#125;
+        &#125;
+        return dao.updatePoliticalStatus(emp);
+    &#125;
+
+    /**
+     * 修改员工入职日期
+     *
+     * @param emp 作为形参传入一个存在的员工对象
+     * @return
+     */
+    private boolean updateHiredate(Employee emp) &#123;
+        while (true) &#123;
+            System.out.println(&quot;请输入员工的入职日期(输入n可以跳过，格式：yyyy-MM-dd)：&quot;);
+            String hiredate = SCANNER.next();
+            if (! &quot;n&quot;.equals(hiredate)) &#123;
+                //SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+                try &#123;
+                    Date date = (Date) FORMAT.parse(hiredate);
+                    emp.setHiredate(date);
+                    break;
+                &#125; catch (Exception e) &#123;
+                    System.out.println(&quot;输入格式不正确，请重新输入&quot;);
+                    //e.printStackTrace();
+                &#125;
+            &#125; else &#123;
+                break;
+            &#125;
+        &#125;
+        return dao.updateHiredate(emp);
+    &#125;
+
+    /**
+     * 修改员工籍贯
+     *
+     * @param emp 作为形参传入一个存在的员工对象
+     * @return
+     */
+    private boolean updateNativePlace(Employee emp) &#123;
+        while (true) &#123;
+            System.out.println(&quot;请输入员工的籍贯（输入n可以跳过）：&quot;);
+            String place = SCANNER.next();
+            if (! &quot;n&quot;.equals(place)) &#123;
+                emp.setNativePlace(place);
+                break;
+            &#125; else &#123;
+                break;
+            &#125;
+        &#125;
+        return dao.updateNativePlace(emp);
+    &#125;
+
+    /**
+     * 修改员工部门编号
+     *
+     * @param emp 作为形参传入一个存在的员工对象
+     * @return
+     */
+    private boolean updateDepId(Employee emp) &#123;
+        while (true) &#123;
+            System.out.println(&quot;请输入员工所在的部门编号（输入n可以跳过）：&quot;);
+            Integer depment = SCANNER.nextInt();
+            if (! &quot;n&quot;.equals(depment)) &#123;
+                emp.setDepId(depment);
+                break;
+            &#125; else &#123;
+                break;
+            &#125;
+        &#125;
+        return dao.updateDepId(emp);
+    &#125;
+
+
+    /**
+     * 删除
+     */
+    private void deleteEmployee() &#123;
+        while (true) &#123;
+            System.out.println();
+            System.out.println(&quot;请输入您要删除的员工编号：&quot;);
+            Integer id = Integer.valueOf(SCANNER.next());
+
+            Employee emp = dao.findByEmpId(id);// 要删除的员工
+            if (emp == null) &#123;
+                System.out.println(&quot;您要删除的员工不存在，请重新输入员工编号&quot;);
+                continue;
+            &#125; else &#123;
+                printEmployee(List.of(emp));
+                System.out.println();
+                System.out.println(&quot;是否确认删除？y/n&quot;);
+                String choice = SCANNER.next();
+                if (&quot;y&quot;.equals(choice)) &#123;
+                    boolean b = dao.deleteByEmpId(emp.getEmpId());
+                    if (b) &#123;
+                        System.out.println(&quot;删除成功&quot;);
+                    &#125; else &#123;
+                        System.out.println(&quot;删除失败&quot;);
+                    &#125;
+                &#125;
+            &#125;
+            System.out.println();
+            System.out.println(&quot;是否继续删除员工？y/n&quot;);
+            String choice = SCANNER.next();
+            if (&quot;n&quot;.equals(choice)) &#123;
+                break;
+            &#125;
+        &#125;
+    &#125;
+
+    /**
+     * 打印员工信息
+     *
+     * @param employees 员工列表
+     */
+
+    private void printEmployee(List&lt;Employee&gt; employees) &#123;
+        int order = 1;
+        System.out.println(&quot;员工列表：&quot;);
+        for (Employee emp : employees) &#123;
+            System.out.println(emp);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h3 id="测试类，用于启动系统"><a href="#测试类，用于启动系统" class="headerlink" title="测试类，用于启动系统"></a>测试类，用于启动系统</h3><pre><code class="java">package com.yuan.week0211;
+
+/**
+ * @Title: Test1
+ * @Project: weekhomework0211
+ * @Description: 启动系统
+ * @Author: 14508
+ * @Version:
+ * @Creat: 2023/2/12 19:57
+ */
+public class Test2 &#123;
+    public static void main(String[] args) &#123;
+        View v = new View();
+        v.welcome();
+        v.start();
+    &#125;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

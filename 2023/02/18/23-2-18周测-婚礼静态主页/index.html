@@ -1,0 +1,744 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>前端练习 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>前端练习 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/18
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/前端/" style="color: #00bcd4">
+                    前端
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h2 id="Html："><a href="#Html：" class="headerlink" title="Html："></a>Html：</h2><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;title&gt;wedding&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/index.css&quot; /&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/reset.css&quot; /&gt;
+        &lt;!-- 对整个网页进行分块，最好在写每一块时，不影响到其他块 --&gt;
+        &lt;!-- 对常用的，通用的样式表，提取出来，写成reset.css，之后用可以导入，复用 --&gt;
+        &lt;!-- 可读性，结构化 --&gt;
+        &lt;!-- 运用小工具 --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- 第一块：头部 --&gt;
+        &lt;!-- 1、宽度100%的顶部背景 --&gt;
+        &lt;!-- 2、100%的透明顶栏，固定 --&gt;
+        &lt;!-- 3、版心：包含3.1、logo，3.2、菜单栏 --&gt;
+        &lt;!-- fixed固定，float浮动 --&gt;
+        &lt;div class=&quot;header floor1&quot;&gt;
+            &lt;div class=&quot;top&quot;&gt;
+                &lt;div class=&quot;heart clear&quot;&gt;
+                    &lt;div class=&quot;logo fl&quot;&gt;&lt;/div&gt;
+                    &lt;div class=&quot;menu&quot;&gt;
+                        &lt;ul class=&quot;linked clear&quot;&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;#&quot;&gt;网站首页&lt;/a&gt;
+
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;&quot;&gt;客片欣赏&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;婚纱客片&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;写真客片&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;其他客片&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;&quot;&gt;样片大赏&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;婚纱作品&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;写真作品&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;其他作品&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;&quot;&gt;最新资讯&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;优惠活动&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;行业新闻&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;&quot;&gt;拍摄场景&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;内景场地&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;外景景点&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href=&quot;&quot;&gt;公司简介&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;公司简介&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;联系我们&lt;/a&gt;
+                                &lt;a href=&quot;#&quot;&gt;精英团队&lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 第二块：作品展示 --&gt;
+        &lt;!-- 还是要用版心限制 --&gt;
+        &lt;!-- 分为两快，标题和图片 --&gt;
+        &lt;!-- 图片又分为三块左中右，浮动 --&gt;
+        &lt;div class=&quot;floor2&quot;&gt;
+            &lt;div class=&quot;heart&quot;&gt;
+                &lt;div class=&quot;title&quot;&gt;
+                    &lt;span class=&quot;title1&quot;&gt;风尚堂摄影作品展示&lt;/span&gt;
+                    &lt;span class=&quot;title2&quot;&gt;WORKS APPLICATION&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;pic clear&quot;&gt;
+                    &lt;div class=&quot;pic1 fl&quot;&gt;
+                        &lt;div&gt;&lt;/div&gt;
+                        &lt;div&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;pic2 fl&quot;&gt;&lt;/div&gt;
+                    &lt;div class=&quot;pic3 fl&quot;&gt;
+                        &lt;div&gt;&lt;/div&gt;
+                        &lt;div&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- 第三块：场景展示 --&gt;
+        &lt;!-- 四个块左浮动，设置等分 --&gt;
+        &lt;div class=&quot;floor3&quot;&gt;
+            &lt;div class=&quot;heart&quot;&gt;
+                &lt;div class=&quot;title&quot;&gt;
+                    &lt;span class=&quot;title1&quot;&gt;唯美场景展示&lt;/span&gt;
+                    &lt;span class=&quot;title2&quot;&gt;STYLE SHOW&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;pic clear&quot;&gt;
+                    &lt;div class=&quot;pic1&quot;&gt;&lt;/div&gt;
+                    &lt;div class=&quot;pic2&quot;&gt;&lt;/div&gt;
+                    &lt;div class=&quot;pic3&quot;&gt;&lt;/div&gt;
+                    &lt;div class=&quot;pi41&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- 第四块：新闻资讯 --&gt;
+        &lt;!-- 先写，两个块，左浮动，等分 --&gt;
+        &lt;div class=&quot;floor4&quot;&gt;
+            &lt;div class=&quot;heart&quot;&gt;
+                &lt;div class=&quot;title&quot;&gt;
+                    &lt;span class=&quot;title1&quot;&gt;新闻资讯&lt;/span&gt;
+                    &lt;span class=&quot;title2&quot;&gt;LATEST NEWS&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;xinwen&quot;&gt;
+                    &lt;ul class=&quot;clear&quot;&gt;
+                        &lt;li class=&quot;part1 clear&quot;&gt;
+                            &lt;div class=&quot;pic fl&quot;&gt;
+                                &lt;div class=&quot;covered fl&quot;&gt;
+                                    &lt;span class=&quot;date&quot;&gt;31&lt;/span&gt;
+                                    &lt;span class=&quot;month&quot;&gt;2023-02&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;text fl&quot;&gt;
+                                &lt;span class=&quot;text1&quot;&gt;婚纱照怎样拍才好看 婚纱摄影完美攻略&lt;/span&gt;
+                                &lt;span class=&quot;text2&quot;&gt;很多新人在拿到婚纱照的时候，总有这样或者那样的一些抱怨。事实上，婚纱照拍摄出现问题，也有自身的一些原因。完美婚纱照的拍摄是新人和摄影方共同的努力的结果。那么，完美婚纱照的拍摄双方要做好哪些呢？&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;part1 clear&quot;&gt;
+                            &lt;div class=&quot;pic fl&quot;&gt;
+                                &lt;div class=&quot;covered fl&quot;&gt;
+                                    &lt;span class=&quot;date&quot;&gt;31&lt;/span&gt;
+                                    &lt;span class=&quot;month&quot;&gt;2023-02&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;text fl&quot;&gt;
+                                &lt;span class=&quot;text1&quot;&gt;婚纱照怎样拍才好看 婚纱摄影完美攻略&lt;/span&gt;
+                                &lt;span class=&quot;text2&quot;&gt;很多新人在拿到婚纱照的时候，总有这样或者那样的一些抱怨。事实上，婚纱照拍摄出现问题，也有自身的一些原因。完美婚纱照的拍摄是新人和摄影方共同的努力的结果。那么，完美婚纱照的拍摄双方要做好哪些呢？&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;part1 clear&quot;&gt;
+                            &lt;div class=&quot;pic fl&quot;&gt;
+                                &lt;div class=&quot;covered fl&quot;&gt;
+                                    &lt;span class=&quot;date&quot;&gt;31&lt;/span&gt;
+                                    &lt;span class=&quot;month&quot;&gt;2023-02&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;text fl&quot;&gt;
+                                &lt;span class=&quot;text1&quot;&gt;婚纱照怎样拍才好看 婚纱摄影完美攻略&lt;/span&gt;
+                                &lt;span class=&quot;text2&quot;&gt;很多新人在拿到婚纱照的时候，总有这样或者那样的一些抱怨。事实上，婚纱照拍摄出现问题，也有自身的一些原因。完美婚纱照的拍摄是新人和摄影方共同的努力的结果。那么，完美婚纱照的拍摄双方要做好哪些呢？&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;part1 clear&quot;&gt;
+                            &lt;div class=&quot;pic fl&quot;&gt;
+                                &lt;div class=&quot;covered fl&quot;&gt;
+                                    &lt;span class=&quot;date&quot;&gt;31&lt;/span&gt;
+                                    &lt;span class=&quot;month&quot;&gt;2023-02&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;text fl&quot;&gt;
+                                &lt;span class=&quot;text1&quot;&gt;婚纱照怎样拍才好看 婚纱摄影完美攻略&lt;/span&gt;
+                                &lt;span class=&quot;text2&quot;&gt;很多新人在拿到婚纱照的时候，总有这样或者那样的一些抱怨。事实上，婚纱照拍摄出现问题，也有自身的一些原因。完美婚纱照的拍摄是新人和摄影方共同的努力的结果。那么，完美婚纱照的拍摄双方要做好哪些呢？&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;part1 clear&quot;&gt;
+                            &lt;div class=&quot;pic fl&quot;&gt;
+                                &lt;div class=&quot;covered fl&quot;&gt;
+                                    &lt;span class=&quot;date&quot;&gt;31&lt;/span&gt;
+                                    &lt;span class=&quot;month&quot;&gt;2023-02&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;text fl&quot;&gt;
+                                &lt;span class=&quot;text1&quot;&gt;婚纱照怎样拍才好看 婚纱摄影完美攻略&lt;/span&gt;
+                                &lt;span class=&quot;text2&quot;&gt;很多新人在拿到婚纱照的时候，总有这样或者那样的一些抱怨。事实上，婚纱照拍摄出现问题，也有自身的一些原因。完美婚纱照的拍摄是新人和摄影方共同的努力的结果。那么，完美婚纱照的拍摄双方要做好哪些呢？&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;part1 clear&quot;&gt;
+                            &lt;div class=&quot;pic fl&quot;&gt;
+                                &lt;div class=&quot;covered fl&quot;&gt;
+                                    &lt;span class=&quot;date&quot;&gt;31&lt;/span&gt;
+                                    &lt;span class=&quot;month&quot;&gt;2023-02&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;text fl&quot;&gt;
+                                &lt;span class=&quot;text1&quot;&gt;婚纱照怎样拍才好看 婚纱摄影完美攻略&lt;/span&gt;
+                                &lt;span class=&quot;text2&quot;&gt;很多新人在拿到婚纱照的时候，总有这样或者那样的一些抱怨。事实上，婚纱照拍摄出现问题，也有自身的一些原因。完美婚纱照的拍摄是新人和摄影方共同的努力的结果。那么，完美婚纱照的拍摄双方要做好哪些呢？&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- 第五块，脚部 --&gt;
+        &lt;!-- 背景色是红色 --&gt;
+        &lt;!-- 两个块，左浮，右浮 --&gt;
+        &lt;div class=&quot;floor5 footer&quot;&gt;
+            &lt;div class=&quot;heart clear&quot;&gt;
+                &lt;div class=&quot;logo fl&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;connection fr&quot;&gt;
+                    &lt;span&gt;Tel：400-080-9123&lt;/span&gt;
+                    &lt;span&gt;ADD：浙江省杭州市XXX路XXX号&lt;/span&gt;
+                    &lt;span&gt;Copyright 2008-2016 风尚堂摄影 版权所有&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="CSS："><a href="#CSS：" class="headerlink" title="CSS："></a>CSS：</h2><pre><code class="css">@charset &quot;utf-8&quot;;
+
+body,
+html &#123;
+    margin: 0;
+    padding: 0;
+&#125;
+
+
+.header &#123;
+    width: 100%;
+    height: 550px;
+    background-image: url(../img/banner03.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 0;
+&#125;
+
+.top &#123;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 55px;
+    top: 0;
+    left: 0;
+    position: fixed;
+&#125;
+
+.heart &#123;
+    /* 版心无需设置宽度，宽度要在上一级的结构块中设置，版心只是限制中心区域 */
+    width: 1100px;
+    /* magin，前面的0表示上下的外边距为0，而auto表示左右的外边距根据宽度自己适配，保持居中 */
+    margin: 0 auto;
+&#125;
+
+.fl &#123;
+    float: left;
+&#125;
+
+.fr &#123;
+    float: right;
+&#125;
+
+.clear::after &#123;
+    content: &quot;&quot;;
+    display: block;
+    clear: both;
+    width: 0;
+&#125;
+
+.top .logo &#123;
+    width: 169px;
+    height: 130px;
+    background-image: url(../img/logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-right: 20px;
+&#125;
+
+.menu &#123;
+    height: 55px;
+&#125;
+
+.linked &#123;
+    list-style-type: none;
+    height: 100%;
+&#125;
+
+.linked li &#123;
+    float: left;
+    height: 100%;
+    line-height: 55px;
+&#125;
+
+.linked li a &#123;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 120px;
+    height: 55px;
+    text-align: center;
+&#125;
+
+.linked li a:hover &#123;
+    background-color: dodgerblue;
+&#125;
+
+.linked li a &#123;
+    background-color: rgba(0, 0, 0, 0.5);
+&#125;
+
+.linked li a:first-child &#123;
+    background-color: rgba(0, 0, 0, 0);
+&#125;
+
+.linked li a:hover &#123;
+    background-color: dodgerblue;
+&#125;
+
+.linked li a:first-child~a &#123;
+    display: none;
+&#125;
+
+.linked li:hover a:first-child~a &#123;
+    display: block;
+&#125;
+
+.title span &#123;
+    display: block;
+    text-align: center;
+&#125;
+
+.title1 &#123;
+    margin-top: 55px;
+    font-size: 26px;
+    color: #E80808;
+    margin-bottom: 4px;
+    font-weight: normal;
+&#125;
+
+.title2 &#123;
+    margin-bottom: 55px;
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+&#125;
+
+.floor2 .pic &#123;
+    height: 715px;
+&#125;
+
+.floor2 .pic&gt;div &#123;
+    height: 100%;
+&#125;
+
+.floor2 .pic&gt;.pic1,
+.floor2 .pic&gt;.pic3 &#123;
+    width: 265px;
+&#125;
+
+.floor2 .pic&gt;.pic1 &#123;
+    margin-right: 15px;
+&#125;
+
+.floor2 .pic&gt;.pic2 &#123;
+    width: calc(100% - 560px);
+    background-image: url(../img/photo03.jpg);
+&#125;
+
+.floor2 .pic&gt;.pic3 &#123;
+    margin-left: 15px;
+&#125;
+
+.floor2 .pic&gt;.pic1&gt;div:first-child,
+.floor2 .pic&gt;.pic3&gt;div:first-child &#123;
+    margin-bottom: 15px;
+&#125;
+
+.floor2 .pic .pic1&gt;div,
+.floor2 .pic .pic3&gt;div &#123;
+    height: calc((100% - 15px) / 2);
+&#125;
+
+.floor2 .pic .pic1&gt;div:first-child &#123;
+    background-image: url(../img/photo04.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+&#125;
+
+.floor2 .pic .pic1&gt;div:last-child &#123;
+    background-image: url(../img/photo01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+&#125;
+
+.floor2 .pic .pic3&gt;div:first-child &#123;
+    background-image: url(../img/photo05.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+&#125;
+
+.floor2 .pic .pic3&gt;div:last-child &#123;
+    background-image: url(../img/photo02.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+&#125;
+
+.floor3 .pic&gt;div &#123;
+    height: 337px;
+    float: left;
+    margin-right: 15px;
+    width: calc((100% - 45px) / 4);
+&#125;
+
+.floor3 .pic&gt;div:nth-child(1) &#123;
+    background-image: url(../img/genpai01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+&#125;
+
+.floor3 .pic&gt;div:nth-child(2) &#123;
+    background-image: url(../img/genpai02.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+&#125;
+
+.floor3 .pic&gt;div:nth-child(3) &#123;
+    background-image: url(../img/genpai03.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+&#125;
+
+.floor3 .pic&gt;div:nth-child(4) &#123;
+    margin-right: 0;
+    background-image: url(../img/genpai04.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+&#125;
+
+.floor4 .xinwen&gt;ul&#123;
+    list-style-type: none;
+    padding: 0;
+&#125;
+
+.floor4 .xinwen&gt;ul&gt;li &#123;
+    float: left;
+    height: 90px;
+    width: 50%;
+    margin-bottom: 60px;
+&#125;
+
+.floor4 .xinwen&#123;
+    font-size: 0;
+&#125;
+
+.floor4 .xinwen .pic&#123;
+    float: left;
+    height: 100px;
+    width: 175px;
+    margin-right: 17px;
+    background-image: url(../img/news.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+&#125;
+
+.floor4 .xinwen .text&#123;
+    display: block;
+    float: left;
+    width: ;
+    color: #666;
+    box-sizing: border-box;
+    height: 100px;
+    width: 335px;
+    overflow: hidden;
+&#125;
+
+.floor4 .xinwen .text .text1&#123;
+    display: block;
+    font-size: 20px;
+    color: rgba(0,0,0,0.7)
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #666;
+&#125;
+
+.floor4 .xinwen .text .text2&#123;
+    display: block;
+    font-size: 8px;
+    color: rgba(0,0,0,0.7)
+    text-align: center;
+    padding-top: 10px;
+&#125;
+
+.floor4 .xinwen .pic .covered&#123;
+    height: 100%;
+    width: 50%;
+    background-color: #ff9600BF;
+&#125;
+
+.floor4 .xinwen .pic .covered .date&#123;
+    display: block;
+    font-size: 31px;
+    color: #fff;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 13px;
+&#125;
+
+.floor4 .xinwen .pic .covered .month&#123;
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 2px;
+&#125;
+
+.footer&#123;
+    height: 120px;
+    width: 100%;
+    background-color: #E53B3B;
+&#125;
+
+.footer .logo&#123;
+    width: 250px;
+    height: 90px;
+    background-image: url(../img/end-logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding-top: 15px;
+&#125;
+
+.footer .connection&#123;
+    width: 300px;
+    height: 133px;
+&#125;
+
+.footer .connection span&#123;
+    display: block;
+    font-size: 15px;
+    color: #FFFFFF;
+    margin: 15px 0 7px;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

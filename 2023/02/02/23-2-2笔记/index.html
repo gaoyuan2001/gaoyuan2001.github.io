@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>MySQL数据库 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>MySQL数据库 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/2
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/MySQL/" style="color: #00bcd4">
+                    MySQL
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><h5 id="图形界面客户端："><a href="#图形界面客户端：" class="headerlink" title="图形界面客户端："></a>图形界面客户端：</h5><p>workbench： </p>
+<p>navicat：c++，流畅，小。付费。 </p>
+<p>dbeaver：开源免费，流畅度差。 </p>
+<p>idea：自带数据库管理。</p>
+<h5 id="学习："><a href="#学习：" class="headerlink" title="学习："></a>学习：</h5><p>1.使用图形界面管理设计数据库，表等对象</p>
+<p>2.sql：重中之重</p>
+<p>3.jdbc连接数据库</p>
+<h4 id="数据库-1"><a href="#数据库-1" class="headerlink" title="数据库"></a>数据库</h4><h5 id="1-关系型数据库："><a href="#1-关系型数据库：" class="headerlink" title="1.关系型数据库："></a>1.关系型数据库：</h5><ul>
+<li>Oracle：重量级</li>
+<li>SQL Server：重量级</li>
+<li>DB2：重量级</li>
+<li>MySQL：免费和付费</li>
+<li>MariaDB：</li>
+<li>PostGreSql：</li>
+<li>……</li>
+</ul>
+<h5 id="2-No-Sql数据库：非关系型数据库"><a href="#2-No-Sql数据库：非关系型数据库" class="headerlink" title="2.No-Sql数据库：非关系型数据库"></a>2.No-Sql数据库：非关系型数据库</h5><ul>
+<li>Redis：</li>
+<li>MemeryCacheDB：</li>
+<li>MongoDB：</li>
+<li>PostGreSql：</li>
+<li>……</li>
+</ul>
+<h5 id="图形界面管理数据库的操作："><a href="#图形界面管理数据库的操作：" class="headerlink" title="图形界面管理数据库的操作："></a>图形界面管理数据库的操作：</h5><p>本机：localhost或127.0.0.1</p>
+<p>数据库的备份与还原</p>
+<p>在关系数据库中，数据是存储在表中的。二维表</p>
+<h5 id="数据库的三范式："><a href="#数据库的三范式：" class="headerlink" title="数据库的三范式："></a><em><strong><u>数据库的三范式：</u></strong></em></h5><p>1.第一范式：原子性：字段不可分。</p>
+<p>表的每一列不可再分</p>
+<p>2.第二范式：唯一性：有主键，非主键字段依赖主键。</p>
+<p>满足第一范式的基础上，每一列都唯一和全部主键依赖。每个表只干一件事，只存储一种数据类型，必须和主键有关系</p>
+<p>3.第三范式：冗余性：非主键不能相互依赖。</p>
+<p>满足第二范式的基础上，某一列不可以通过其他列计算或推到而得出，比如年龄可以通过生日计算得出</p>
+<p>在一定情况下也会使用反范式。</p>
+<p>主键：primary key</p>
+<p>联合主键：两列联合为为主键</p>
+<p>逻辑主键：和业务没有关系，比如序号和本身并无对应联系</p>
+<p>业务主键：和业务有关系，比如一个属性：学号，就和学生本身有关</p>
+<p>外键：foreign key</p>
+<p>开发中一般不会用到</p>
+<p>外键：</p>
+<p>cascade级联删除：会都删除</p>
+<p>noaction：无行为</p>
+<p>set null：设置空</p>
+<p>设计数据库的表：约束</p>
+<p>1.实体完整性约束：</p>
+<ul>
+<li>主键约束：每个设置主键</li>
+<li>自增长列：列自动增长</li>
+<li>唯一键约束：mysql通过索引来实现唯一键约束</li>
+<li>外键约束：保证主外键约束，保证数据完整性，在开发中几乎不适用外键约束</li>
+</ul>
+<p>2.域完整性约束：对列的约束</p>
+<ul>
+<li><p>数据类型约束：每个列的类型不一样</p>
+<ul>
+<li>tinyint，smallint，mediemint，int，bigint：整数</li>
+<li>float，double：小数</li>
+<li>char：定长字符串，varchar：不定长字符串</li>
+<li>date：日期</li>
+<li>time：时间</li>
+<li>datetime：时间和日期</li>
+<li>timestamp：时间戳，返回值是一个整数，距离1970年的毫秒数</li>
+<li>bit：位，返回值是boolean类型</li>
+<li>text：大文本类型</li>
+<li>blob：大二进制类型</li>
+<li>enum：枚举，可以提前设置范围，只能从中选，比如男，女 ，只能从两个中选</li>
+<li>decimal：设置小数精确到几位，但是需要设置总长度</li>
+<li>json：用于描述一个对象的一小段代码</li>
+</ul>
+</li>
+<li><p>非空</p>
+</li>
+<li><p>默认值约束</p>
+</li>
+</ul>
+<p>3.其他类型约束：</p>
+<p>mysql的引擎：</p>
+<p>InnoDB（事务），MyISAM</p>
+<hr>
+<p>作业：使用navicat创建一个学生数据库，创建三个表，学生信息表，班级信息表，考试成绩表，三个表之间有关联关系，列自行设计，并添加至少5行数据。</p>
+<p>students字段：<br><img src="https://c2.im5i.com/2023/02/02/nw3uQ.png"></p>
+<p>students索引：<br><img src="https://c2.im5i.com/2023/02/02/nwoSs.png"></p>
+<p>students外键：<br><img src="https://c2.im5i.com/2023/02/02/nwIx3.png"></p>
+<hr>
+<p>class字段：<br><img src="https://c2.im5i.com/2023/02/02/nwiwy.png"></p>
+<p>class索引：<br><img src="https://c2.im5i.com/2023/02/02/nwY0m.png"></p>
+<hr>
+<p>score字段：<br><img src="https://c2.im5i.com/2023/02/02/nwmJO.png"></p>
+<p>score索引：<br><img src="https://c2.im5i.com/2023/02/02/nwxoR.png"></p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

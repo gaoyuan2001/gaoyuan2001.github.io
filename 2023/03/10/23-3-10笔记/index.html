@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>SSM框架 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>SSM框架 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/3/10
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #00a596">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <p>@Service只能加在实现类上，只有实现类才能创建对象</p>
+<p>构造函数注入，要比字段输入更加安全，方便测试</p>
+<p>目前构造函数注入可以省略</p>
+<h5 id="连接数据库，datasource为空的情况，因为在启动spring时，创建对象template，但是此时没有数据源时创建不了的，所以会报datasource为空的错误"><a href="#连接数据库，datasource为空的情况，因为在启动spring时，创建对象template，但是此时没有数据源时创建不了的，所以会报datasource为空的错误" class="headerlink" title="连接数据库，datasource为空的情况，因为在启动spring时，创建对象template，但是此时没有数据源时创建不了的，所以会报datasource为空的错误"></a>连接数据库，datasource为空的情况，因为在启动spring时，创建对象template，但是此时没有数据源时创建不了的，所以会报datasource为空的错误</h5><ul>
+<li>监听器有优先顺序，可以在web.xml中用标签来设置监听器的启动顺序</li>
+</ul>
+<pre><code class="xml">&lt;listener&gt;
+    &lt;listener-class&gt;com.yuan.global.LoadJdbcConfigListener&lt;/listener-class&gt;
+&lt;/listener&gt;
+
+&lt;!-- spring引入，在web应用启动时执行--&gt;
+&lt;listener&gt;
+    &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+&lt;/listener&gt;
+</code></pre>
+<ul>
+<li>把创建template下放到方法中，但问题是又要保证单例，缺点就是每请求一次，都会创建</li>
+</ul>
+<pre><code class="java">public List&lt;Human&gt; findAll(HumanSearchCondition hsc, PaginateInfo pi) &#123;
+    JdbcTemplate template = new JdbcTemplate(Constants.getDataSource());
+</code></pre>
+<ul>
+<li><p>在spring.xml中加bean（最优）</p>
+<p>因为在web.xml中设置的监听器，所以每次启动先扫描spring.xml文件，在spring.xml文件中加上bean后，</p>
+<p>就会根据类，（反射）创建出对象，放在spring容器中，其实这就是注入。</p>
+<p>第一个jdbcTemplate，是根据构造函数创建的，因为他的类：SimpleDriverDataSource中就有构造函数（所以可以用构造函数注入），但是其构造函数中有参数，所以index &#x3D; 0，就是在参数列表的第一位赋值为dataSource</p>
+<p>而要用到dataSource，又需要根据类，（反射）创建出对象，放在spring容器中，</p>
+<p>这里用到的是根据参数注入，</p>
+</li>
+</ul>
+<pre><code class="xml">&lt;bean id=&quot;jdbcTemplate&quot; class=&quot;org.springframework.jdbc.core.JdbcTemplate&quot;&gt;
+    &lt;constructor-arg index=&quot;0&quot; ref=&quot;dataSource&quot;/&gt;
+&lt;/bean&gt;
+
+&lt;bean id=&quot;dataSource&quot; class=&quot;org.springframework.jdbc.datasource.SimpleDriverDataSource&quot;&gt;
+    &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.jdbc.Driver&quot; /&gt;
+    &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/samples?serverTimezone=Asia/Chongqing&amp;amp;characterEncoding=utf8&amp;amp;useSSL=false&amp;amp;allowPublicKeyRetrieval=true&quot; /&gt;
+    &lt;property name=&quot;username&quot; value=&quot;root&quot; /&gt;
+    &lt;property name=&quot;password&quot; value=&quot;0123456789&quot;/&gt;
+&lt;/bean&gt;
+</code></pre>
+<h1 id="Spring整合MyBatis"><a href="#Spring整合MyBatis" class="headerlink" title="Spring整合MyBatis"></a>Spring整合MyBatis</h1><h5 id="ORM：Object-relationship-Mapping，对象关系映射"><a href="#ORM：Object-relationship-Mapping，对象关系映射" class="headerlink" title="ORM：Object relationship Mapping，对象关系映射"></a>ORM：Object relationship Mapping，对象关系映射</h5><p>Hibernate：纯粹面向对象的，全自动，负责sql操作。太重了。无法进行sql优化，是用于非常宏大的项目</p>
+<h5 id="MyBatis：半自动，只负责映射，不负责sql操作。非常灵活，轻量级，移植性不强。（把从数据库查找出的数据，映射成对象），适合偏中小型的项目"><a href="#MyBatis：半自动，只负责映射，不负责sql操作。非常灵活，轻量级，移植性不强。（把从数据库查找出的数据，映射成对象），适合偏中小型的项目" class="headerlink" title="MyBatis：半自动，只负责映射，不负责sql操作。非常灵活，轻量级，移植性不强。（把从数据库查找出的数据，映射成对象），适合偏中小型的项目"></a>MyBatis：半自动，只负责映射，不负责sql操作。非常灵活，轻量级，移植性不强。（把从数据库查找出的数据，映射成对象），适合偏中小型的项目</h5><h2 id="SSM："><a href="#SSM：" class="headerlink" title="SSM："></a>SSM：</h2><h4 id="常用的数据库连接池："><a href="#常用的数据库连接池：" class="headerlink" title="常用的数据库连接池："></a>常用的数据库连接池：</h4><p>1、dbcp2：apache</p>
+<p>2、c3p0：个人维护</p>
+<p>3、hikari：光速，快</p>
+<p>4、Druid：阿里的数据库连接池</p>
+<h4 id="配置数据库连接池："><a href="#配置数据库连接池：" class="headerlink" title="配置数据库连接池："></a>配置数据库连接池：</h4><ul>
+<li><p>1、引入依赖</p>
+</li>
+<li><p>2、spring配置数据库连接池</p>
+<p>用spring来创建数据库连接池，控制反转</p>
+</li>
+</ul>
+<h3 id="把创建对象的控制权交给框架，既可以自动依赖注入，又可以保持单例"><a href="#把创建对象的控制权交给框架，既可以自动依赖注入，又可以保持单例" class="headerlink" title="把创建对象的控制权交给框架，既可以自动依赖注入，又可以保持单例"></a>把创建对象的控制权交给框架，既可以自动依赖注入，又可以保持单例</h3><h2 id="配置MyBatis"><a href="#配置MyBatis" class="headerlink" title="配置MyBatis"></a>配置MyBatis</h2><ul>
+<li><p>引入依赖</p>
+<ul>
+<li>mybatis</li>
+<li>mybatis-spring</li>
+</ul>
+</li>
+<li><p>spring.xml中配置，还是在spring中创建，通过控制反转</p>
+<ul>
+<li><p>创建SqlSeesionFactory，创建sqlSession</p>
+<p>创建mybatis.xml配置文件</p>
+<p>创建定每一个模型实体的映射文件mapper</p>
+</li>
+<li><p>mapper扫描器，一般就是dao接口，发出sql查询，映射成相应的对象</p>
+<h5 id="一个dao接口就是一个mapper，都是查询出数据，映射成一个模型类对象"><a href="#一个dao接口就是一个mapper，都是查询出数据，映射成一个模型类对象" class="headerlink" title="一个dao接口就是一个mapper，都是查询出数据，映射成一个模型类对象"></a>一个dao接口就是一个mapper，都是查询出数据，映射成一个模型类对象</h5><ul>
+<li>@mapper，注解放在dao接口前，mybatis自动创建接口的实现类，替代自己手写的dao的实现类，无需实现</li>
+</ul>
+</li>
+<li><p>创建SqlSession对话（类似于请求响应的模式），<strong>不是单例的</strong>（scope：”prototype”）</p>
+<p>提供很多方便快捷的方法</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="mybatis是不需要实现dao接口的，实现在mapper里的xml中实现"><a href="#mybatis是不需要实现dao接口的，实现在mapper里的xml中实现" class="headerlink" title="mybatis是不需要实现dao接口的，实现在mapper里的xml中实现"></a>mybatis是不需要实现dao接口的，实现在mapper里的xml中实现</h4><pre><code class="xml">&lt;!--配置mybatis的步骤--&gt;
+&lt;!-- 一、创建SqlSessionFactory --&gt;
+&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+    &lt;!-- 指定数据库连接池 --&gt;
+    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
+    &lt;!-- 指定mybatis的配置文件 --&gt;
+    &lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis.xml&quot;/&gt;
+    &lt;!-- 指定每一个模型实体的映射文件 --&gt;
+    &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/*.xml&quot;/&gt;
+    &lt;!-- 配置插件 --&gt;
+    &lt;property name=&quot;plugins&quot;&gt;
+        &lt;array&gt;
+            &lt;!-- 国内开发者开发的分页插件 https://pagehelper.github.io/  --&gt;
+            &lt;bean class=&quot;com.github.pagehelper.PageInterceptor&quot;&gt;
+                &lt;property name=&quot;properties&quot;&gt;
+                    &lt;value&gt;
+                        helperDialect=mysql
+                        reasonable=true
+                        rowBoundsWithCount=true
+                        pageSizeZero=true
+                        offsetAsPageNum=true
+                    &lt;/value&gt;
+                &lt;/property&gt;
+            &lt;/bean&gt;
+        &lt;/array&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;!-- 二、mapper扫描器，将包下面的mapper接口自动创建代理对象，自动创建到Spring容器中，bean的id就是mapper的类名(首字母小写) --&gt;
+&lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+    &lt;property name=&quot;basePackage&quot; value=&quot;com.yuan.dao&quot;/&gt;
+&lt;/bean&gt;
+
+&lt;!-- 三、创建SqlSession会话，不是单例的 --&gt;
+&lt;bean id=&quot;sqlSession&quot; class=&quot;org.mybatis.spring.SqlSessionTemplate&quot; scope=&quot;prototype&quot;&gt;
+    &lt;constructor-arg index=&quot;0&quot; ref=&quot;sqlSessionFactory&quot;/&gt;
+&lt;/bean&gt;
+</code></pre>
+<h3 id="XXXDao-xml中配置Dao接口中的方法实现"><a href="#XXXDao-xml中配置Dao接口中的方法实现" class="headerlink" title="XXXDao.xml中配置Dao接口中的方法实现"></a>XXXDao.xml中配置Dao接口中的方法实现</h3><p>id要和方法同名，resultType是要映射返回的模型类</p>
+<p>mybatis默认不允许有两个参数，但可以用@param进行注解</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

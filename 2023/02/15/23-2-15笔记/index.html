@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>前端：Html，css | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>前端：Html，css </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/15
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/前端/" style="color: #ff7d73">
+                    前端
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><h4 id="浏览器：browser"><a href="#浏览器：browser" class="headerlink" title="浏览器：browser"></a>浏览器：browser</h4><p>专门用于解析 html、css和JavaScript的。是一款软件，应用级软件</p>
+<p>Chrome及开源版本：Google，V8引擎</p>
+<p>Firefox：Mozilla</p>
+<p>IE及edge：微软</p>
+<p>safari：Apple</p>
+<p>opera：某一国家。360收购之后，废弃</p>
+<h4 id="前端三大件：没有竞品，不需要可虑过时"><a href="#前端三大件：没有竞品，不需要可虑过时" class="headerlink" title="前端三大件：没有竞品，不需要可虑过时"></a>前端三大件：没有竞品，不需要可虑过时</h4><p>html：1.0、4.01、5</p>
+<p>css：Cascading Style Sheets，层叠样式表</p>
+<p>js：JavaScript</p>
+<p>html：网页的框架结构</p>
+<p>css：美化，修饰</p>
+<p>JavaScript：负责动态效果，行为交互</p>
+<h2 id="html：超文本标记语言"><a href="#html：超文本标记语言" class="headerlink" title="html：超文本标记语言"></a>html：超文本标记语言</h2><p><strong>html是由一个个标记组成的</strong></p>
+<p><strong>html的标记是一个树形结构，一个标记可以嵌套着另外多个标记，一层一层</strong></p>
+<p>html标记有两种：</p>
+<p>单标记：</p>
+<pre><code class="html">&lt;meta charset=&quot;utf-8&quot;&gt;
+</code></pre>
+<p>双标记：标记开始和结束，成对出现，开始标记&lt;&gt;，结束标记&lt;&#x2F;&gt;</p>
+<pre><code class="html">&lt;html&gt;
+    &lt;body&gt;
+        &lt;div&gt;
+            &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;     
+&lt;/html&gt;
+</code></pre>
+<p>开始标记&lt;&gt;，结束标记&lt;&#x2F;&gt;，里面的内容称为一个元素</p>
+<p>不管多少空格，在页面上只占一个英文半角的字符大小</p>
+<p><strong>块标记：独占一行，h，p，div，ul，ol，dl</strong></p>
+<p><strong>内联标记：b，span</strong></p>
+<h4 id="标记属性"><a href="#标记属性" class="headerlink" title="标记属性"></a>标记属性</h4><pre><code class="html">size=&quot;50&quot; color=&quot;blue&quot; width=&quot;100%&quot; align=&quot;center&quot;
+</code></pre>
+<p>每个标记都有自己的属性，有些可以通用</p>
+<ul>
+<li><p>align：水平</p>
+</li>
+<li><p>size：大小</p>
+</li>
+<li><p>color：颜色</p>
+</li>
+<li><p>width：宽度，可以用百分比，或者定值（单位px，像素）</p>
+</li>
+</ul>
+<h4 id="主要标记"><a href="#主要标记" class="headerlink" title="主要标记"></a>主要标记</h4><ul>
+<li><p>html：整个网页容器</p>
+<pre><code class="html">&lt;html&gt;
+    
+&lt;/html&gt;
+</code></pre>
+</li>
+<li><p>head：头数据</p>
+<pre><code class="html">&lt;!-- 头数据，用于声明文档的一些属性等 --&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;测试&lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
+</li>
+<li><p>body：身体部分</p>
+<pre><code class="html">&lt;!-- 身体部分，用来定义网页内容 --&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+</code></pre>
+</li>
+<li><p>h：标题标记，h1、h2、h3</p>
+<pre><code class="html">&lt;h1 align=&quot;center&quot;&gt;一级标题&lt;/h1&gt;
+&lt;h2 align=&quot;left&quot;&gt;二级标题&lt;/h2&gt;
+&lt;h3 align=&quot;right&quot;&gt;三级标题&lt;/h3&gt;
+&lt;h4&gt;四级标题&lt;/h4&gt;
+</code></pre>
+</li>
+<li><p>p：段落标记</p>
+</li>
+<li><p>br：换行标记</p>
+</li>
+<li><p>hr：水平线标记</p>
+<pre><code class="html">&lt;hr size=&quot;50&quot; color=&quot;blue&quot; width=&quot;100%&quot; align=&quot;center&quot;/&gt;
+</code></pre>
+</li>
+<li><p>文本格式化标记：都是<strong>内联标记</strong></p>
+<ul>
+<li><p>font：字体，已经废弃，其中的属性，size表大小，仅代表挡位（一共有七档）；face表字体</p>
+<p>颜色的表示方法：</p>
+<ul>
+<li><p>1.英文单词，white，black， yellow……</p>
+</li>
+<li><p>2.rgb函数表示法：RGB(0,0,0)代表黑色……</p>
+</li>
+<li><p>3.使用#十六进制表示法（6位十六进制字符）：#ffffff，#000000</p>
+</li>
+<li><p>4.缩写：#fff，#000</p>
+</li>
+</ul>
+</li>
+<li><p>b：自动加粗，没有尺寸</p>
+</li>
+<li><p>i：自动斜体</p>
+</li>
+<li><p>del：删除线</p>
+</li>
+<li><p>strong：强调，默认加粗</p>
+<pre><code class="html">&lt;font size=&quot;8&quot; color=&quot;darkmagenta&quot;&gt;谁是谁&lt;/font&gt;
+&lt;del&gt;删除&lt;/del&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>div：没有任何样式的块标记</p>
+<pre><code class="html">&lt;!-- 没有任何样式的块标记 --&gt;
+&lt;div id=&quot;&quot;&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor=&quot;blue&quot;&gt;哈哈&lt;/td&gt;
+        &lt;td bgcolor=&quot;plum&quot;&gt;嘿嘿嘿&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li><p>list：列表</p>
+<ul>
+<li><p>ul：无序列表 unordered list</p>
+<ul>
+<li><p>li：列表项 list item</p>
+</li>
+<li><p>type &#x3D; disc、square、circle</p>
+</li>
+</ul>
+</li>
+<li><p>ol：有序列表 ordered list</p>
+<ul>
+<li>li：列表项 list item</li>
+<li>type &#x3D; 1、A、a、I、i</li>
+</ul>
+</li>
+<li><p>dl：定义列表 defined list</p>
+<p>dl、dt、dd是一组合标签，使用了dt dd最外层就必须使用dl包裹</p>
+<ul>
+<li>dt：定义列表标题 defined title</li>
+<li>dd：定义列表内容 defined data</li>
+</ul>
+<pre><code class="html">    &lt;!-- 列表 --&gt;
+    &lt;!-- 无序列表 unordered list --&gt;
+    &lt;!-- type=disc、square、circle --&gt;
+    &lt;ul type=&quot;disc&quot;&gt;
+        &lt;!-- 列表项 list item --&gt;
+        &lt;li&gt;足球&lt;/li&gt;
+        &lt;li&gt;篮球&lt;/li&gt;
+        &lt;li&gt;台球&lt;/li&gt;
+        &lt;li&gt;网球&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;!-- 没有任何样式的块标记 --&gt;
+    &lt;div&gt;	&lt;/div&gt;
+    &lt;!-- 有序列表 ordered list --&gt;
+    &lt;!-- type=1、A、a、I、i --&gt;
+    &lt;ol&gt;
+        &lt;li&gt;小明&lt;/li&gt;
+        &lt;li&gt;小敏&lt;/li&gt;
+        &lt;li&gt;王总&lt;/li&gt;
+        &lt;li&gt;李总&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;!-- 定义列表 defined list--&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;定义列表标题&lt;/dt&gt;
+        &lt;dd&gt;定义列表内容&lt;/dd&gt;
+        &lt;dd&gt;定义列表内容&lt;/dd&gt;
+        &lt;dd&gt;定义列表内容&lt;/dd&gt;
+    &lt;/dl&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>table：表格标记</p>
+<p>colspan：行合并</p>
+<p>rowspan：列合并</p>
+<pre><code class="html">&lt;tr&gt;
+    &lt;td colspan=&quot;4&quot;&gt;总计一人&lt;/td&gt;
+&lt;/tr&gt;
+</code></pre>
+</li>
+<li><p>form：表单标记，与用户进行交互</p>
+<pre><code class="html">&lt;!-- 表单 --&gt;
+&lt;form action=&quot;111&quot;&gt;
+    
+&lt;/form&gt;
+</code></pre>
+</li>
+<li><p>input：</p>
+<p>id：通用的标记，在body里面的都可以定义id，不可以以数字开头，唯一的</p>
+<p>name：也是通用元素，只能给表单元素起名字，可以重复</p>
+<p>size：文本框大小，但是以挡位来控制</p>
+<p>maxlength：最大字符数，中英文都算一个字符</p>
+<p>readonly：布尔属性，只读。可以不加 &#x3D;” “</p>
+<p>value：文本框里的值，通用属性，用在任意表单元素，用在向后台服务器提交的数据</p>
+<p>disabled：布尔属性，禁用。此表单元素不在生效，也不再向后台服务器提交数据</p>
+<p>type：</p>
+<ul>
+<li><p>text：文本框</p>
+<pre><code class="html">&lt;div&gt;
+    &lt;label for=&quot;n1&quot;&gt;用户名：&lt;/label&gt;
+    &lt;!-- 文本框 --&gt;
+    &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;n1&quot; value=&quot;输入用户名&quot; size=&quot;25&quot; maxlength=&quot;5&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li><p>password：密码</p>
+<pre><code class="html">&lt;div&gt;
+    &lt;label for=&quot;p1&quot;&gt;密　码：&lt;/label&gt;
+    &lt;!-- 密码框 --&gt;
+    &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;p1&quot; value=&quot;&quot; size=&quot;25&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li><p>radio：选择按钮</p>
+<ul>
+<li>name：相同的为一组按钮，只能选择一个</li>
+<li>value：表示传向后台的值</li>
+<li>checked：默认选择的</li>
+</ul>
+<pre><code class="html">&lt;div&gt;
+    &lt;label&gt;性　别：&lt;/label&gt;
+    &lt;!--  --&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;1&quot;&gt;男
+    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;0&quot;&gt;女
+&lt;/div&gt;
+</code></pre>
+</li>
+<li><p>checkbox：复选框</p>
+<pre><code class="html">&lt;div&gt;
+    &lt;label&gt;爱　好：&lt;/label&gt;
+    &lt;!-- 复选框 --&gt;
+    &lt;input type=&quot;checkbox&quot; value=&quot;0&quot;&gt;篮球
+    &lt;input type=&quot;checkbox&quot; value=&quot;1&quot;&gt;足球
+    &lt;input type=&quot;checkbox&quot; value=&quot;2&quot;&gt;排球
+    &lt;input type=&quot;checkbox&quot; value=&quot;3&quot;&gt;乒乓球
+&lt;/div&gt;
+</code></pre>
+</li>
+<li><p>file：文件选择</p>
+<pre><code class="html">&lt;div id=&quot;&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;头　像：&lt;/label&gt;
+    &lt;!-- 文件选择 --&gt;
+    &lt;input type=&quot;file&quot; name=&quot;image&quot; id=&quot;i1&quot; value=&quot;&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li><p>date：日期</p>
+<pre><code class="html">&lt;div&gt;
+    &lt;!-- 日期 --&gt;
+    &lt;label for=&quot;&quot;&gt;出生日期：&lt;/label&gt;
+    &lt;!-- 日期 --&gt;
+    &lt;input type=&quot;date&quot; name=&quot;&quot; id=&quot;&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li><p>button：普通按钮，无行为</p>
+<ul>
+<li>reset：重置按钮，重置表单</li>
+<li>submit：提交按钮，提交到form表单中action所指定的服务器地址</li>
+</ul>
+<pre><code class="html">&lt;div&gt;
+    &lt;!-- 按钮 --&gt;
+    &lt;input type=&quot;button&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;点我&quot;&gt;
+    &lt;!-- 普通按钮，无行为 --&gt;
+    &lt;input type=&quot;reset&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;取消&quot;&gt;
+    &lt;!-- 重置按钮：重置表单 --&gt;
+    &lt;input type=&quot;submit&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;提交&quot;&gt;
+    &lt;!-- 提交按钮：提交到form表单中action所指定的服务器地址 --&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>select—option：下拉列表</p>
+<pre><code class="html">&lt;div&gt;
+    &lt;label for=&quot;&quot;&gt;季　节：&lt;/label&gt;
+    &lt;!-- 下拉列表 --&gt;
+    &lt;select name=&quot;&quot; id=&quot;&quot;&gt;
+        &lt;option value=&quot;0&quot;&gt;春&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;夏&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;秋&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;冬&lt;/option&gt;	
+    &lt;/select&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li><p>textarea：文本域</p>
+<pre><code class="html">&lt;div id=&quot;&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;个人自我介绍：&lt;/label&gt;
+    &lt;!-- 文本域 --&gt;
+    &lt;textarea cols=&quot;30&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li><p>button：按钮</p>
+<ul>
+<li>type：<ul>
+<li>button：普通按钮，无行为</li>
+<li>submit：提交按钮：提交到form表单中action所指定的服务器地址</li>
+<li>reset：重置按钮：重置表单</li>
+</ul>
+</li>
+</ul>
+<pre><code class="html">&lt;div&gt;
+    &lt;!-- 以下作用和上面一样 --&gt;
+    &lt;button type=&quot;button&quot;&gt;点我&lt;/button&gt;
+    &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+    &lt;button type=&quot;reset&quot;&gt;重置&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li><p>a：超文本链接标记，href可以是相对地址，</p>
+<ul>
+<li>target：<ul>
+<li>_blank：新开一个页面打开</li>
+<li>_self：在本页面打开</li>
+</ul>
+</li>
+</ul>
+<pre><code class="html">&lt;a href=&quot;1.html&quot;&gt;跳转到1&lt;/a&gt;
+&lt;a href=&quot;http://www.gaoyuan2001.github.io&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;http://www.gaoyuan2001.github.io&quot; target=&quot;_self&quot;&gt;&lt;/a&gt;
+</code></pre>
+</li>
+<li><p>span：没有任何样式</p>
+</li>
+<li><p>iframe：框架标记</p>
+<pre><code class="html">&lt;!-- 框架标记 --&gt;
+&lt;iframe width=&quot;700&quot; height=&quot;400&quot; src=&quot;http://www.taobao.com&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+</li>
+<li><p>符号实体：&amp;nbsp；&amp;copy；&amp;reg，&amp;lt，&amp;gt，……</p>
+<pre><code class="html">&amp;nbsp;
+&amp;copy;
+&amp;reg;
+&amp;lt;
+&amp;gt;
+</code></pre>
+</li>
+<li><p>img：图片标记</p>
+</li>
+</ul>
+<pre><code class="html">&lt;img src=&quot;img/012.gif&quot; alt=&quot;&quot;&gt;
+&lt;img src=&quot;img/014.jpg&quot; alt=&quot;&quot;&gt;
+</code></pre>
+<hr>
+<h2 id="CSS：casade-style-sheet，层叠样式表"><a href="#CSS：casade-style-sheet，层叠样式表" class="headerlink" title="CSS：casade style sheet，层叠样式表"></a>CSS：casade style sheet，层叠样式表</h2><h4 id="负责样式的美化和装饰"><a href="#负责样式的美化和装饰" class="headerlink" title="负责样式的美化和装饰"></a>负责样式的美化和装饰</h4><p>css版本：1.0、 2.0、3.0</p>
+<p>样式的三种引入方式：</p>
+<ul>
+<li><p>1.行内样式（内联样式）:直接在标记上使用style属性引入</p>
+<p>缺点：只能修饰当前所在标记</p>
+</li>
+<li><p>2.页内样式：在当前页引入样式，供本页使用</p>
+<p>需要使用css选择器指定要修饰的元素集合</p>
+<p>指定修饰谁，通过选择器</p>
+<p>基础选择器：</p>
+<ul>
+<li><p>1.标记选择器：标记名{……样式}</p>
+</li>
+<li><p>2.id选择器：定义样式：#id名称{……样式}，调用id&#x3D;“pink-div”</p>
+</li>
+<li><p>3.类选择器：定义样式：.类名称，标记内类名称定义：class&#x3D;“类名  对象名”，一个标记可以有多个类名称，用空格分隔</p>
+</li>
+<li><p>全选选择器：*{……样式}，表示选择全部元素</p>
+<pre><code class="html">&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        h1 &#123;
+            color: #00f;
+            font-size: 25px;
+            background-color: pink;
+        &#125;
+        #pink-div &#123;
+            text-align: center;
+        &#125;
+        .my &#123;
+            text-decoration: underline;
+            width: 400px;
+            height: 200px;
+            text-align: center;
+            font-style: italic;
+            font-family: 宋体, 黑体, 隶书, 微软雅黑;
+        &#125;
+        * &#123;
+            display: none;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 style=&quot;color: #00f; font-size: 25px; background-color: pink;&quot;&gt;今天好运气&lt;/h1&gt;
+    &lt;h2&gt;老狼请吃鸡&lt;/h2&gt;
+    
+    &lt;h1 id=&quot;pink-div&quot;&gt;我也要粉色&lt;/h1&gt;
+    
+    &lt;h1 class=&quot;my your&quot;&gt;中国智造&lt;/h1
+        
+    &lt;h1&gt;2222&lt;/h1&gt;
+    
+    &lt;h1 class=&quot;my red&quot;&gt;3333&lt;/h1&gt;
+    
+    &lt;h1&gt;4444&lt;/h1&gt;
+    
+    &lt;h1 class=&quot;my a&quot;&gt;5555&lt;/h1&gt;
+    
+&lt;/body&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>样式语法：</p>
+<p>样式名（用-分隔）：样式值</p>
+<p>多个样式用；分号分隔</p>
+<p>常用样式：</p>
+<p>1.color：前景色</p>
+<p>2.font-size：设置字号。单位可以修改px(像素)，em，rem，</p>
+<p>3.background-color：设置背景色</p>
+<p>4.text-align：left&#x2F;right&#x2F;center文本内容的水平对齐方式</p>
+<p>5.text-decoration：underline下划线，none没有任何下划线</p>
+<p>6.width：设置宽度，单位可以是像素或者百分比</p>
+<p>7.height：设置高度，单位可以是像素或者百分比</p>
+<p>8.font-style：italic，字体斜体</p>
+<p>9.font-family：设置字体，‘宋体’,‘隶书’,‘黑体’,‘微软雅黑’</p>
+<p>10.display：none，不显示。block|inline|inline-block|flex|table|table-cell</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

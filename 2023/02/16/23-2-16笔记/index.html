@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>前端：续-Css语法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>前端：续-Css语法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/16
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/前端/" style="color: #00bcd4">
+                    前端
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h2 id="css的三种引入方式"><a href="#css的三种引入方式" class="headerlink" title="css的三种引入方式"></a>css的三种引入方式</h2><p>3.引入外部样式表文件。推荐使用第三种方式。</p>
+<p>使用link标记</p>
+<p>相当于，html专用于框架，css专用于装饰，各司其职</p>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p><strong>块元素：可以设置尺寸。独占一行</strong></p>
+<p>内联元素：大小取决于内容所决定的，由内容所撑起</p>
+<p><strong>内联元素不可以设置大小</strong></p>
+<ul>
+<li><p>复合选择器：其中a和b都是其他选择器（基础选择器，或者其他复合选择器）</p>
+<p><u><strong>a和b，既可以为标签名，也可以为样式名</strong></u></p>
+<p>1.子代选择器：<strong>a&gt;b</strong>，tr&gt;td {……样式}，选择所有tr之下的td。<strong>tr是td的父</strong></p>
+<p>2.后代选择器：<strong>a b</strong>，选择a下的后代b。<strong>a是b的祖先</strong></p>
+<p>3.兄弟选择器：<strong>a~b</strong>所有弟，<strong>a+b</strong>紧邻弟</p>
+<ul>
+<li><p>所有弟选择器：crt~td {……样式}，选择与id &#x3D; crt的所有的类型为td的兄弟元素们</p>
+</li>
+<li><p>紧邻弟选择器：crt+td {……样式}，选择与id &#x3D; crt的相邻的类型为td的兄弟元素们</p>
+</li>
+</ul>
+<p>4.并集选择器：<strong>a，b</strong></p>
+<ul>
+<li>.crt，.l1 {……样式}</li>
+</ul>
+<p>5.交集选择器：<strong>ab</strong>，注意顺序，不要歧义</p>
+<ul>
+<li>div.crt {……样式}</li>
+</ul>
+</li>
+<li><p>超链接伪类选择器：爱恨准则。 love hate</p>
+<p>:link默认样式</p>
+<p>:visited访问之后的样式</p>
+<p>:hover鼠标划过的样式（不止可以用于a）</p>
+<p>:active激活的样式</p>
+<pre><code class="html">&lt;style type=&quot;text/css&quot;&gt;
+    /* 默认样式 */
+    a:link &#123;
+        color: red;
+        text-decoration: none;
+        cursor: default;
+    &#125;
+    /* 访问之后的样式 */
+    a:visited &#123;
+        color: blue;
+    &#125;
+    /* 鼠标滑过的样式，适用于所有标记 */
+    a:hover &#123;
+        border: 1px solid red;
+        font-weight: bold; */
+        font-size: 40px;
+        background-color: pink;
+    &#125;
+    /* 激活的样式*/
+    a:active &#123;
+            font-size: 50px; 
+    &#125;
+    .my &#123;
+        width: 300px;
+        height: 200px;
+        background-color: pink;
+    &#125;
+    /* 鼠标滑过的样式，适用于所有标记，不止适用于链接 */
+    .my:hover &#123;
+        background-color: gold;
+    &#125;
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;a  href=&quot;demo3.html&quot;&gt;走你。。。。&lt;/a&gt;
+        
+    &lt;div class=&quot;my&quot;&gt;		
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+</li>
+<li><p>伪元素选择器</p>
+<p>::before,::after</p>
+<pre><code class="html">&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        ul &#123;
+            list-style-type: none;
+        &#125;
+        /* 就是在li元素后在加入content内的元素，before则在其前面加入content内的元素 */
+        ul&gt;li::after &#123;
+            content: &quot;CCC&quot;;
+            border: 1px solid #ccc;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+</code></pre>
+</li>
+<li><p>其他伪类选择器</p>
+<p><strong>:first-child</strong>选中作为起父元素的第一个子元素的元素</p>
+<p><strong>:last-child</strong>选中作为起父元素的最后一个子元素的元素</p>
+<p>**:nth-child(n)**选中作为起父元素的第n个子元素的元素</p>
+<p>:not(s)排除掉指定的选择器，其他的s都给设置样式</p>
+<pre><code class="html">#tbl tr&gt;td &#123;
+    border: 1px solid #ccc;
+&#125;
+            
+#tbl tr&gt;td:first-child &#123;
+    background-color: red;
+&#125;
+            
+#tbl tr&gt;td:last-child &#123;
+    background-color: gray;
+&#125;
+            
+#tbl tr&gt;td:nth-child(2) &#123;
+    background-color: gray;
+&#125;
+</code></pre>
+</li>
+</ul>
+<h3 id="盒模型：box-model！！！"><a href="#盒模型：box-model！！！" class="headerlink" title="盒模型：box model！！！"></a>盒模型：box model！！！</h3><p>css将任意一个html原色都视为一个盒子，以div为例</p>
+<p>1、margin：外边距margin box</p>
+<ul>
+<li>margin：30px 20px 10px 5px(上右下左，顺时针)，四个值</li>
+<li>margin：30px 20px 10px（上，左右，下），三个值</li>
+<li>margin：30px 20px（上下，左右），两个值</li>
+<li>margin：30px（上下左右），一个值</li>
+</ul>
+<p>也可以分别设置</p>
+<ul>
+<li>margin-top上</li>
+<li>margin-bottom下</li>
+<li>margin-left左</li>
+<li>margin-right右</li>
+</ul>
+<pre><code class="html">&lt;style&gt;
+    .my &#123;
+        width: 300px;
+        height: 200px;
+        background-color: pink;
+                
+        /* 外边距 */
+        margin: 30px; 
+        margin: 30px 20px;
+        margin: 30px 20px 10px;
+        margin: 30px 20px 10px 5px; 
+                        
+        margin-top: 30px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 5px; 
+    &#125;
+&lt;/style&gt;
+</code></pre>
+<p>2、border：边框样式border box（width，style，color）</p>
+<ul>
+<li>border-width：30px 20px 10px 5px边框宽度</li>
+<li>border-style：solid solid dotted dashed边框样式</li>
+<li>border-color：red blue white yellow边框颜色</li>
+</ul>
+<p>也可以分别设置</p>
+<ul>
+<li>border-top上</li>
+<li>border-bottom下</li>
+<li>border-left左</li>
+<li>border-right右</li>
+</ul>
+<pre><code class="html">&lt;style&gt;
+    .my&#123;
+        /* 边框 */
+        border: 30px solid #000;		
+                
+        border-width:30px 30px 20px 5px;
+        border-style: solid solid dotted dashed;
+        border-color: #000 #0f0 #f00 blue;
+                
+        border-top-color: #0f0;
+        border-left-width: 2px;
+                
+                
+        border-top: 30px solid #000;
+        border-bottom: 10px dotted red; 
+        &#125;
+&lt;/style&gt;
+</code></pre>
+<p>3、padding：内边距 padding box</p>
+<pre><code class="html">&lt;style&gt;
+    .my&#123;
+        /* 内边距 */
+        padding: 30px; 
+        padding-left: 20px;
+        padding-right: 50px; 
+                
+                
+        /* 不独占一行的块元素 */
+        display: inline-block;
+        &#125;
+&lt;/style&gt;		
+        
+</code></pre>
+<p>4、content：最里面是内容，content-area，width height是给内容设置的</p>
+<p>style中默认设置尺寸，设置的就是内容区域</p>
+<h3 id="常用样式"><a href="#常用样式" class="headerlink" title="常用样式"></a>常用样式</h3><p>1.border：边框样式</p>
+<ul>
+<li><p>border: 1px solid blue; 边框</p>
+</li>
+<li><p>solid实线，dashed虚线 ，dotted点线</p>
+</li>
+</ul>
+<p>2.border-radius：边框圆角</p>
+<p>3.border-collapse：collapse：边框折叠</p>
+<pre><code class="html">#tbl &#123;
+    border-collapse: collapse;
+&#125;
+/* 用id=“tb1”调用 */
+</code></pre>
+<p>4.font-weight：字重。normal正常，bold边框，lighter高亮，bolder加粗</p>
+<p>5.<strong>display：显示，none（不显示），inline-block（行内块），block（块），inline（内联）</strong></p>
+<p>6.margin：外边距</p>
+<p>7.padding：内边距</p>
+<p>8.border-width：边框宽度</p>
+<p>9.border-style：边框样式</p>
+<p>10.border-color：边框颜色</p>
+<p>11.visibility：hidden，隐藏了</p>
+<p>12.text-decoration：设置a中的链接下划线，none</p>
+<p>13.<strong>box-sizing：控制尺寸施加在哪个盒子上，border-box包含边框，content-box在内容区域外面</strong></p>
+<p>14：magin：0 auto，自动调整，居中</p>
+<p>15.overfow：内容溢出，进行处理scroll，hidden</p>
+<ul>
+<li>overfow-x</li>
+<li>overfow-y</li>
+</ul>
+<p>16.<strong>list-style-type：设置列表前的原点，none。</strong></p>
+<p>text-align：文本水平对齐</p>
+<p>text-decoration： none;</p>
+<p>ul是无序列表，全称是unordered list，先来个例子：<br>  ● 张三<br>  ●李四<br>  ●王二<br>  ●刘五<br>  ol是有序列表 ,全称是ordered list，同样举个例子：<br> 1、张三<br> 2、李四<br> 3、王二<br> 4、刘五</p>
+<p>这就是ul与ol的区别。<br>ul与ol前的符号是可以修改的。只需要修改它们的type值。<br>ul的type属性有：disc—实心圆(默认）、circle—空心圆、square—实心方块<br>ol的type属性有：1—数字（默认）、a—小写字母、A—大写字母、i—小写希腊字母、I—大写希腊字母。<br>通过CSS也可以在将它们前的符号改为图片，这样列表显示就会更美观了。<br>ul 是块级元素可以定义宽和高 ,li表示行排列不能单独使用，需要在ul和ol里面，配合使用。</p>
+<p>17.calc()函数：不同单位之间的运算，可以计算百分比，但是必须要有空格</p>
+<h4 id="背景图片的设置："><a href="#背景图片的设置：" class="headerlink" title="背景图片的设置："></a>背景图片的设置：</h4><p>background：第一个参数是背景色，第二个参数是图片地址，第三个参数是平铺，第四个参数是对齐位置（垂直，水平）&#x2F;100% auto</p>
+<p>background：pink  url  no-repeat top left</p>
+<pre><code class="html">&lt;div&gt;
+    &lt;img src=&quot;&quot;&gt;
+&lt;/div&gt;
+
+background: url(img/016.jpg) pink  url  no-repeat top left/100% auto
+
+background-color: pink;
+background-image: url();
+background-repeat: no-repeat;
+background-position: top right;
+//还可以写成百分比 50% 50%，还可以写成绝对像素 50px 50px
+
+//背景图的尺寸，可以使用像素，也可以使用百分比
+background-size: 100% auto;//cover，contain
+</code></pre>
+<h3 id="浮动：是一种可以破坏文档流规则的机制。"><a href="#浮动：是一种可以破坏文档流规则的机制。" class="headerlink" title="浮动：是一种可以破坏文档流规则的机制。"></a>浮动：是一种可以破坏文档流规则的机制。</h3><p>通俗来说就是将这一元素浮起来，将会覆盖其之下的元素</p>
+<p>浮动float：left|right</p>
+<p>清除clear：</p>
+<p>clear：both</p>
+<p>1.必须使用一个兄弟元素来清除浮动</p>
+<p>2.必须在浮动元素的后面</p>
+<p>3.必须是块元素</p>
+<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><h5 id="1-横向菜单"><a href="#1-横向菜单" class="headerlink" title="1.横向菜单"></a>1.横向菜单</h5><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;横向菜单&lt;/title&gt;
+        &lt;style&gt;
+            body &#123;
+                margin: 0;
+            &#125;
+            .nav &#123;
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                background-color: #222;
+            &#125;
+            .nav&gt;li &#123;
+                display: inline;
+            &#125;
+            .nav&gt;li&gt;a &#123;
+                text-decoration: none;
+                color: #ddd;
+                padding: 5px 10px;
+                display: inline-block;
+            &#125;
+            .nav&gt;li&gt;a:hover &#123;
+                background-color: red;
+            &#125;
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;ul class=&quot;nav&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;产品列表&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;设备列表&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;人事招聘&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="2-上中下"><a href="#2-上中下" class="headerlink" title="2.上中下"></a>2.上中下</h5><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            body&#123;
+                margin: 0;
+                border: 2px solid red;
+                box-sizing: border-box;
+            &#125;
+            html,body &#123;
+                height: 100%;
+            &#125;
+            .main &#123;
+                width: 700px;
+                height: 100%;
+                background-color: pink;
+                margin: 0 auto;
+            &#125;
+            .top &#123;
+                height: 100px;
+                background-color: black;
+            &#125;
+            
+            .bottom &#123;
+                height: 100px;
+                background-color: gold;
+            &#125;
+            .middle &#123;
+                height: calc(100% - 200px);
+            &#125;
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;main&quot;&gt;
+            &lt;div class=&quot;top&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;bottom&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="3-左中右"><a href="#3-左中右" class="headerlink" title="3.左中右"></a>3.左中右</h5><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            body &#123;
+                margin: 0;
+                border: 2px solid red;
+                box-sizing: border-box;
+            &#125;
+
+            html,
+            body &#123;
+                height: 100%;
+            &#125;
+
+            .main &#123;
+                width: 700px;
+                height: 100%;
+                background-color: pink;
+                margin: 0 auto;
+                font-size: 0;
+            &#125;
+
+            .main&gt;div &#123;
+                display: inline-block;
+                font-size: 16px;
+            &#125;
+
+            .left &#123;
+                width: 100px;
+                height: 100%;
+                background-color: black;
+            &#125;
+
+            .right &#123;
+                width: 100px;
+                height: 100%;
+                background-color: gold;
+            &#125;
+
+            .middle &#123;
+                height: 100%;
+                width: calc(100% - 200px);
+            &#125;
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;main&quot;&gt;
+            &lt;div class=&quot;left&quot;&gt;111&lt;/div&gt;
+            &lt;div class=&quot;middle&quot;&gt;222&lt;/div&gt;
+            &lt;div class=&quot;right&quot;&gt;3333&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="4-运用calc-函数做等分，注意：calc中在运算符前后必须要加空格"><a href="#4-运用calc-函数做等分，注意：calc中在运算符前后必须要加空格" class="headerlink" title="4.运用calc()函数做等分，注意：calc中在运算符前后必须要加空格"></a>4.运用calc()函数做等分，注意：calc中在运算符前后必须要加空格</h5><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            .my &#123;
+                width: 700px;
+                height: 400px;
+                margin: 0 auto;
+                border: 2px solid #ccc;
+            &#125;
+            .my&gt;div &#123;
+                height: 100%;
+                background-color: pink;
+                float: left;
+                width: calc(20% - 8px);
+                margin-right: 10px;
+            &#125;
+            .my&gt;div:last-child &#123;
+                margin-right: 0;
+            &#125;
+            .my::after &#123;
+                content: &quot;&quot;;
+                clear: both;
+                display: block;
+                height: 0;
+            &#125;
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;my&quot;&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="5-背景图background运用"><a href="#5-背景图background运用" class="headerlink" title="5.背景图background运用"></a>5.背景图background运用</h5><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            body &#123;
+                /* background: url(img/092.png); */
+            &#125;
+            .my &#123;
+                width: 300px;
+                height: 200px;
+                background-color: pink;
+                overflow: hidden;
+                margin-bottom: 10px;
+            &#125;
+            .my&gt;img &#123;
+                /* width: 100%; */
+                height: 100%;
+            &#125;
+            .my:nth-child(2) &#123;
+                /* background: pink url(img/016.jpg) no-repeat top right/100% auto; */
+                
+                background-color: pink;
+                background-image: url(img/035.jpg);
+                background-repeat: no-repeat;
+                
+                /* 背景图的位置 */
+                background-position: center center;
+                
+                /* 背景图的尺寸 */
+                background-size: cover;
+                
+                /* background-origin: ;
+                background-clip: ; */
+            &#125;
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;my&quot;&gt;
+            &lt;img src=&quot;img/016.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- 设置背景图 --&gt;
+        &lt;div class=&quot;my&quot;&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>6.浮动：float</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;style&gt;
+            div:not(.clear) &#123;
+                width: 300px;
+                height: 200px;
+                margin-bottom: 10px;	
+            &#125;
+            .div1 &#123;
+                background-color: black;
+                float: left;
+            &#125;
+            .div2 &#123;
+                background-color: gold;
+                /* width: 400px; */
+                /* height: 300px; */
+                float: left;
+            &#125;
+            .div3 &#123;
+                background-color: silver;
+                /* height: 300px; */
+                float: left;
+            &#125;
+            .my &#123;
+                width: 100px;
+                height: 200px;
+                background-color: red;
+            &#125;
+            .clear &#123;
+                /* 清除浮动 */
+                clear: both;
+            &#125;
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;div1&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;div2&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;div3&quot;&gt;3&lt;/div&gt;
+        
+        &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;my&quot;&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

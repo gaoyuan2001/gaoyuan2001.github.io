@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Thymeleaf模板引擎，分页 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>Thymeleaf模板引擎，分页 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/3/20
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #03a9f4">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h1 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h1><p>可以渲染模板的引擎</p>
+<p>jsp：官方的老牌的模板引擎。目前来说弊大于利，不建议使用</p>
+<p>freemarker：</p>
+<p>velocity：</p>
+<p>httl：</p>
+<p>thymeleaf：强烈推荐。将所有的逻辑编写在标记内部。扩展名是.html。既可作动态模板（服务器解析），也可以作静态模板（浏览器解析）</p>
+<h3 id="整合thymeleaf"><a href="#整合thymeleaf" class="headerlink" title="整合thymeleaf"></a>整合thymeleaf</h3><p>1、引入依赖：</p>
+<pre><code class="xml">&lt;!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>2、在application中进行配置</p>
+<ul>
+<li><p>把jsp的去掉</p>
+</li>
+<li><p>配置，很多默认即可，只是在开发期间，把缓存关闭</p>
+</li>
+<li><p>编写模板html页面，使用th.XXX属性</p>
+<p>常用th.XXX属性：</p>
+<p>大多数的html属性，都支持th，表示动态的，可以靠${……}来取值</p>
+<ul>
+<li><p>text：定义标记中的内容</p>
+</li>
+<li><p>each：对域中集合进行迭代</p>
+<pre><code class="html">&lt;tr th:each:&quot;stu : $&#123;students&#125;&quot;&gt;
+    &lt;td th:text=&quot;$&#123;stu.id&#125;&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+</code></pre>
+</li>
+<li><p>if：条件判断，单分支（没有else，可以使用not取反）</p>
+<pre><code class="html">&lt;td th:if=&quot;$&#123;stu.name.startsWith(&#39;张&#39;)&#125;&quot; th:text=&quot;$&#123;stu.name&#125;&quot; class=&quot;red&quot;&gt;&lt;/td&gt;
+&lt;td th:if=&quot;$&#123;not stu.name.startsWith(&#39;张&#39;)&#125;&quot; th:text=&#39;$&#123;stu.name&#125;&#39;&gt;&lt;/td&gt;
+</code></pre>
+<p><strong>与或非： and，or，not</strong></p>
+<p>比较运算符：eq lt gt ne</p>
+</li>
+<li><p>unless：除了</p>
+</li>
+<li><p>switch和case：选择，类似于Java中的额switch，其中case&#x3D;”*”代表其余所有的情况</p>
+</li>
+<li><p>inline：行内表达式，[[${……}]]</p>
+</li>
+<li><p>通用的自定义属性的属性：th:attr&#x3D;”key &#x3D; ${value}”</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><h4 id="路径表达式：-x2F-xxxxxxxx-，必须以-x2F-开头，以上下文路径为参照物"><a href="#路径表达式：-x2F-xxxxxxxx-，必须以-x2F-开头，以上下文路径为参照物" class="headerlink" title="路径表达式：@{&#x2F;xxxxxxxx}，必须以&#x2F;开头，以上下文路径为参照物"></a>路径表达式：@{&#x2F;xxxxxxxx}，必须以&#x2F;开头，以上下文路径为参照物</h4><p>th:href&#x3D;”@{……}”</p>
+<h4 id="thymeleaf行内表达式：th-inline"><a href="#thymeleaf行内表达式：th-inline" class="headerlink" title="thymeleaf行内表达式：th:inline"></a>thymeleaf行内表达式：th:inline</h4><h4 id="……"><a href="#……" class="headerlink" title="[[${……}]]"></a>[[${……}]]</h4><pre><code class="html">&lt;script type=&quot;text/javascript&quot; th:inline=&quot;javascript&quot;&gt;
+    const ctx = /*[[$&#123;ctx&#125;]]*/&quot;&quot;;
+&lt;/script&gt;
+</code></pre>
+<p>日期格式转换：</p>
+<p>运用内置工具类dates，前提model中的属性是Date类型的，如果想要支持LocalDate类型需要引入依赖</p>
+<p>&#96;&#96;&#96;html<br> th:text&#x3D;”$</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

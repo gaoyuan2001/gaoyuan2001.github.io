@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>数据结构，注解，Jdk8 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>数据结构，注解，Jdk8 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/14
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/算法/" style="color: #ff7d73">
+                    算法
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/java/" style="color: #ff7d73">
+                    java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h2 id="数据结构：树"><a href="#数据结构：树" class="headerlink" title="数据结构：树"></a>数据结构：树</h2><h4 id="平衡二叉树（AVL）：旋转"><a href="#平衡二叉树（AVL）：旋转" class="headerlink" title="平衡二叉树（AVL）：旋转"></a>平衡二叉树（AVL）：旋转</h4><p>二叉排序树</p>
+<p>左左：旋转一次</p>
+<p>右右：旋转一次</p>
+<p>左右：旋转两次</p>
+<p>右左：旋转两次</p>
+<h4 id="红黑树：一种自平衡二叉查找树"><a href="#红黑树：一种自平衡二叉查找树" class="headerlink" title="红黑树：一种自平衡二叉查找树"></a>红黑树：一种自平衡二叉查找树</h4><p>红黑树时一种含有红黑节点并能自平衡的二叉查找树</p>
+<p>hashmap底层实现是 数组 + 链表 —&gt; 数组 + 红黑树</p>
+<p>链表长度大于8时转换为红黑树</p>
+<p>红黑树不是严格意义上的平衡二叉树</p>
+<p>结点需要标注颜色：color：black、red</p>
+<ul>
+<li><p>1.根节点是黑色的，每个叶子节点是黑色</p>
+</li>
+<li><p>2.每个红色结点的两个子结点一定都是黑色</p>
+</li>
+<li><p>3.任意一结点到每个叶子结点的路径都包含数量相同的黑结点</p>
+</li>
+<li><p>4.如果一个结点存在黑子结点，那么该结点肯定有两个子结点</p>
+</li>
+</ul>
+<h4 id="B树（B-树）"><a href="#B树（B-树）" class="headerlink" title="B树（B-树）"></a>B树（B-树）</h4><p>多路查找：深度浅，IO次数少</p>
+<p>B-树就是B树(Balanced Tree)，是一种<strong>平衡的多路查找树</strong>。一棵m阶B树(Balanced Tree of order m)是一棵平衡的m路搜索树。它或者是空树，或者是满足下列性质的树：</p>
+<ul>
+<li><p>树中的每个结点至多有m棵子树。</p>
+</li>
+<li><p>若根结点不是叶子结点，则至少有两棵子树。</p>
+</li>
+<li><p>除根之外的所有非终端结点至少有[m&#x2F;2]棵子树。</p>
+</li>
+<li><p>所有的非终端结点中包括如下信息的数据</p>
+<p>（n,A0,K1,A1,K2,A2,….,Kn,An）</p>
+<p>其中：Ki（i&#x3D;1,2,…,n）为关键码，且Ki &lt; K(i+1)，</p>
+<p>Ai 为指向子树根结点的指针(i&#x3D;0,1,…,n)，且指针A(i-1) 所指子树中所有结点的关键码均小于Ki (i&#x3D;1,2,…,n)，An 所指子树中所有结点的关键码均大于Kn. </p>
+<p>n 为关键码的个数。</p>
+</li>
+<li><p>所有的叶子结点都出现在同一层次上，并且不带信息（可以看作是外部结点或查找失败的结点，实际上这些结点不存在，指向这些结点的指针为空）。</p>
+</li>
+</ul>
+<h4 id="B-树：二叉排序树-平衡二叉树-B树"><a href="#B-树：二叉排序树-平衡二叉树-B树" class="headerlink" title="B+树：二叉排序树 + 平衡二叉树 + B树"></a>B+树：二叉排序树 + 平衡二叉树 + B树</h4><p>数据仅存储于叶子结点上</p>
+<p>B树和B+树的应用场景：数据库索引，大数据</p>
+<p>B+树是B-树的变体，也是一种多路搜索树：</p>
+<p>其定义基本与B-树同，除了：</p>
+<ul>
+<li><p>1.非叶子结点的子树指针与关键字个数相同；</p>
+</li>
+<li><p>2.非叶子结点的子树指针P[i]，指向关键字值属于[K[i], K[i+1])的子树（B-树是开区间）；</p>
+</li>
+<li><p>3.为所有叶子结点增加一个链指针；</p>
+</li>
+<li><p>4.所有关键字都在叶子结点出现；</p>
+</li>
+</ul>
+<h4 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h4><p>可以通过关键字直接找到数据的存储位置，不需要任何的比较</p>
+<p>hashcode通过hash函数得到</p>
+<p>哈希冲突：当H（key1）和H（key2）的结果一样时，会造成冲突</p>
+<p>hashmap：使用的是 链地址法 避免哈希冲突</p>
+<hr>
+<h2 id="注解：就是注释的一种"><a href="#注解：就是注释的一种" class="headerlink" title="注解：就是注释的一种"></a>注解：就是注释的一种</h2><p>其一类型的注解，只有标识作用，在编译后即擦除，比如：@Override，@FunctionalInterface</p>
+<p>还有一类注解，结合反射，可以起到一定的程序逻辑，编译后依然存在</p>
+<hr>
+<h4 id="自定义注解："><a href="#自定义注解：" class="headerlink" title="自定义注解："></a>自定义注解：</h4><p>1.使用@interface，不具备继承能力</p>
+<p>2.类似于定义抽象方法，但是无参，可以通过default定义默认值。<strong>抽象方法返回值的类型就是值的类型</strong></p>
+<p>3.{}代表数组</p>
+<p>4.返回值只能是基本数据类型（封装类），数组，或者引用类型，不能使用集合</p>
+<p>关键字：</p>
+<p>@Target(Element.Type)&#x2F;&#x2F;此注释将放在哪里</p>
+<p>@Retention(RententionPolicy.RUNTIME)此注释的作用时间，SOURCE（源码时期）、ClASS（类时期）、RUNTIME（运行时期）</p>
+<p>结合反射，可以起到一定的程序逻辑，编译后依然存在</p>
+<p>必须结合反射才能拿到注解里的值</p>
+<pre><code class="java">Class&lt;?&gt; clazz = A.class;
+
+Description annotation = clazz.getDeclareAnnotation(Description.class);
+
+System.out.println(Arrays.toString(annotation.author);
+System.out.println(annotation.version);
+</code></pre>
+<hr>
+<h2 id="jdk8新特性："><a href="#jdk8新特性：" class="headerlink" title="jdk8新特性："></a>jdk8新特性：</h2><p>里程碑版本：5，8，11（LTS），17（LTS）</p>
+<ul>
+<li><p>1.函数式接口。</p>
+<p>只能有一个抽象方法（不包含toString()，equals() 等Object中的方法）的接口，可以添加@FunctionalInterface接口，但不是必须的</p>
+<p>Runnable就是一个函数式接口</p>
+<pre><code class="java">@FunctionalInterface
+public interface Study &#123;
+    public void study(Study a);//一个抽象方法
+    
+    String toString();//Object类里的方法
+    
+    public static void sayHello()&#123;//静态方法
+        System.out.println(&quot;Hello&quot;);
+    &#125;
+    
+    public default void play()&#123;//默认方法
+        System.out.println(&quot;play&quot;);
+    &#125;
+&#125;
+
+main&#123;
+    Study.super.play();//实现类（或者实现类的子类）调用接口里的play默认方法，接口名.super.默认方法名
+&#125;
+</code></pre>
+</li>
+<li><p>2.接口的静态方法和默认方法，</p>
+<p>静态方法：static修饰。接口.方法名调用</p>
+<p>默认方法：default修饰。直接被继承到其实现类中，也可以在实现类重写，但对实现类及其子类不会产生任何影响，</p>
+<p>　　　　　实现类调用：接口名.super.默认方法名（自动默认全有）</p>
+</li>
+<li><p>3.lambda表达式与方法引用，<strong>（只能对函数式接口使用）</strong></p>
+<p>括号里的是接口的抽象方法的参数列表，-&gt; 箭头后面表示方法体，前提A必须是函数式接口</p>
+<p>当参数个数只有一个时，可以省略小括号，也可以省略数据类型</p>
+<p>当参数个数有多个时，可以省略数据类型</p>
+<p>如果方法体只有一句可以省略大括号，也可以省略return</p>
+<p>如果方法体有多句时，不可以省略大括号</p>
+<pre><code class="java">A a = () -&gt; System.out.println(&quot;执行任务&quot;)；
+
+study((int a)-&gt; System.out.println(a + &quot;执行任务&quot;));//接口的抽象方法
+</code></pre>
+<pre><code class="java">//线程中lambda表达式的应用
+//这里也是实现了接口函数式接口Runnable，其中的唯一抽象方法run()
+//所以这里可以用lambda表达式代替run()方法
+//原来写成：
+Thread t = new Thread(new Runnable() &#123;
+            @Override
+            public void run() &#123;
+                System.out.println(&quot;aaaa&quot;);
+            &#125;
+        &#125;);
+        t.start();
+//用lambda表达式更改后：
+Thread t = new Thread(()-&gt; System.out.println(&quot;aaaa&quot;));
+t.start();
+
+
+//自己创建函数式接口
+public interface Logger &#123;
+    void info(String msg);
+&#125;
+
+//这里的()对应的是函数式接口的抽象方法的参数列表，因为定义Logger接口时有唯一的带参的抽象函数，所以要有一个t
+//t的类型可以省略，到时候调用的时候自动匹配
+Logger logger = (t) -&gt; System.out.println(t);
+
+//这里用的时方法引用::，你的想法是输出一个参数，而System.out.println()正好是把括号内的一个参数输出，返回值都为空，所以你可以直接引用此方法为你服务
+Logger logger2 = System.out::println;
+</code></pre>
+<p>方法引用::，双冒号</p>
+<p>当你想执行的方法，和一个已有的方法参数一样时（返回值，参数列表，方法体），你可以使用方法引用直接引用</p>
+<pre><code class="java">study(Integer :: sum);
+</code></pre>
+</li>
+<li><p>4.Stream流操作</p>
+<p>中间操作：返回的值仍然是流，还可以继续操作</p>
+<p>终结操作：返回的值不是流类，可以直接输出了</p>
+<pre><code class="java">List&lt;Integer&gt; list = List.of(1, 2, 3, 4, 5);
+//列表的流，list.stream()
+//filter()过滤方法，把满足条件的元素筛选出来
+list.stream().filter(t -&gt; t % 2 == 0)
+        .forEach(System.out::println);//输出：2，换行，4
+
+//此语句是对上面的改版，采用并行的方法同时筛选，同时输出的结果
+//列表的并行流，多线程的运用
+String s = list.parallelStream()
+        .filter(t -&gt; t % 2 == 0)
+        .map(t-&gt;String.valueOf(t))//map方法是映射，把t类型转换为String类型，并返回String类型
+        .collect(Collectors.joining(&quot;,&quot;));//把并行的结果用，连接起来
+
+System.out.println(s);//输出：2，4
+
+//以下是整数流
+//此算法是计算出1到100的叠加
+//rangeClose(1,100)是取闭区间[1，100]
+//redece(,),其参数列表正好是两个，返回值是一个，正好和我们需求一致，所以可以直接使用lambda表达式
+OptionalInt oi =  IntStream.rangeClosed(1, 100).reduce((a, b) -&gt; a + b);
+
+System.out.println(oi.getAsInt());//输出：5050
+</code></pre>
+</li>
+<li><p>5.新增时间：LocalDate，LocalTime，LocalDateTime</p>
+<p>Date已经过时了，其中很多方法已经被calendar类中的方法替代</p>
+<p>String -&gt; Date &#x2F; LocalDate</p>
+<p>以下源码是：把String格式的日期转为Date格式的方法，格式yyyy-MM-dd</p>
+<pre><code class="java">String birthday = &quot;2001-01-01&quot;;
+SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+try &#123;
+    Date date = (Date) format.parse(birthday);
+    emp.setBirthday(date);
+    break;
+&#125; catch (Exception e) &#123;
+    System.out.println(&quot;输入格式不正确，请重新输入&quot;);
+    //e.printStackTrace();
+&#125;
+</code></pre>
+<p>以下源码是：把String格式的日期转为LocalDate格式的方法，格式yyyy-MM-dd</p>
+<pre><code class="java">try &#123;
+    LocalDate ld = LocalDate.parse(birthday, DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&quot;));
+&#125; catch (Exception e) &#123;
+    System.out.println(&quot;输入格式不正确，请重新输入&quot;);
+    // e.printStackTrace();
+&#125;
+</code></pre>
+</li>
+</ul>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

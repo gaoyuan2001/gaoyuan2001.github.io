@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>续-Js语法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>续-Js语法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/20
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/前端/" style="color: #00bcd4">
+                    前端
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h2 id="DOM：Document-Object-Model-文档对象模型"><a href="#DOM：Document-Object-Model-文档对象模型" class="headerlink" title="DOM：Document Object Model 文档对象模型"></a>DOM：Document Object Model 文档对象模型</h2><p>在js中，将每一个html元素都视作一个对象。通过js就可以操作这些对象</p>
+<p>有键值对，即对象</p>
+<p>my.style.backgroundColor &#x3D; “pink”&#x2F;&#x2F;键值对， backgroundColor就是一个key，把value“pink”赋给key<br>my.style[“backgronud - color”] &#x3D; “pink”;</p>
+<p>在js钟，有一些类型，拥有和数组类似的行为（可以用下标索引，有length属性），称之为类数组 </p>
+<p>类数组，HTMLCollection类型的对象</p>
+<h4 id="获取dom元素的方法"><a href="#获取dom元素的方法" class="headerlink" title="获取dom元素的方法"></a>获取dom元素的方法</h4><p>1.document.getElementById();&#x2F;&#x2F;不用</p>
+<p>2.document.getElementByClassName();&#x2F;&#x2F;不用</p>
+<p>3.let my &#x3D; document.querySelectAll()&#x2F;&#x2F;在dom上下文，去获取所有匹配的元素，返回NodeList对象&#x2F;&#x2F;(#idname)(.classname)(“div”)</p>
+<p>4.let my &#x3D; document.querySelect()&#x2F;&#x2F;在dom上下文，只会获取第一个匹配的元素</p>
+<pre><code class="html">&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        .my &#123;
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;my&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;my&quot;&gt;&lt;/div&gt;	
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        //类数组，HTMLColleciotn类型的对象
+        //let my = document.getElementsByClassName(&quot;my&quot;);
+        
+        //返回NodeList类型
+        let my = document.querySelectorAll(&quot;.my&quot;);
+        console.log(my);
+        console.log(Array.isArray(my));
+        console.log(my.length);
+        console.log(my[0]);
+        console.log(my[1]);
+        
+        my[0].style.backgroundColor = &quot;red&quot;;
+        my[1].style.backgroundColor = &quot;green&quot;;
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h4 id="dom对象常用属性和行为"><a href="#dom对象常用属性和行为" class="headerlink" title="dom对象常用属性和行为"></a>dom对象常用属性和行为</h4><p>1.innerText：指代元素的内容，可读可写</p>
+<p>2.innerHtml：指代元素的Html内容，可读可写</p>
+<p>b.name 和 b[“name”]一样，都是b对象通过key—name，取得value</p>
+<p>3.style：指代元素行内样式</p>
+<p>4.className：读写dom元素的class值</p>
+<p>5.tagName：读出dom元素的标签值，返回一个标签名，只可读</p>
+<p>6.classList.：用于指代dom元素的class值的一个对象，进行类名增加&#x2F;删除等，add();romove();</p>
+<p>7.removeAttribute(“属性名”)：用对象调用，参数为属性名称，删除对象的一个属性</p>
+<p>8.hasAttribute(“属性名”)：用于判断是否拥有某个指定名称的属性</p>
+<p>9.getAttribute(“属性名”)：获取某个属性的值</p>
+<p>10.setAttribute(“属性名”,”要给属性名的值”)：用于设置（增加）属性</p>
+<h5 id="11-增删改查："><a href="#11-增删改查：" class="headerlink" title="11.增删改查："></a>11.增删改查：</h5><p>查：query：</p>
+<ul>
+<li>document.querySelectAll()</li>
+<li>document.querySelect()</li>
+</ul>
+<p>增：</p>
+<ul>
+<li>createElement(“li”)：凭空创造一个新的dom元素</li>
+<li>parent.appendChild(child)：父dom追加一个字元素（child）</li>
+<li>parent.insertBefore(newLi,lastLi)：可以指定添加在某一个元素之前</li>
+</ul>
+<pre><code class="html">let u = document.querySelector(&quot;ul&quot;);
+
+let newLi = document.createElement(&quot;li&quot;);
+
+newLi.innerText = &quot;5&quot;;
+
+u.appendChild(li)；//追加已有的元素，相当于转移，追加没有的元素，相当于增加
+</code></pre>
+<p>删：domElement.romove();&#x2F;&#x2F;dom元素移除自身</p>
+<p>parent.removeChild(child);用父dom移除一个指定的子元素</p>
+<pre><code class="html">&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        .my &#123;
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        &#125;
+
+        .red &#123;
+            background-color: red;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;mydiv&quot; class=&quot;my&quot;&gt;111&lt;/div&gt;
+
+    &lt;input placeholder=&quot;请输入用户名&quot; id=&quot;username&quot; name=&quot;username&quot; type=&quot;text&quot; value=&quot;abc&quot;&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        let my = document.querySelector(&quot;.my&quot;);
+        //my.className = &quot;my red&quot;;
+        my.classList.add(&quot;red&quot;);
+        my.classList.remove(&quot;my&quot;);
+
+        console.log(my.id);
+
+        let u = document.querySelector(&quot;#username&quot;);
+        console.log(u.id);
+        console.log(u.name);
+        console.log(u.type);
+        console.log(u.value);
+
+        u.removeAttribute(&quot;id&quot;);
+
+        console.log(u.hasAttribute(&quot;name&quot;));
+
+        console.log(u.getAttribute(&quot;placeholder&quot;));
+
+        u.setAttribute(&quot;data&quot;, &quot;李四&quot;);
+        u.setAttribute(&quot;disabled&quot;, &quot;disabled&quot;);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        let u = document.querySelector(&quot;ul&quot;);
+
+        //增删改
+        let newLi = document.createElement(&quot;li&quot;);
+        newLi.innerText = &quot;5&quot;;
+
+        //let li = document.querySelector(&quot;ul&gt;li:nth-child(2)&quot;);
+        //追加一个子元素
+        //u.appendChild(newLi);
+        let lastLi = document.querySelector(&quot;ul&gt;li:last-child&quot;);
+        //添加一个子元素到某个元素的前面
+        u.insertBefore(newLi, lastLi);
+        
+        //dom元素移除自身
+        //lastLi.remove();
+        
+        u.removeChild(lastLi);		
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h5 id="12-四向遍历："><a href="#12-四向遍历：" class="headerlink" title="12.四向遍历："></a>12.四向遍历：</h5><ul>
+<li><p>向上查找</p>
+<p>parentElement：获取父元素，唯一</p>
+</li>
+<li><p>向下查找</p>
+<p>childElementCount：获取子元素的个数，只读</p>
+<p>children：获取所有子元素，返回值是类数组</p>
+</li>
+<li><p>向左查找</p>
+<p>previousElementSibling：获取兄元素，唯一，如果没有，返回null</p>
+</li>
+<li><p>向右查找</p>
+<p>nextElementSibling：获取弟元素，唯一，如果没有，返回null</p>
+</li>
+</ul>
+<pre><code class="html">&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        #tbl &#123;
+            border-collapse: collapse;
+        &#125;
+        #tbl tr&gt;td &#123;
+             border: 1px solid #ccc;
+                padding: 10px 10px;
+                text-align: center;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table id=&quot;tbl&quot;&gt;
+        &lt;tr class=&quot;first&quot;&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;second&quot;&gt;
+            &lt;td&gt;4&lt;/td&gt;
+            &lt;td class=&quot;ctr&quot;&gt;5&lt;/td&gt;
+            &lt;td&gt;6&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;third&quot;&gt;
+            &lt;td&gt;7&lt;/td&gt;
+            &lt;td&gt;8&lt;/td&gt;
+            &lt;td&gt;9&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    let ctr = document.querySelector(&quot;.ctr&quot;);
+    //四向遍历
+    //向上找父元素
+    let tr = ctr.parentElement;
+    console.log(tr.className);
+        
+    let table = tr.parentElement;
+    if(table.tagName.toLowerCase() === &quot;tbody&quot;) &#123;
+        table = table.parentElement;
+    &#125;
+        
+    //向下找子元素
+    console.log(table.tagName);
+    console.log(table.childElementCount);//子元素的个数
+    console.log(table.children[0].childElementCount);
+        
+    let trs = table.children[0].children;
+    for(let i=0;i&lt;trs.length;i++) &#123;
+        let tr = trs[i];
+        console.log(tr.className);
+    &#125;	
+        
+    //向前找兄元素
+    let prev = ctr.previousElementSibling;
+    console.log(prev.innerHTML);
+        
+    //向后找弟元素
+    let next = ctr.nextElementSibling;
+    console.log(next.innerHTML);
+    
+    let firstTd = document.querySelector(&quot;tr.first&gt;td:first-child&quot;);
+    
+    console.log(firstTd.previousElementSibling);		
+&lt;/script&gt;
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

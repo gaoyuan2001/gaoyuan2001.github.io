@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>JavaSE基础语法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>JavaSE基础语法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/12/28
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #00a596">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <p><strong>6.Java语言 语法</strong><br>　　运算符<br>　　　1.算术运算符 + - * &#x2F; %（注：除法中两个操作数都是整数，结果也是正数，做整除运算，如果其中一个不是整数则不是整除）<br>　　　2.比较运算符<br>　　　3.逻辑运算符，参与运算的操作数都是Boolean型的，其结果也是Boolean型<br>　　　4.赋值运算符  注：a++（先取值后自增）++a（先自增后取值）<br>　　　5.位运算符 不讲，按bit运算<br>　　　6.条件运算符  max &#x3D; a &gt; b ? a : b;<br>　　　7.其他  </p>
+<p>　　优先级：小括号&gt;单目运算符&gt;算数&gt;比较&gt;逻辑(与或)&gt;赋值<br>　　　单目：只需一个操作数！，+，-，++，–等   </p>
+<p>　　表达式：操作数和运算符组合到一起的式子。</p>
+<p>　　语句：由分号结束的完整的指令<br>　　　在Java中必须以英文状态下的分号结束;;;;;;;;</p>
+<p>　　流程控制<br>　　　一、顺序结构：按照顺序依次执行<br>　　　二、选择结构，分支结构：<br>　　　　1.单分支 if（）{}<br>　　　　2.双分支 if（）{} else {}<br>　　　　3.嵌套多分支 if（）{ if（）{ } }<br>　　　　4.switch结构<br>　　　三、循环结构<br>　　　　while(表达式){循环体}：先判断后循环，比较适合没有循环变量的场景<br>　　　　do{循环体}while(表达式)：先循环后判断，至少执行一次循环体<br>　　　　for循环：for(表达式1;表达式2;表达式3){循环体},表达式1和表达式3可以没有，但是分号不能没有。特别适合有循环变量的场景</p>
+<pre><code class="java">package com.yuan;  
+import java.io.*;  
+import java.util.*;  
+public class Test2 &#123;  
+    public static void main(String[] args) &#123;
+
+        int x = 10;// 顺序结构
+        int y = 20;
+        System.out.println(x + y);
+
+        if (x &gt; y) &#123; // 括号里的结果是Boolean值(true或false)
+            System.out.println(&quot;a大于b&quot;);
+        &#125; else if (y &gt; x) &#123;
+            System.out.println(&quot;b大于a&quot;);
+        &#125; else &#123;
+            System.out.println(&quot;a等于b&quot;);
+        &#125;
+
+        int year = 2000; // 判断闰年
+        if (year % 400 == 0) &#123; // 1、能被4整除,但不能被100整除 2、能被400整除
+            System.out.println(year + &quot;是闰年&quot;);
+        &#125; else if (year % 4 == 0) &#123;
+            if (year % 100 == 0) &#123;
+                System.out.println(year + &quot;不是闰年&quot;);
+            &#125; else &#123;
+                System.out.println(year + &quot;是闰年&quot;);
+            &#125;
+        &#125; else &#123;
+            System.out.println(year + &quot;不是闰年&quot;);
+        &#125;
+
+        int sum1 = 0;
+        for (int counter = 1; counter &lt;= 100; counter++) &#123;
+            sum1 = counter + sum1;
+        &#125;
+        System.out.println(sum1);
+
+        int i = 100;
+        while (i &lt; 1000) &#123;
+            int a = i / 100;
+            int b = i % 100 / 10;
+            int c = i % 10;
+            int temp = a * a * a + b * b * b + c * c * c;
+            if (temp == i) &#123;
+                System.out.println(i);
+            &#125;
+            i++;
+        &#125;
+
+        int sum = 0;
+        for (int q = 1; q &lt;= 100; q++) &#123;
+            sum += q;
+        &#125;
+        System.out.println(sum);
+    &#125;
+&#125;
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

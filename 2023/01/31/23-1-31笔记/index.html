@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>JavaSE基础语法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>JavaSE基础语法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/1/31
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #00a596">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h3 id="常用类：String，Object，Date，Calendar，LocalDate，基本数据类型的封装类"><a href="#常用类：String，Object，Date，Calendar，LocalDate，基本数据类型的封装类" class="headerlink" title="常用类：String，Object，Date，Calendar，LocalDate，基本数据类型的封装类"></a>常用类：String，Object，Date，Calendar，LocalDate，基本数据类型的封装类</h3><h4 id="String类："><a href="#String类：" class="headerlink" title="String类："></a>String类：</h4><p>语法糖：”a” &#x3D; new String(“a”);</p>
+<p>1.值不可改变。天生线程安全，连更改都不可以，多个线程同时更改的冲突不会出现。</p>
+<p>引用在栈里，对象在堆里</p>
+<p>StringBuilder：值可以改变。线程不安全</p>
+<p>StringBuffer：值可以改变。线程安全的</p>
+<p>2.final修饰：不可被继承</p>
+<p>3.引入缓存机制。可以缓存字符串常量</p>
+<pre><code class="java">String s1 = &quot;abc&quot;;
+String s2 = &quot;abc&quot;;
+System.out.println(s1 == s2);//true
+
+String s3 = new String(&quot;abc&quot;);
+System.out.println(s1 == s3);//false
+//new之后，引用肯定指向堆中的对象，并在缓存池中创建字符串常量对象
+//此后，新的引用再次=字符串常量（而不是new，如果再new，则再堆中创建一个新对象，而缓存池中不在创建相同的字符串常量），则新引用指向缓存池中的字符串常量对象
+</code></pre>
+<p>例：</p>
+<pre><code class="java">String a1 = &quot;ja&quot; + &quot;va&quot;;//创建两个对象&quot;ja&quot;,&quot;va&quot;,不创建&quot;java&quot;对象,虚拟机jvm启动时肯定有java
+String a2 = &quot;java&quot;;//不创建对象
+
+String a3 = &quot;计算机&quot; + &quot;语言&quot;;//创建三个对象，&quot;计算机&quot;,&quot;语言&quot;,&quot;计算机语言&quot;
+String a4 = &quot;计算机语言&quot;;//不创建对象
+</code></pre>
+<p>4.常用方法：charAt，indexOf，subString，replace，length()，split()……</p>
+<p>5.+可以讲字符串拼接。</p>
+<h4 id="Object类-：所有类的最终父类（根）"><a href="#Object类-：所有类的最终父类（根）" class="headerlink" title="Object类 ：所有类的最终父类（根）"></a>Object类 ：所有类的最终父类（根）</h4><p>equals()：判断两个对象是否相等。用户可重写，例如在hashSet中因为不能重复需要重写hashCode和equals</p>
+<p>hashCode()：生成一个唯一的哈希码，子类的hashCode不一定唯一，取决于这个类的编写者</p>
+<p>toString()：将对象以字符串的形式展示</p>
+<p>wait()：</p>
+<p>notify()：</p>
+<p>notifyAll()：</p>
+<h4 id="Date：表示日期和时间的类"><a href="#Date：表示日期和时间的类" class="headerlink" title="Date：表示日期和时间的类"></a>Date：表示日期和时间的类</h4><h4 id="LocalDate：表示日期"><a href="#LocalDate：表示日期" class="headerlink" title="LocalDate：表示日期"></a>LocalDate：表示日期</h4><h4 id="LocalTime：表示时间"><a href="#LocalTime：表示时间" class="headerlink" title="LocalTime：表示时间"></a>LocalTime：表示时间</h4><h4 id="LocalDateTime：表示日期和时间"><a href="#LocalDateTime：表示日期和时间" class="headerlink" title="LocalDateTime：表示日期和时间"></a>LocalDateTime：表示日期和时间</h4><h4 id="Calendar：日历类"><a href="#Calendar：日历类" class="headerlink" title="Calendar：日历类"></a>Calendar：日历类</h4><h4 id="Math类：数学运算相关"><a href="#Math类：数学运算相关" class="headerlink" title="Math类：数学运算相关"></a>Math类：数学运算相关</h4><h4 id="BigInteger类：大整度，无限精度"><a href="#BigInteger类：大整度，无限精度" class="headerlink" title="BigInteger类：大整度，无限精度"></a>BigInteger类：大整度，无限精度</h4><h4 id="BigDecimal类：大实数，无限精度"><a href="#BigDecimal类：大实数，无限精度" class="headerlink" title="BigDecimal类：大实数，无限精度"></a>BigDecimal类：大实数，无限精度</h4><h4 id="基本数据类型的封装类："><a href="#基本数据类型的封装类：" class="headerlink" title="基本数据类型的封装类："></a>基本数据类型的封装类：</h4><p>byte：Byte</p>
+<p>short：Short</p>
+<p>int：Integer</p>
+<p>long：Long</p>
+<p>float：Float</p>
+<p>double：Double</p>
+<p>boolean：Boolean</p>
+<p>char：Character</p>
+<h5 id="装箱和拆箱机制："><a href="#装箱和拆箱机制：" class="headerlink" title="装箱和拆箱机制："></a>装箱和拆箱机制：</h5><p>装箱：valueOf();</p>
+<p>拆箱：intValue();</p>
+<p>parseInt();把字符串转换为一个数字</p>
+<hr>
+<h3 id="集合与泛型"><a href="#集合与泛型" class="headerlink" title="集合与泛型"></a>集合与泛型</h3><h4 id="集合：数据的容器。"><a href="#集合：数据的容器。" class="headerlink" title="集合：数据的容器。"></a>集合：数据的容器。</h4><p>数组</p>
+<p>List：列表，接口。ArrayList：基于数组实现的List，可以实现自动增长。LinkedList：基于双向链表实现的List。有序，可以重复。</p>
+<p>Set：集合，接口。存储不重复无序数据。HashSet：底层是通过HashMap来实现的。</p>
+<p>Map：映射，接口。存储键值对（key—value）。HashMap：存储键值对。通过哈希码的原理来判断键是否重复。底层实现：数组+链表—&gt;数组+红黑树。（阈值：8，链表长度大于8时会先扩容进行减少链长，如果数组容量&gt;64时，会转化为红黑树）</p>
+<h4 id="泛型的定义和使用："><a href="#泛型的定义和使用：" class="headerlink" title="泛型的定义和使用："></a>泛型的定义和使用：</h4><p>定义在类上：使用尖括号写在类名后面。在类内部进行约束</p>
+<pre><code class="java">public class Test1&lt;A&gt; &#123;
+   private A a;
+   public Test(A a)&#123;
+   this.a = a;
+   &#125;
+   public A get() &#123;
+   return this.a;
+   &#125;
+&#125;
+
+public static main(String[] args)&#123;
+   Test1&lt;Integer&gt; a1 = new Test2&lt;Integer&gt;(10);
+   a1.get();
+&#125;
+</code></pre>
+<p>定义在方法上：写在方法的返回值类型之前。在方法内部进行约束</p>
+<pre><code class="java">public class Test2 &#123;
+    
+    public static &lt;B&gt; B build(B b) &#123;    
+        return b
+    &#125;
+
+    public static main(String[] args)&#123;	
+        int a1 = Test2.build(10);    
+        long a2 = Test.build(10L);
+    &#125;
+&#125;
+</code></pre>
+<hr>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><p>try：尝试执行，监视一段代码，异常出现后，抛出异常，之后的语句不再执行</p>
+<p>catch(Exception e)：捕获异常，捕获到异常后执行</p>
+<p>finally：不管是否捕获到异常都会执行</p>
+<p>throw：创建一个异常对象，并触发</p>
+<pre><code class="java">public static void sayHello(File f) throws FileNotFoundException &#123;  
+
+    if(!f.getname().equals(&quot;aaa.txt&quot;))&#123;
+        throw new FileNotFoundException(&quot;文件未找到&quot;);
+   &#125;
+&#125;
+</code></pre>
+<p>throws：定义在方法之后，可以抛出多种类型的异常给上级调用者，让调用者对异常进行处理</p>
+<p>应用：可以快速跳出多层循环</p>
+<p>可以自己创建异常，提供给抛出用</p>
+<p>运行时异常（RunTimeException及其子类）不强制要求捕获。</p>
+<p>检查异常：要求必须显示的捕获。</p>
+<p>NullpointerException：空引用异常</p>
+<p>ArrayIndexOutOfBoundsException</p>
+<p>StringIndexOutBoundsException</p>
+<p>ArithmeticException</p>
+<p>RuntimeException</p>
+<p>IOException</p>
+<p>FileNotFoundException</p>
+<hr>
+<h3 id="IO：Input-x2F-Output以流的机制实现"><a href="#IO：Input-x2F-Output以流的机制实现" class="headerlink" title="IO：Input&#x2F;Output以流的机制实现"></a>IO：Input&#x2F;Output以流的机制实现</h3><p>外部 —输入流—&gt;程序—输出流—&gt;外部</p>
+<p>外部：文件、网络等</p>
+<pre><code class="java">// 将一个文件拆分成n份，存储到相同的路径之下
+package com.situ.chapter2;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class Test1 &#123;
+
+    public static void main(String[] args) &#123;
+        File f = new File(&quot;d:/data.pptx&quot;);
+        splitFile(f, 5);
+    &#125;
+
+    // 将一个文件拆分成n份，存在到相同路径之下
+    public static void splitFile(File file, int n) &#123;
+        long perSize = file.length() / n;// 每个拆分后的大小
+        // long lastFileSize = perSize + len % n;// 最后一个的大小
+
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+        try &#123;
+            fis = new FileInputStream(file);
+
+            // 先读出前n-1份
+            for (int i = 0; i &lt; n - 1; i++) &#123;
+                fos = new FileOutputStream(new File(file.getParent() + &quot;/&quot; + file.getName() + &quot;-&quot; + (i + 1) + &quot;.spl&quot;));
+
+                int minRead = (int)(perSize &lt; 1024 ? perSize : 1024);
+                long readed = 0;// 表示已读取了多少个字节
+
+                byte[] b = new byte[minRead];
+
+                while (true) &#123;
+                    int len = fis.read(b);
+                    readed += len;
+                    fos.write(b, 0, len);
+
+                    if (readed == perSize) &#123;
+                        break;
+                    &#125;
+
+                    int l = (int)(perSize - readed);
+                    if (l &lt; 1024) &#123;
+                        fis.read(b, 0, l);
+                        fos.write(b, 0, l);
+                        break;
+                    &#125;
+                &#125;
+
+                fos.flush();
+                fos.close();
+            &#125;
+
+            // 把剩余全部读成最后一个
+            fos = new FileOutputStream(new File(file.getParent() + &quot;/&quot; + file.getName() + &quot;-&quot; + n + &quot;.spl&quot;));
+            byte[] b = new byte[1024];
+            while (true) &#123;
+                int len = fis.read(b);
+
+                if (len &lt; 0) &#123;
+                    break;
+                &#125;
+
+                fos.write(b, 0, len);
+            &#125;
+
+            fos.flush();
+            fos.close();
+
+        &#125; catch (FileNotFoundException e) &#123;
+            e.printStackTrace();
+        &#125; catch (IOException e) &#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            if (fis != null) &#123;
+                try &#123;
+                    fis.close();
+                &#125; catch (IOException e) &#123;
+                    e.printStackTrace();
+                &#125;
+            &#125;
+        &#125;
+
+        System.out.println(&quot;结束&quot;);
+    &#125;
+&#125;
+</code></pre>
+<p>读写properteis文件：</p>
+<p>读写xml文件：</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

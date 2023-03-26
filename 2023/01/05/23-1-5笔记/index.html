@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>JavaSE基础语法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>JavaSE基础语法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/1/5
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #ffa2c4">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h3 id="二、Math："><a href="#二、Math：" class="headerlink" title="二、Math："></a>二、Math：</h3><p>Math.PI:圆周率<br>Math.E：e的值<br>Math.floor()：向下取值<br>Math.ceil()：向上取值<br>Math.pow(a,b)：a的b次方<br><br/> </p>
+<h3 id="三、String："><a href="#三、String：" class="headerlink" title="三、String："></a>三、String：</h3><p>字符串对象是不可变的<br>引用指向的地址会变，但已经存在的字符串不会消失，也不会改变</p>
+<p>和Integer类似，可以向上查看<br>String str1 &#x3D; “hello”;&#x2F;&#x2F; 是str2的简写，也是有缓存机制的<br>String str2 &#x3D; String.valueOf(“hello”);&#x2F;&#x2F; 启用缓存机制，和str1地址一样<br>String str3 &#x3D; new String(“hello”);&#x2F;&#x2F; 创建新的字符串对象和str1值一样，但是地址不一样</p>
+<p>String str4 &#x3D; “ja” + “va”;<br>“ja”创建一个对象，”va”创建一个对象，但”java”在缓存中肯定有，这门语言叫java，一共创建了两个对象<br>String str5 &#x3D; “java” + “你好”;<br>“java”不会创建对象，”你好”会创建一个对象，”java你好”创建一个对象，一共创建了两个对象   </p>
+<p>但是这两个类存储的字符串对象内容可以变，且两者用法类似  </p>
+<h5 id="StringBuffer-线程安全-，StringBuilder-线程不安全"><a href="#StringBuffer-线程安全-，StringBuilder-线程不安全" class="headerlink" title="StringBuffer(线程安全)，StringBuilder(线程不安全)"></a><strong>StringBuffer(线程安全)，StringBuilder(线程不安全)</strong></h5><p>StringBuffer str6&#x3D; new StringBuffer();<br>StringBuilder str7 &#x3D;  new StringBuilder();<br><br/> </p>
+<h3 id="四、日期相关类："><a href="#四、日期相关类：" class="headerlink" title="四、日期相关类："></a>四、日期相关类：</h3><h4 id="Date、Calendar、LocalDate、LocalTime、LocalDateTime"><a href="#Date、Calendar、LocalDate、LocalTime、LocalDateTime" class="headerlink" title="Date、Calendar、LocalDate、LocalTime、LocalDateTime"></a>Date、Calendar、LocalDate、LocalTime、LocalDateTime</h4><p><strong>需要导入包（快捷键Ctrl+shift+o）</strong>  </p>
+<h4 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h4><p>Data now &#x3D; new new Date();<br>过时方法,官方不建议使用了<br>now.getYear();<br>now.getMonth();<br>now.getHours();    </p>
+<h4 id="Calendar"><a href="#Calendar" class="headerlink" title="Calendar"></a>Calendar</h4><p>历史遗留：<br>用日历类获取日期<br>Calendar can &#x3D; Calendar.getInstance();  </p>
+<p>int year &#x3D; can.get(Calendar.Year);&#x2F;&#x2F; 年<br>int year &#x3D; can.get(Calendar.MONTH);&#x2F;&#x2F; 月<br>int year &#x3D; can.get(Calendar.DAT_OF_WEEK);&#x2F;&#x2F; 一个星期的第几天<br>int hours &#x3D; can.get(calendar.HOUR_OF_DAY);&#x2F;&#x2F; 小时  </p>
+<p>can.set(Calendar.HOUR_OF_DAT,20)&#x2F;&#x2F; 设置小时<br>can.setTime(now);&#x2F;&#x2F; 可以将一个Date对象设置到日历对象中  </p>
+<h4 id="建议使用："><a href="#建议使用：" class="headerlink" title="建议使用："></a>建议使用：</h4><p>LocalDate，LocalTime，LocalDateTime<br>不能set，只能新建一个对象重新设置  </p>
+<h4 id="LocalDate"><a href="#LocalDate" class="headerlink" title="LocalDate"></a>LocalDate</h4><p>本地日期类：年，月，日<br>LocalDate ld1 &#x3D; LocalDate.now();&#x2F;&#x2F; 静态方法<br>LocalDate ld2 &#x3D; LocalDate.of(2001,1,24);&#x2F;&#x2F; 引用ld2指向创建的新LocalDate对象(2001,01,24)<br>ld1.getYear();&#x2F;&#x2F; 获取年<br>ld1.getMonthValue();&#x2F;&#x2F; 获取月<br>ld1.getDayOfMonth();&#x2F;&#x2F; 获取日</p>
+<p>LocalDate ld3 &#x3D; ld2.plusYears(10);&#x2F;&#x2F; 加上10年,会生成一个新的对象，而原来的对象ld2不会改变<br>LocalDate ld4 &#x3D; ld2.minusWeeks(3);&#x2F;&#x2F; 减去3周，会生成一个新的对象，而原来的对象ld2不会改变  </p>
+<h4 id="LocalTime"><a href="#LocalTime" class="headerlink" title="LocalTime"></a>LocalTime</h4><p>本地时间类：时间，时，分，秒，纳秒，1ms&#x3D;1000000纳秒<br>LocalTime lt1 &#x3D; LocalTime.now();&#x2F;&#x2F; 静态方法<br>LocalTime lt2 &#x3D; LocalTime.of(13,14,21);&#x2F;&#x2F; 引用lt2指向创建的新LocalTime对象(13,14,21)  </p>
+<p>lt1.getHour();&#x2F;&#x2F; 获取小时<br>lt1.getMinute();&#x2F;&#x2F; 获取分钟<br>lt1.getSecond();&#x2F;&#x2F; 获取秒  </p>
+<h4 id="LocalDateTime"><a href="#LocalDateTime" class="headerlink" title="LocalDateTime"></a>LocalDateTime</h4><p>日期和时间都有<br>LocalDateTime ldt1 &#x3D; LocalDateTime.now();<br>LocalDateTime ldt2 &#x3D; LocalDateTime.of(2022,1,24,5,2,1)<br><br/></p>
+<h3 id="知识补充："><a href="#知识补充：" class="headerlink" title="知识补充："></a>知识补充：</h3><h4 id="1-static"><a href="#1-static" class="headerlink" title="1.static:"></a>1.static:</h4><p>静态的，固定值，固定的方法，属于类的<br>无需创建对象就可引用，通过类名就可以引用<br>静态成员只能访问静态成员，不能访问普通成员，因为访问普通成员需要创建对象才能访问，没有this，比如静态方法中只能访问静态属性<br>普通成员可以访问静态成员<br>静态成员可以访问构造函数，因为执行构造函数之前还没有对象  </p>
+<p>静态块：是在创建对象之前，初始化类的时候执行<br>有这个类时就会执行静态块内的代码<br>private static int count;<br>static {&#x2F;&#x2F; 静态块<br>counter &#x3D; 100;<br>}  </p>
+<p>非静态块：创建对象，执行构造函数，先执行第1句（super()或者this()，然后执行非静态块，再接着执行构造函数<br>{&#x2F;&#x2F; 非静态块  </p>
+<p>}  </p>
+<h4 id="2-变量的作用域与生命周期"><a href="#2-变量的作用域与生命周期" class="headerlink" title="2.变量的作用域与生命周期"></a>2.变量的作用域与生命周期</h4><p>作用域：变量生效的空间范围。从所在块，当前定义位置开始，一直到所在块结束，{块}<br>生命周期：变量生效的时间范围。从执行当前代码开始，一直到当块代码执行结束  </p>
+<p>块就是两个大括号之间的{　　块　　}  </p>
+<h4 id="3-枚举"><a href="#3-枚举" class="headerlink" title="3.枚举"></a>3.枚举</h4><p><strong>关键字：enum，其中成员属性名大写</strong><br>用的很少<br>不能new，能引用&#x2F;&#x2F;Season s &#x3D; Season.CHUN;s是一个引用，指向CHUN<br>表达固定的选项。春夏秋冬，东西南北，男女，前后左右<br>本质也是用类实现的<br>本质也是引用类型<br>枚举如果用到构造函数，默认是私有的，也只能是私有的</p>
+<h4 id="4-switch"><a href="#4-switch" class="headerlink" title="4.switch"></a>4.switch</h4><p>分支结构<br>缺陷：仅能用于判断与目标值是否相等的情况<br>switch(a)　{<br>　　case　1:　{<br>　　　　break;<br>　　}<br>　　case　2:　{<br>　　　　break;<br>　　}<br>　　default:　{<br>　　}<br>}<br>或者<br>switch(b)　{<br>　　case　1　-&gt;　{<br>　　　　break;<br>　　}<br>　　case　2　-&gt;　{<br>　　　　break;<br>　　}<br>　　default　-&gt;　{<br>　　}<br>}<br>掉落机制：一旦进入一个分支，会继续执行以后的分支，除非加break跳出switch<br>default分支可以没有</p>
+<h4 id="5-内部类"><a href="#5-内部类" class="headerlink" title="5.内部类"></a>5.内部类</h4><p>Java语法特性<br>用的不多<br>在一个类的内部，定义一个类</p>
+<p><strong>成员内部类（非静态内部类）</strong>：也是外部类的一个成员<br>使用需要先创建外类的对象，然后用对象.创建成员内部类<br>内部类中，持有一个其外部类对象的引用，可以访问外部类的成员<br>如果成员内部类继承于另一个类，则间接实现了多继承<br><strong>静态内部类</strong>：  </p>
+<p><strong>局部内部类</strong>：<br><strong>匿名内部类</strong>：使用频率相对而言，会比其他内部类多一些  </p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

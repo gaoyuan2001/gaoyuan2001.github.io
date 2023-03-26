@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Java基础语法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>Java基础语法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/1/10
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #ffa2c4">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h3 id="六、异常：Exception"><a href="#六、异常：Exception" class="headerlink" title="六、异常：Exception"></a>六、异常：Exception</h3><h5 id="异常处理机制：Java语法，及异常类型"><a href="#异常处理机制：Java语法，及异常类型" class="headerlink" title="异常处理机制：Java语法，及异常类型"></a>异常处理机制：Java语法，及异常类型</h5><p>程序中出现非预期的情况，导致程序无法正常运行，数据出错，或者程序终止。   </p>
+<p>出现异常后，程序立即终止，异常位置之后的代码不再执行<br>由程序员去捕获异常，在捕获异常后，进行一定的补救或者挽回措施，同时保证程序可以继续运行<br>捕获私有前后顺序的。当出现异常时，只会进入一个分支  </p>
+<p>finally分支一定会执行，且优先级很高，比return优先级更高<br>最好不要再finally里写return</p>
+<p>补充知识：return时，会提前将返回值锁定lock，以求返回前不被破坏</p>
+<p>try　{  &#x2F;&#x2F;程序  </p>
+<p>}　catch　(异常类型1)　{  </p>
+<p>}　catch　(异常类型2)　{  </p>
+<p>}　catch　(Exception　e)　{<br>　　e.printStackTrace();<br>}　finally　{&#x2F;&#x2F;一定会执行</p>
+<p>}</p>
+<p>catch　(异常A　|　异常B){<br>}<br>此种语法异常A与异常B之间不能有继承关系</p>
+<p>常见异常类型：<br>　　Exception：异常的父类<br>　　ArithmeticException：数学异常<br>　　RuntimeException：运行时异常<br>　　ArrayIndexOutOfBoundsException：数组下标越界<br>　　StringIndexOutOfBoundsException：字符串索引越界异常<br>　　IndexOutOfBoundsException：下标越界异常<br>　　NullPointerException：空指针异常  </p>
+<hr>
+<h3 id="七、IO输入输出类型：InputStream，OutputStream"><a href="#七、IO输入输出类型：InputStream，OutputStream" class="headerlink" title="七、IO输入输出类型：InputStream，OutputStream"></a>七、IO输入输出类型：InputStream，OutputStream</h3><h5 id="IO流：输入-x2F-输出流"><a href="#IO流：输入-x2F-输出流" class="headerlink" title="IO流：输入&#x2F;输出流"></a>IO流：输入&#x2F;输出流</h5><p>I：Input，输入<br>O：Output，输出  </p>
+<p>按照流动的方向可分为：输入流和输出流<br>输入流：外界（控制台，文件，网络等）流入程序<br>输出流：程序流出外界（控制台，文件，网络等）   </p>
+<p>按照流动的单位可分为：字符流和字节流<br>字符：流动的字符。ABCD汉字数字等<br>字节：推荐，InputStream和OutputStream都是字节流  </p>
+<p>按照数据的介质可以分为：<br>1.文件流<br>2.数组流<br>3.网络<br>4.控制台<br>5.文件    </p>
+<p>I&#x2F;O流涉及大量异常处理  </p>
+<p>InputStream：字节输入流，抽象类<br>OutStream：字节输出流，抽象类<br>BufferedInputStream：字节缓冲输入流，抽象类<br>BufferedOutputStream：字节缓冲输出流，抽象类  </p>
+<p>Reader：字符输入流，抽象<br>Writer：字符输出流，抽象<br>BufferedReader：字符缓冲输入流，抽象类<br>BufferedWriter：字符缓冲输出流，抽象类  </p>
+<p>路径一个使用&#x2F;，或者使用\来进行分隔    </p>
+<p>字节流：InputStream，OutputStream<br>字符流：Reader，Writer  </p>
+<p>输入<br>创建一个文件对象，存储文件<br>创建一个文件字节&#x2F;字符输入流对象，读取文件对象，被缓冲输入流引用<br>创建一个字符缓冲输入流对象，读取字符输入流对象，把文件放入缓冲输入流中<br>用字符缓冲输入流对象，调用方法读出流中的文件数据<br>关闭流对象close()  </p>
+<p>输出<br>创建一个文件对象，存储文件，用于存储输出的数据<br>把文件对象在硬盘中创建出来creatNewFile<br>创建一个文件字节&#x2F;字符输出流对象，用于被缓冲流输出流引用<br>创建一个字符缓冲输出流对象，用于把输出数据放到流中<br>用缓冲输出流对象，调用方法读取输出数据，并传入缓冲流中<br>清空字符缓冲输出流，把流中数据写入到文件中<br>关闭流对象close()  </p>
+<p>ObjectInputStream：对象字节输入流<br>ObjectOutputStream：对象字节输出流<br>注意对象序列化问题<br>需要让对象的类实现一个接口Serializable  </p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

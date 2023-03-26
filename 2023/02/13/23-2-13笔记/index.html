@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>数据结构，算法 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>数据结构，算法 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/13
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/算法/" style="color: #ff7d73">
+                    算法
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h4 id="以下排序需要会手写"><a href="#以下排序需要会手写" class="headerlink" title="以下排序需要会手写"></a>以下排序需要会手写</h4><h3 id="main方法启动"><a href="#main方法启动" class="headerlink" title="main方法启动"></a>main方法启动</h3><pre><code class="java">    public static void main(String[] args) &#123;
+        int[] n = &#123;80, 36, 89, 27, 18, 56, 66, 98&#125;;//测试无序数组
+        bubbleSort(n);
+        selectSort(n);
+        insertSort2(n);
+        quickSort(n);
+        System.out.println(Arrays.toString(n));
+    &#125;
+</code></pre>
+<h3 id="冒泡排序：也叫作交换排序"><a href="#冒泡排序：也叫作交换排序" class="headerlink" title="冒泡排序：也叫作交换排序"></a>冒泡排序：也叫作交换排序</h3><pre><code class="java">    /**
+     * 冒泡排序（交换排序）
+     */
+    public static void bubbleSort(int[] n) &#123;
+        for (int i = 0; i &lt; n.length - 1; i++) &#123;
+            for (int j = 0; j &lt; n.length - 1 - i; j++) &#123;
+                if (n[j + 1] &gt; n[j]) &#123;
+                    int t = n[j + 1];
+                    n[j + 1] = n[j];
+                    n[j] = t;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+</code></pre>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><pre><code class="java">    /**
+     * 选择排序
+     */
+    public static void selectSort(int[] n) &#123;
+        for (int i = 0; i &lt; n.length - 1; i++) &#123;
+            for (int j = i + 1; j &lt; n.length; j++) &#123;
+                if (n[i] &gt; n[j]) &#123;
+                    int t = n[i];
+                    n[i] = n[j];
+                    n[j] = t;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+</code></pre>
+<h3 id="插入排序：其中有两种变体"><a href="#插入排序：其中有两种变体" class="headerlink" title="插入排序：其中有两种变体"></a>插入排序：其中有两种变体</h3><pre><code class="java">    /**
+     * 插入排序
+     */
+
+    /**
+     * 找到要插入的点，将后续整体移动
+     * @param n
+     */
+    public static void insertSort1(int[] n) &#123;
+        for (int i = 1; i &lt; n.length; i++) &#123;
+            for (int j = 0; j &lt; i; j++) &#123;
+                if (n[i] &gt; n[j] &amp;&amp; n[i] &lt; n[j + 1]) &#123;
+                    int t = n[i];
+                    for (int k = i - 1; k &gt;= j + 1; k++) &#123;
+                        n[k + 1] = n[k];
+                    &#125;
+                    n[j + 1] = t;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+
+    /**
+     * 每向前走一次，后移一位，当找到要插入的点，直接插入
+     * @param n
+     */
+    public static void insertSort2(int[] n) &#123;
+        for (int i = 1; i &lt; n.length - 1; i++) &#123;//从1开始选择需要插入的元素，小于0的位置，则把0处后移，然后赋值于0处
+            int t = n[i];
+            int j = i;
+            while (j &gt; 0 &amp;&amp; t &lt; n[j - 1]) &#123;//需要从0开始判断插入位置
+                n[j] = n[j - 1];
+                j--;
+            &#125;
+            if (j != i) &#123;
+                n[j] = t;
+            &#125;
+        &#125;
+    &#125;
+</code></pre>
+<h3 id="快速排序：也叫做快排，重点看，一定要理解"><a href="#快速排序：也叫做快排，重点看，一定要理解" class="headerlink" title="快速排序：也叫做快排，重点看，一定要理解"></a>快速排序：也叫做快排，重点看，一定要理解</h3><pre><code class="java">    /**
+     * 快速排序
+     */
+    public static void quickSort(int[] n) &#123;
+        quickSortInner(n, 0, n.length - 1);
+    &#125;
+
+    /**
+     * 嵌套的思想
+     * 思路：选择出来基准后，先保存下来，此时基准处的值可以被覆盖
+     * 当选择的基准值是表头的位置时，必须从后指针开始判断，因为此时前指针所指的元素可以被赋值（当然如果选择基准值为表尾的位置时，则相反）
+     * 当前指针所指被后指针处的元素赋值后，表示前指针的元素已经确定，此时需要把前指针向后移一位，以求前指针所指一直为需要排序的元素
+     * 因为后指针所指的值已经确定位置，所以后指针所指的位置又可以被前指针所赋值
+     * 循环往复，直到每一个小组的元素个数为1时，也就是数组排好序了
+     * （通俗来说，刚开始看成基准值的位置为空，赋值后，不再为空，指针后移，已经把值赋走的位置又可以被看为空，又可以继续被赋值，循环往复）
+     *
+     * @param n
+     * @param left
+     * @param right
+     */
+    public static void quickSortInner(int[] n, int left, int right) &#123;
+        //结束的标志：当每一个小小小小组的元素为1时，代表所有的元素已经排好序，因为当数组元素个数为1时，自动判断此数组有序
+        if (left &gt;= right) &#123;
+            return;
+        &#125;
+        int i = left;
+        int j = right;
+
+        int pivot = n[left];
+
+        while (i != j) &#123;
+            while (n[j] &gt;= pivot &amp;&amp; j &gt; i) &#123;//当后指针处的值一直比基准值pivot要大时，则不需要改变其位置，而是把后指针指向前一个元素
+                j--;
+            &#125;
+            //这里跳出循环，意味着发现指针所指的元素要比pivot小，需要改变位置（不是交换位置）
+            if (i &lt; j) &#123;
+                n[i] = n[j];//一定要注意这里不是交换两者的值，而只是后指针赋值给前指针
+                i++;//这里是i已经被赋完值了，值已经确定了，这一轮已经不再需要再进行排序改动了，前指针自然要移动到后一个需要排序的元素身上
+            &#125;
+            while (n[i] &lt;= pivot &amp;&amp; i &lt; j) &#123;//当前指针处的值一直比基准值pivot要小时，则不需要改变其位置，而是把前指针指向后一个元素
+                i++;
+            &#125;
+            //这里跳出循环，意味着发现指针所指的元素要比pivot大，需要改变位置（不是交换位置）
+            if (i &lt; j) &#123;
+                n[j] = n[i];//这里一样要注意，不再是交换两者的值，而只是前指针赋值给后指针
+                j--;//后指针j处已经被赋完值，这一轮已经不需要再排序改动了，后指针自然要移动到前一个需要排序的元素身上
+            &#125;
+        &#125;
+        n[i] = pivot;
+        //System.out.println(Arrays.toString(n));
+        quickSortInner(n, left, i - 1);//这里容易出错，记得不要用 0和n.length
+        quickSortInner(n, i + 1, right);
+    &#125;
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

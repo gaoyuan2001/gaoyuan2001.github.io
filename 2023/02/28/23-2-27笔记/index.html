@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>JavaEE | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>JavaEE </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/2/28
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #ff7d73">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h2 id="MVC："><a href="#MVC：" class="headerlink" title="MVC："></a>MVC：</h2><ul>
+<li><p>model：模型</p>
+</li>
+<li><p>view：视图</p>
+</li>
+<li><p>control：控制器</p>
+</li>
+</ul>
+<h5 id="spring-jdbc：连接数据库工具"><a href="#spring-jdbc：连接数据库工具" class="headerlink" title="spring-jdbc：连接数据库工具"></a>spring-jdbc：连接数据库工具</h5><ul>
+<li><p>model：User基本类</p>
+</li>
+<li><p>service：接口和impl实现</p>
+</li>
+<li><p>servlet：控制器</p>
+</li>
+<li><p>util：工具包</p>
+</li>
+<li><p>dao：数据存取，接口和实现类</p>
+</li>
+<li><p>jsp：放jsp</p>
+</li>
+</ul>
+<h2 id="jstl-el"><a href="#jstl-el" class="headerlink" title="jstl + el"></a>jstl + el</h2><p>EL：express language：表达式语言，jsp默认支持，${stu.name}、${stu.sex}</p>
+<p>会自动通过反射调用实现，其实还是调用了函数 </p>
+<p>JSTL：jsp standard tag library，jsp标准标签库。需要引入相关的库</p>
+<p>1.pom.xml需要加入依赖</p>
+<p>2.jsp也需要导入，只引入核心库，流行趋势</p>
+<p>把标签嵌入到网页里，有规范</p>
+<p>三个标签的依赖</p>
+<h2 id="Apache-Standard-Taglib-Implementation"><a href="#Apache-Standard-Taglib-Implementation" class="headerlink" title="Apache Standard Taglib Implementation"></a><a target="_blank" rel="noopener" href="https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl">Apache Standard Taglib Implementation</a></h2><h2 id="Apache-Standard-Taglib-Specification-API"><a href="#Apache-Standard-Taglib-Specification-API" class="headerlink" title="Apache Standard Taglib Specification API"></a><a target="_blank" rel="noopener" href="https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-spec">Apache Standard Taglib Specification API</a></h2><h2 id="Apache-Standard-Taglib-1-0-EL-Support"><a href="#Apache-Standard-Taglib-1-0-EL-Support" class="headerlink" title="Apache Standard Taglib 1.0 EL Support"></a><a target="_blank" rel="noopener" href="https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-jstlel">Apache Standard Taglib 1.0 EL Support</a></h2><p>jstl：jsp也需要引入，pom.xml也需要加入依赖</p>
+<pre><code class="xml">&lt;dependency&gt;
+   &lt;groupId&gt;org.apache.taglibs&lt;/groupId&gt;
+   &lt;artifactId&gt;taglibs-standard-impl&lt;/artifactId&gt;
+   &lt;version&gt;1.2.5&lt;/version&gt;
+   &lt;scope&gt;runtime&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-spec --&gt;
+&lt;dependency&gt;
+   &lt;groupId&gt;org.apache.taglibs&lt;/groupId&gt;
+   &lt;artifactId&gt;taglibs-standard-spec&lt;/artifactId&gt;
+   &lt;version&gt;1.2.5&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-jstlel --&gt;
+   &lt;dependency&gt;
+   &lt;groupId&gt;org.apache.taglibs&lt;/groupId&gt;
+   &lt;artifactId&gt;taglibs-standard-jstlel&lt;/artifactId&gt;
+   &lt;version&gt;1.2.5&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<ul>
+<li><h4 id="JSTL-EL的使用"><a href="#JSTL-EL的使用" class="headerlink" title="JSTL+EL的使用"></a>JSTL+EL的使用</h4></li>
+</ul>
+<p>标签&lt;c: forEach items&#x3D;” ”  var&#x3D;“ ”&gt;&#x2F;&#x2F;items指代集合，var指代遍历的元素</p>
+<pre><code class="jsp">&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;//c可以更改
+
+&lt;c:forEach&gt;迭代&lt;/c:forEach&gt;和增强for循环一样
+&lt;c:forEach items=”$&#123;students&#125;”  var=“stu”&gt;&lt;/c:forEach&gt;//items=就是指代一个集合，stu就是用来在集合内部迭代的元素，
+//$&#123;students&#125;就是el表达式
+</code></pre>
+<p>EL表达式取出来，到底从哪个域取出来（运用的是反射的机制，无需知晓集合的类型）</p>
+<p>页面域（pagecontext）-&gt;请求域（request）-&gt;会话域（session）-&gt;应用域（application），依次找到为止</p>
+<p>标签：&lt;c: if test&#x3D;”  “&gt;test判断条件成不成立，boolean值，但是没有else</p>
+<pre><code class="jsp">&lt;c:if test=&quot;$&#123;stu.sex == &#39;女&#39;&#125;&quot;&gt;
+    &lt;td class=&quot;female&quot;&gt;$&#123;stu.sex&#125;&lt;/td&gt;
+&lt;/c:if&gt;
+
+&lt;c:if test=&quot;$&#123;stu.sex == &#39;男&#39;&#125;&quot;&gt;
+    &lt;td&gt;$&#123;stu.sex&#125;&lt;/td&gt;
+&lt;/c:if&gt;
+</code></pre>
+<h5 id="当css有问题时一定要找到地址看一看，有可能时导入的地址有问题，很有可能多了一层，应该直接在项目名称下面"><a href="#当css有问题时一定要找到地址看一看，有可能时导入的地址有问题，很有可能多了一层，应该直接在项目名称下面" class="headerlink" title="当css有问题时一定要找到地址看一看，有可能时导入的地址有问题，很有可能多了一层，应该直接在项目名称下面"></a>当css有问题时一定要找到地址看一看，有可能时导入的地址有问题，很有可能多了一层，应该直接在项目名称下面</h5><p>解决办法：</p>
+<p>标签：&lt;c: set var&#x3D;”” value&#x3D;”” &#x2F;&gt;&#x2F;&#x2F;定义一个变量，var是变量名称，value是变量的值，单标记即可</p>
+<pre><code class="jsp">&lt;c:set var=&quot;ctx&quot; value=&quot;$&#123;pageContext.request.contextPath&#125;&quot; /&gt;//单标记即可
+</code></pre>
+<p>标签：<base>整个页面都基于这个路径，之后直接用css的地址即可</p>
+<pre><code class="jsp">&lt;base href=&quot;$&#123;ctx&#125;/&quot; &gt;
+</code></pre>
+<p>标签：&lt;c: choose&gt;&#x2F;&#x2F;相当于switch</p>
+<pre><code class="jsp">&lt;choose&gt;
+    &lt;c:when test=&quot;$&#123;sex = &#39;男&#39;&#125;&quot; &gt;&lt;td&gt;$&#123;stu.sex&#125;&lt;/td&gt;&lt;/c:when&gt;
+    &lt;c:when test=&quot;$&#123;sex = &#39;女&#39;&#125;&quot; &gt;&lt;td class=&quot;female&quot;&gt;$&#123;stu.sex&#125;&lt;/td&gt;&lt;/c:when&gt;
+    &lt;c:otherwise&gt;&lt;td&gt;$&#123;stu.sex&#125;&lt;/td&gt;&lt;/c:otherwise&gt;
+&lt;/choose&gt;
+</code></pre>
+<p>jsp：模板引擎，把跟前端无关的东西解释成可以对前端进行设置</p>
+<p>jsp-&gt;转译成java语法-&gt;在进行编译成.class</p>
+<p>freemarker，thymeleaf，httl</p>
+<h2 id="过滤器和监听器"><a href="#过滤器和监听器" class="headerlink" title="过滤器和监听器"></a>过滤器和监听器</h2><h5 id="Filter：在tomcat服务器和servlet之间，就是对请求进行拦截，在进入servlet的service方法之前进行拦截"><a href="#Filter：在tomcat服务器和servlet之间，就是对请求进行拦截，在进入servlet的service方法之前进行拦截" class="headerlink" title="Filter：在tomcat服务器和servlet之间，就是对请求进行拦截，在进入servlet的service方法之前进行拦截"></a>Filter：在tomcat服务器和servlet之间，就是对请求进行拦截，<u>在进入servlet的service方法之前进行拦截</u></h5><p>可以使用注解，或者放在web.xml中，和servlet很像</p>
+<p>@WebFilter(“&#x2F;*”);过滤任何一个请求</p>
+<p>implements Filter</p>
+<p>注解不能控制顺序，先定义的先执行</p>
+<p>xml中可以控制顺序，写在上面的先执行</p>
+<p>FilterChain 里面封装了所有的过滤器</p>
+<pre><code class="java">filterChain.doFilter(req,resp);//放行，继续执行filterchain中的其他过滤器
+</code></pre>
+<p>dofilter：进行拦截，并对请求进行一定的处理</p>
+<p>filterchain：对已经处理完的请求进行放行</p>
+<h5 id="先定义的先过滤，后定义的后过滤"><a href="#先定义的先过滤，后定义的后过滤" class="headerlink" title="先定义的先过滤，后定义的后过滤"></a>先定义的先过滤，后定义的后过滤</h5><p>就相当于递归，过滤是顺序，放行是倒序，以doFilter为界</p>
+<p>过滤完了，就把请求送到servlet进行执行</p>
+<h2 id="session和cookie的区别："><a href="#session和cookie的区别：" class="headerlink" title="session和cookie的区别："></a>session和cookie的区别：</h2><h5 id="session会话域是请求所共用的"><a href="#session会话域是请求所共用的" class="headerlink" title="session会话域是请求所共用的"></a>session会话域是请求所共用的</h5><ul>
+<li><h5 id="重定向是客户端行为，客户端发送两次请求，response进行调用"><a href="#重定向是客户端行为，客户端发送两次请求，response进行调用" class="headerlink" title="重定向是客户端行为，客户端发送两次请求，response进行调用"></a>重定向是客户端行为，客户端发送两次请求，response进行调用</h5></li>
+<li><h5 id="存储转发是服务器行为，只需要客户端发送一次请求，而且请求对象不会丢失，request进行调用"><a href="#存储转发是服务器行为，只需要客户端发送一次请求，而且请求对象不会丢失，request进行调用" class="headerlink" title="存储转发是服务器行为，只需要客户端发送一次请求，而且请求对象不会丢失，request进行调用"></a>存储转发是服务器行为，只需要客户端发送一次请求，而且请求对象不会丢失，request进行调用</h5></li>
+</ul>
+<h5 id="session是一个服务器端对象，可以存储数据。对于同一个用户的多个请求-，共用一个会话session"><a href="#session是一个服务器端对象，可以存储数据。对于同一个用户的多个请求-，共用一个会话session" class="headerlink" title="session是一个服务器端对象，可以存储数据。对于同一个用户的多个请求 ，共用一个会话session"></a>session是一个服务器端对象，可以存储数据。对于同一个用户的多个请求 ，共用一个会话session</h5><h5 id="cookie是客户端访问服务器请求时，携带的小量的数据（字符串），没有安全性可言，也不能携带大量的数据"><a href="#cookie是客户端访问服务器请求时，携带的小量的数据（字符串），没有安全性可言，也不能携带大量的数据" class="headerlink" title="cookie是客户端访问服务器请求时，携带的小量的数据（字符串），没有安全性可言，也不能携带大量的数据"></a>cookie是客户端访问服务器请求时，携带的小量的数据（字符串），没有安全性可言，也不能携带大量的数据</h5><p>通常情况下（大多数情况），session可以借助于cookie携带一个jsessionid来实现session效果</p>
+<h3 id="应用：用户登录"><a href="#应用：用户登录" class="headerlink" title="应用：用户登录"></a>应用：用户登录</h3><p>成功：</p>
+<ul>
+<li><p>将user放到session中（将用户认证信息放入session域，下次过滤器过滤时不为空直接放行）</p>
+</li>
+<li><p>然后重定向到首页</p>
+</li>
+</ul>
+<pre><code class="java">User user = new User();
+user.setUsername(username);
+user.setPassword(password);
+req.getSession().setAttribute(&quot;current_login_user&quot;,user);//set放入，get获取出来
+
+resp.sendRedirect(req.getContextPath() + &quot;/&quot;);
+</code></pre>
+<p>失败：</p>
+<ul>
+<li>再次重定向到登录页</li>
+</ul>
+<pre><code class="java">resp.sendRedirect(req.getContextPath() + &quot;/login&quot;);
+</code></pre>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Java基础 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>Java基础 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/12/27
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #03a9f4">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <p><strong>1.JDK和JRE</strong><br>　　JDK：java development kit，Java开发工具包<br>　　JRE：Java runtime environment，Java运行环境  </p>
+<p><strong>2.Java&#x2F;jdk的版本</strong><br>　　Java是门语言，jdk是开发工具包，虽然不一样但是对于版本经常一起说，理解成一个也可以<br>　　　1.0，1.1，1.2（里程碑），1.3，1.4，1.5（重要的里程碑），1.6，1.7，1.8（里程碑）<br>　　　James的Sun卖出，被Oracle收购，<br>　　　9，10，11，12，13，14，15，16，17（LTS：long term support，长持支持版本），19  </p>
+<p><strong>3.Java历史</strong><br>　　James基于c++改造而来，原本叫做Oak（橡树）<br>　　Sun公司卖出，Oracle收购  </p>
+<p><strong>4.jdk的安装</strong><br>　　1.安装jdk。执行安装程序jdk-17_windows-x64_bin.exe<br>　　2.安装路径：尽量不要用到中文、空格、特殊字符等<br>　　3.设置环境变量：<br>　　　　　右键我的电脑-属性-高级系统设置-环境变量<br>　　　　　在系统变量中添加 变量名：JAVA_HOME  变量值：D:\Environment\jdk\jdk-17.0.5<br>　　　　　在Path中编辑，新建一个 %JAVA_HOME%\bin<br>　　　　<em>注：bin：binary二进制，conf：configuration配置文件</em>  </p>
+<p><strong>5.IDE:集成开发环境</strong><br>　　eclipse：免费，IBM<br>　　idea：社区版和旗舰版（付费）<br>　　net beans：  </p>
+<p>　　配置eclipse环境<br>　　　1.配置工作环境utf—8编码：window-&gt;preferences-&gt;workspace-&gt;Text file encoding-&gt;UTF-8<br>　　　2.配置已安装的jdk：window-&gt;preferwnces-&gt;java-&gt;Installed  JREs-&gt;把其他没用的都删除，然后添加新的  </p>
+<p>　　package：包，来管理类（命名 一般域名的倒写）<br>　　　　Action类所在包命名规范：公司名称.开发组名称.项目名称.web.struts.action<br>　　　　　<em>例如：net.linkcn.web.struts.action</em><br>　　class、interface：类、接口　<br>　　　　类　命名规范：以大写字母开头，如果有多个单词，每个单词头字母大写<br>　　　　　<em>例如：StudentInfo</em><br>　　　　接口　命名规范：以大写字母“I”开头，如果有多个单词，每个单词头字母大写<br>　　　　　<em>例如：IStudentInfo</em>  </p>
+<p>　　快捷键：<br>　　　1.ctrl+D 删除光标所在行<br>　　　2.ctrl+S 保存<br>　　　3.ctrl+F 英文状态下可以格式化代码，但是中文状态下会切换简繁体  </p>
+<p>　　eclipse项目导入导出<br>　　　导入：Import-&gt;General-&gt;Existing projects into   workspace<br>　　　导出：项目右键-&gt;show in-&gt;System Explorer，在文件夹内显示然后将文件夹复制即可  </p>
+<p><strong>6.Java语言 语法</strong><br>　　基础语法：<br>　　　1.变量、常量<br>　　　2.数据类型:分为两大类，基本数据类型和引用类型  </p>
+<p>　　8大基本数据类型  　　　<br>　　　byte：整型，占1个字节。-128——127，可能用于文件读写<br>　　　short：整型，占2个字节，-32768——32767，几乎不用<br>　　　int：整型，占4个字节。-2147483648——2147483647<br>　　　long：整型，占8个字节，范围很大<br>　　　<em>注：long f &#x3D; 22222222222222L;</em><br>　　　f 会被默认为是int，需要在最后加 L 强制指定long类型<br>　　　运算中，在任一个数后加L，即可结果为long类型  </p>
+<p>　　　float：单精度小数，４个字节，可以精确到小数点6-7位<br>　　　double：双精度小数，８个字节，可以精确到小数点16-17位<br>　　　注：小数自动默认为是都是double类型的值，float d1 &#x3D; 3.14 报错，可以改成 flout d1 &#x3D; 3.14F,在最后加 F 将3.14强制改为float类型，（常值的赋值需要加 F）<br>　　　但要区别于变量赋值 double d2 &#x3D; d1（此时非常量参数赋值：自动类型转换），小可以改大<br>　　　但float d3 &#x3D; d2 错误，应改成 float d3 &#x3D; （float）d2，大改小不合法，进行强制类型转换   </p>
+<p>　　　char：字符型 两个字节，本质是保存的整数<br>　　　boolean：布尔型 true false  </p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

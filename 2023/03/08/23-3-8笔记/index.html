@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>SSM框架 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>SSM框架 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/3/8
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #00a596">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h1 id="SSM框架"><a href="#SSM框架" class="headerlink" title="SSM框架"></a>SSM框架</h1><p>SSM：springmvc+spring+mybatis</p>
+<p>ssh：structs+spring+hibernate</p>
+<p>ssh2 &#x3D; structs2 + spring + hibernate</p>
+<p>前期准备：对servlet，jsp，http协议，请求响应模型，过滤器，监听器。</p>
+<hr>
+<h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><h3 id="搭建springmvc框架的过程"><a href="#搭建springmvc框架的过程" class="headerlink" title="搭建springmvc框架的过程"></a>搭建springmvc框架的过程</h3><h4 id="第一步：引入springmvc库"><a href="#第一步：引入springmvc库" class="headerlink" title="第一步：引入springmvc库"></a>第一步：引入springmvc库</h4><p>pom.xml</p>
+<pre><code class="xml">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+    &lt;version&gt;5.3.25&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h4 id="第二步：在web-xml中配置mvc"><a href="#第二步：在web-xml中配置mvc" class="headerlink" title="第二步：在web.xml中配置mvc"></a>第二步：在web.xml中配置mvc</h4><pre><code class="xml">&lt;!--配置springmvc--&gt;
+&lt;!-- 一、配置中文编码过滤器，统一utf-8编码 --&gt;
+&lt;filter&gt;
+   &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;
+   &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
+   &lt;init-param&gt;
+       &lt;param-name&gt;encoding&lt;/param-name&gt;
+       &lt;param-value&gt;UTF-8&lt;/param-value&gt;
+   &lt;/init-param&gt;
+   &lt;init-param&gt;
+       &lt;param-name&gt;forceEncoding&lt;/param-name&gt;
+       &lt;param-value&gt;true&lt;/param-value&gt;
+   &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+   &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;
+   &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+&lt;!-- 二、springmvc配置，注意：url-pattern可以配置成*.do或者*.action或者/，但是不能配置成/* --&gt;
+&lt;!-- /*：可以匹配所有请求，但不能匹配带扩展名的请求，比如*.do，*.action了 --&gt;
+&lt;!-- *.action：匹配所有以action结尾的请求 --&gt;
+&lt;!-- /：可以匹配所有请求，包括静态资源请求 --&gt;
+&lt;servlet&gt;
+   &lt;servlet-name&gt;springmvc&lt;/servlet-name&gt;
+   &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+   &lt;!-- 配置springmvc的配置文件路径 --&gt;
+   &lt;init-param&gt;
+       &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+       &lt;param-value&gt;classpath:springmvc.xml&lt;/param-value&gt;
+   &lt;/init-param&gt;
+   &lt;!--应用启动时加载--&gt;
+   &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+   &lt;servlet-name&gt;springmvc&lt;/servlet-name&gt;
+   &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre>
+<h5 id="DispatcherServlet：负责分发请求"><a href="#DispatcherServlet：负责分发请求" class="headerlink" title="DispatcherServlet：负责分发请求"></a>DispatcherServlet：负责分发请求</h5><h4 id="第三步：配置springmvc-xml文件"><a href="#第三步：配置springmvc-xml文件" class="headerlink" title="第三步：配置springmvc.xml文件"></a>第三步：配置springmvc.xml文件</h4><ul>
+<li><p>扫描包的基路径：com.yuan.chapter1</p>
+<p>从其中扫描出来Controller组件的注解，将所有的放在一个容器内</p>
+</li>
+<li><p>解析静态资源</p>
+<p>虽然已经也接收静态资源，但是转发给tomcat默认的servlet处理</p>
+</li>
+<li><p>配置静态资源映射</p>
+<p>location：目录</p>
+<p>mapping：要找的东西</p>
+<p>也就是如果找mapping的静态资源，自动去到location下去找</p>
+</li>
+<li><p>视图层</p>
+<p>自动增加前缀和后缀，组成存储转发的路径</p>
+</li>
+<li><p>注解驱动</p>
+</li>
+</ul>
+<pre><code class="xml">&lt;!-- 一、配置基础扫描包路径，springmvc会自动扫描该包及其子包下满足特定条件的类，use-default-filters属性默认值为true，表示使用默认过滤器，默认过滤器会扫描所有标有@Component、@Controller、@Service、@Repository注解的类 --&gt;
+&lt;context:component-scan base-package=&quot;com.situ.springmvc1/&gt;
+&lt;!-- 二、解析静态资源，需要与结合mvc:annotation-driven --&gt;
+&lt;mvc:default-servlet-handle/&gt;
+&lt;!-- 三、配置静态资源映射，不仅可以将任意目录下的静态资源映射成指定的路径，还能设置浏览器对此静态资源缓存 --&gt;
+&lt;mvc:resources location=&quot;/assets/&quot; mapping=&quot;/static/**/&gt;
+&lt;!-- 四、视图层配置，使用jsp作为模板引擎 --&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+    &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;/&gt;
+    &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;
+&lt;/bean&gt;
+&lt;!-- 五、注解驱动：激活基于注解的配置，如：@RequestMapping、@ExceptionHandler、数据绑定、@NumberFormat、@DateTimeFormat、@Controller、@Valid、@ResponseBody等 --&gt;
+&lt;mvc:annotation-driven/&gt;
+</code></pre>
+<h4 id="第四步：编写Controller组件"><a href="#第四步：编写Controller组件" class="headerlink" title="第四步：编写Controller组件"></a>第四步：编写Controller组件</h4><h5 id="DispatcherServlet：把响应的请求转发给响应的控制器组件"><a href="#DispatcherServlet：把响应的请求转发给响应的控制器组件" class="headerlink" title="DispatcherServlet：把响应的请求转发给响应的控制器组件"></a>DispatcherServlet：把响应的请求转发给响应的控制器组件</h5><p>加注解@Controller，代表是一个控制器</p>
+<p>@RequestMapping(“ “)，不管是post还是get请求都可以处理，和servlet中的service差不多</p>
+<p>@GetMapping(“ “)，只能接收get请求</p>
+<p>@PostMapping(“ “)，只能接收post请求</p>
+<h3 id="常用的注解及其相关概念操作："><a href="#常用的注解及其相关概念操作：" class="headerlink" title="常用的注解及其相关概念操作："></a>常用的注解及其相关概念操作：</h3><p>1、@Controller，代表控制器组件</p>
+<p>@RestController，代表响应json数据的控制器组件</p>
+<p>2、@RequestMapping：（请求映射）表示接收类型的模式，可以修饰类，也可以修饰方法</p>
+<p>代表各种类型的请求，，例如定义为“&#x2F;student”，则&#x2F;student&#x2F;list请求，就会进入此类，和servlet中的@WebServlet(“&#x2F;student&#x2F;*”)一样</p>
+<p>修饰类的时候，表示类中所有的请求，以此为基础</p>
+<p>处理的请求可以写多个，写成数组，可以定义多个</p>
+<pre><code class="java">@RequestMapping(&#123;&quot;/hello&quot;, &quot;/stu&quot;&#125;)
+</code></pre>
+<p>3、@GetMapping：仅仅是get请求，仅可以修饰方法</p>
+<p>@PostMapping：仅仅是post请求，仅可以修饰方法</p>
+<pre><code class="java">@GetMapping(&quot;/list&quot;)
+</code></pre>
+<p>4、在controller的方法中，定义Map、Model、ModelMap，使用此三种类型的对象，都可以等效于对请求域的操作</p>
+<p>Map用put（常用)</p>
+<p>ModelMap用addAttribute、或者put（此类继承自LinkedHashMap）</p>
+<p>5、存储转发和重定向。返回字符串的三种含义</p>
+<p>存储转发：服务器转发，客户端无感知，地址无变化，不创建新的请求</p>
+<p>重定向：客户端转发，客户端知道，地址已发生变换，创建新的请求</p>
+<p>返回值：加前缀<strong>forward</strong>，表示<strong>存储转发</strong>给另一个请求</p>
+<p>返回值：加前缀<strong>redirect</strong>，表示<strong>重定向</strong>给另一个请求</p>
+<p>关键字：forward，存储转发给一个请求</p>
+<pre><code class="java">return ”forward:/student/list&quot;;//表示转发给一个/student/list请求
+</code></pre>
+<p>HttpServletRequest req</p>
+<p>定义一个请求获取上下文</p>
+<pre><code class="java">req.getContextpath()
+</code></pre>
+<p>6、参数绑定（获取参数），自动将请求中的参数绑定到方法中的参数</p>
+<ul>
+<li><p>如果名称相同，直接绑定</p>
+</li>
+<li><p>如果类型不同，自动转换类型（有可能有异常）。</p>
+<p>基本数据类型的封装类型，String，Date，LocalDate&#x2F;LocalTime&#x2F;LocalDateTime，BigInteger，BigDecimal</p>
+</li>
+<li><p>日期类型：加注解@DateTimeFormat(pattern  &#x3D;  “yyyy-MM-dd”)</p>
+</li>
+<li><p>文件类型：MultipartFile，用于文件上传</p>
+</li>
+<li><p>使用@RequestParam注解，可以指定请求参数，使用不同名称绑定，并可以指定此参数是否必需</p>
+</li>
+</ul>
+<pre><code class="java">@RequestParam(name = &quot;pageNo&quot;, required = true) Integer pn
+</code></pre>
+<ul>
+<li>如果使用@RequestParam修饰map，此时map将不作为域对象，而作为存储请求参数的map</li>
+<li>可以直接对javabean（模型类）进行绑定，但是需要setter&#x2F;getter方法</li>
+</ul>
+<p>7、响应ajax请求</p>
+<ul>
+<li>指定响应内容类型：produces &#x3D; “application&#x2F;json;charset&#x3D;utf-8”</li>
+<li>添加@ResponseBody注解</li>
+</ul>
+<pre><code class="java">@GetMapping(value = &quot;/add&quot;, produces = &quot;application/json;charset=utf-8&quot;)
+    @ResponseBody
+    public Student save() &#123;
+        Student stu = new Student();
+        stu.setId(100);
+        stu.setName(&quot;孙小美&quot;);
+        stu.setSex(&quot;女&quot;);
+        return stu;
+    &#125;
+</code></pre>
+<ul>
+<li>引入依赖jackson，用于json序列化（把json变成字符串）</li>
+</ul>
+<pre><code class="xml">&lt;!--用于json序列化--&gt;
+&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+    &lt;version&gt;2.14.2&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+    &lt;artifactId&gt;jackson-core&lt;/artifactId&gt;
+    &lt;version&gt;2.14.2&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+    &lt;artifactId&gt;jackson-annotations&lt;/artifactId&gt;
+    &lt;version&gt;2.14.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h3 id="controller中方法的参数可以是（任意顺序进行组合）："><a href="#controller中方法的参数可以是（任意顺序进行组合）：" class="headerlink" title="controller中方法的参数可以是（任意顺序进行组合）："></a>controller中方法的参数可以是（任意顺序进行组合）：</h3><p>1、基本数据类型封装类性，String，LocalDate&#x2F;LocalTime&#x2F;LocalDateTime，Date，BigeInteger，BigDecimal</p>
+<p>2、javaBean</p>
+<p>3、Map、Model、ModelMap，等效于请求域对象使用</p>
+<p>4、HttpServletRequest，HttpServletResponse，HttpSession（不建议使用）</p>
+<p>5、MultipartFile：用于文件上传</p>
+<h3 id="controller中方法的返回值可以是："><a href="#controller中方法的返回值可以是：" class="headerlink" title="controller中方法的返回值可以是："></a>controller中方法的返回值可以是：</h3><p>1、字符串。三种定义</p>
+<p>2、可以返回javabean，或者集合，挥着字符串：当方法响应ajax请求时，返回值会被序列化成json对象</p>
+<p>3、ModelAndView：同时作为域对象存储模型数据，以及存储视图名称</p>
+<ul>
+<li>setViewName()，返回视图，jsp</li>
+<li>addObject()，返回数据，data</li>
+</ul>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>

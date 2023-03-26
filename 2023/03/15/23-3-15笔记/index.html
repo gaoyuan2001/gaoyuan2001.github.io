@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>SSM框架：事务 | Yuan来是你</title>
+        <meta name="author" content="Yuan">
+        <meta name="description" content="从前车马很慢，书信很远，一生只够爱一个人！">
+        <meta name="keywords" content="blog,technology,life,博客,技术,生活,算法">
+        <link rel="icon" href="https://pic.imgdb.cn/item/63eb93ecf144a0100702ac89.jpg">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">Yuan来是你</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;about</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;tags</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;Yuan来是你</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+            <a href="/categories">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
+                </div>
+            </a>
+            
+            <a href="/tags">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>SSM框架：事务 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/3/15
+        </span>
+        
+        <span class="category">
+            <a href="/categories/学习/">
+                <span class="icon">
+                    <svg class="fa-icon"><use xlink:href="#bookmark-solid"></use></svg>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Java/" style="color: #00bcd4">
+                    Java
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h1 id="事务，数据库的概念"><a href="#事务，数据库的概念" class="headerlink" title="事务，数据库的概念"></a>事务，数据库的概念</h1><p>同时成功，或者同时失败</p>
+<p>设置自动提交为false</p>
+<p>conn.setAutoCommit(false);</p>
+<p>在操作完成后，手动提交</p>
+<p>conn.commit;</p>
+<p>出现异常后事务进行回滚</p>
+<p>conn.rollback;</p>
+<p>find：SUPPORTS</p>
+<h3 id="事务的四大特性"><a href="#事务的四大特性" class="headerlink" title="事务的四大特性"></a>事务的四大特性</h3><p>1、原子性：事务是一个不可分割的整体，要么全部成功，要么全不成功</p>
+<p>2、一致性：事务执行结束之后，数据是一致而准确的</p>
+<p>3、隔离性：两个并发执行的事务是互相隔离的，互不影响。隔离级别</p>
+<p>4、持久性：当事务结束之后，永久性的写入到数据库</p>
+<h3 id="事务的隔离级别：针对于并发执行的多个不同的事务"><a href="#事务的隔离级别：针对于并发执行的多个不同的事务" class="headerlink" title="事务的隔离级别：针对于并发执行的多个不同的事务"></a>事务的隔离级别：针对于并发执行的多个不同的事务</h3><h4 id="四个隔离级别（关键字：isolation）："><a href="#四个隔离级别（关键字：isolation）：" class="headerlink" title="四个隔离级别（关键字：isolation）："></a>四个隔离级别（关键字：isolation）：</h4><p>1、读未提交：一个事务可以读取到另一个事务未提交commit的数据（可能是无效数据，未成功提交，造成脏读，数据不一致）。安全性最差，性能最强</p>
+<p>2、读已提交：一个事务可以读取到另一个事务已经提交完成的数据。只能读已提交commit的数据。</p>
+<p>3、可重复读：同一个事务期间，多次读取数据，读取到的数据一致（无视其他事务的操作，类似把表锁死）</p>
+<p>4、串行化（序列化）：将所有事务以队列的形式先后执行，性能极差，安全性最高。不允许并发执行，不同事务只能一个一个执行。</p>
+<h4 id="可能会出现的情况："><a href="#可能会出现的情况：" class="headerlink" title="可能会出现的情况："></a>可能会出现的情况：</h4><p>脏读：无效数据（最终未提交）</p>
+<p>不可重复读：同一个事务期间，多次读取数据，读取到的数据不一致</p>
+<p>幻读：往往伴随着写操作</p>
+<h3 id="事务的7种传播机制（向上传播）：事务的嵌套，一层一层的冒泡"><a href="#事务的7种传播机制（向上传播）：事务的嵌套，一层一层的冒泡" class="headerlink" title="事务的7种传播机制（向上传播）：事务的嵌套，一层一层的冒泡"></a>事务的7种传播机制（向上传播）：事务的嵌套，一层一层的冒泡</h3><p>1、SUPPORTS：如果有事务，则在事务内运行。读操作通常使用此操作</p>
+<p>2、REQUIRED：需要一个事务，如果外层有事务，再在事务种运行，如果没有，则创建新的事务运行。写操作通常使用的操作</p>
+<p>3、REQUIRES_NEW；始终需要一个新的事务，如果外部有事务，先将外部事务挂起。</p>
+<p>4、NEVER：始终以非事务方式运行，如果有事务，就报异常</p>
+<p>5、NOT_SUPPORTED：始终以非事务放肆运行，如果外部有事务，则挂起</p>
+<p>6、NESTED：事务以嵌套方式运行。如果没有则新建</p>
+<p>7、MANDATORY ：支持事务。要求有事务，但不创建新的，没有则报异常</p>
+<hr>
+<p>Spring AOP及事务的声明式配置</p>
+<p>aop的应用：spring缓存，在业务类进行缓存。dao层缓存，<strong>详情看3.14笔记</strong>****</p>
+
+    </div>
+    
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 Yuan来是你
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @Yuan
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+        <canvas id="fireworks" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+        <script src="/js/fireworks.js"></script>
+
+    </body>
+</html>
